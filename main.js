@@ -1,4 +1,5 @@
 import { homePage } from "./Pages/homePage";
+import { loginPage } from "./Pages/loginPage";
 import { sliderPage } from "./Pages/sliderPage";
 import { welcomePage } from "./Pages/welcomePage";
 import "./style.css";
@@ -14,10 +15,12 @@ export const routes = {
   home: "/",
   welcome: "/welcome",
   slider: "/slider",
+  login: "/login",
 };
 
 router
   .on(routes.home, () => render(homePage()))
   .on(routes.welcome, () => render(welcomePage()))
   .on(routes.slider, sliderPage)
+  .on(routes.login, loginPage)
   .resolve();
