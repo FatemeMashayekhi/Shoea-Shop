@@ -20,7 +20,7 @@ export function loginPage() {
         <label for="password" class="relative">
           <i class="fa-solid fa-lock absolute top-2 left-4 pt-0.5 text-grayBtn"></i>
           <input type="password" id="password" placeholder="Password" class="w-96 h-9 bg-lightGray pl-10 placeholder-grayBtn" />
-          <i class="fa-solid fa-eye-slash absolute text-grayBtn right-3 top-3 text-xs"></i>
+          <i class="fa-solid fa-eye-slash absolute text-grayBtn right-3 top-3 text-xs cursor-pointer"></i>
         </label>
 
         <div class="flex justify-center mt-6">
@@ -38,7 +38,9 @@ export function loginPage() {
   //   document.querySelector("img").addEventListener("click", () => {
   //     router.navigate(routes.slider);
   //   });
+
   login();
+  showpass();
 }
 
 function login() {
@@ -46,7 +48,8 @@ function login() {
   const emailInput = document.querySelector("#email");
   const passInput = document.querySelector("#password");
 
-  emailInput.addEventListener("input", () => {
+  emailInput.addEventListener("input", (e) => {
+    e.preventDefault();
     if (emailInput.value !== "") {
       document.querySelector(".fa-envelope").classList.add("text-black");
       document.querySelector(".fa-envelope").classList.remove("text-grayBtn");
@@ -58,7 +61,8 @@ function login() {
     }
   });
 
-  passInput.addEventListener("input", () => {
+  passInput.addEventListener("input", (e) => {
+    e.preventDefault();
     if (passInput.value !== "") {
       document.querySelector(".fa-lock").classList.add("text-black");
       document.querySelector(".fa-lock").classList.remove("text-grayBtn");
@@ -85,4 +89,22 @@ function updateLoginButton() {
     loginBtn.setAttribute("disabled", true);
     loginBtn.classList.remove("bg-darkBtn");
   }
+}
+
+function showpass() {
+  const passInput = document.querySelector("#password");
+  const eye = document.querySelector(".fa-eye-slash");
+
+  eye.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (passInput.type === "password") {
+      passInput.type = "text";
+      eye.classList.remove("fa-eye-slash");
+      eye.classList.add("fa-eye");
+    } else {
+      passInput.type = "password";
+      eye.classList.add("fa-eye-slash");
+      eye.classList.remove("fa-eye");
+    }
+  });
 }
