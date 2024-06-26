@@ -14,7 +14,7 @@ export function welcomePage() {
     </div>
     `;
 
-  setTimeout(() => {
-    router.navigate(routes.slider);
-  }, 2000);
+  //   setTimeout(() => {
+  //     router.navigate(routes.slider);
+  //   }, 2000);
 }

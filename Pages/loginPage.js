@@ -38,7 +38,6 @@ export function loginPage() {
   document.querySelector("img").addEventListener("click", () => {
     router.navigate(routes.slider);
   });
-
   login();
 }
 
@@ -47,13 +46,13 @@ function login() {
   const emailInput = document.querySelector("#email");
   const passInput = document.querySelector("#password");
 
-  emailInput.value = "";
-  passInput.value = "";
-
   emailInput.addEventListener("input", () => {
-    document.querySelector("i").classList.remove("text-black");
     if (emailInput.value !== "") {
       document.querySelector("i").classList.add("text-black");
+      document.querySelector("i").classList.remove("text-grayBtn");
+    } else {
+      document.querySelector("i").classList.remove("text-black");
+      document.querySelector("i").classList.add("text-grayBtn");
     }
   });
 }
