@@ -20,7 +20,7 @@ export default {
       },
 
       backgroundImage: {
-        wallpaperDog: "url('./public/images/WallpaperDog.png')",
+        wallpaperDog: "url('./public/imges/WallpaperDog.png')",
       },
     },
   },

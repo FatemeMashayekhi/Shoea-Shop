@@ -1,4 +1,5 @@
 import { homePage } from "./Pages/homePage";
+import { welcomePage } from "./Pages/welcomePage";
 import "./style.css";
 import Navigo from "navigo";
 
@@ -10,6 +11,10 @@ function render(children) {
 
 export const routes = {
   home: "/",
+  welcome: "/welcome",
 };
 
-router.on(routes.home, () => render(homePage())).resolve();
+router
+  .on(routes.home, () => render(homePage()))
+  .on(routes.welcome, () => render(welcomePage()))
+  .resolve();
