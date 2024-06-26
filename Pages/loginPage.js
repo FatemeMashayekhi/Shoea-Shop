@@ -3,9 +3,9 @@ import { routes } from "../main";
 
 export function loginPage() {
   document.querySelector("#app").innerHTML = `
-    <div class="mt-2">
-      <img src="./imges/prev icon.png" alt="prev-icon" class="cursor-pointer" />
-    </div>
+    <a href="/slider" data-navigo class="mt-2">
+       <img src="./imges/prev icon.png" alt="prev-icon" class="cursor-pointer" />
+    </a>
     <div class="flex flex-col items-center gap-y-32 font-Roboto mt-20">
       <div><img src="./imges/logo.png" alt="logo" /></div>
 
@@ -31,13 +31,13 @@ export function loginPage() {
         </label>
         </div>
       </div>
-      <button id="login-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed mt-36" disabled>Sign In</button>
+      <button id="login-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed mt-36" disabled="true">Sign In</button>
     </div>
     `;
 
-  document.querySelector("img").addEventListener("click", () => {
-    router.navigate(routes.slider);
-  });
+  //   document.querySelector("img").addEventListener("click", () => {
+  //     router.navigate(routes.slider);
+  //   });
   login();
 }
 
@@ -48,11 +48,41 @@ function login() {
 
   emailInput.addEventListener("input", () => {
     if (emailInput.value !== "") {
-      document.querySelector("i").classList.add("text-black");
-      document.querySelector("i").classList.remove("text-grayBtn");
+      document.querySelector(".fa-envelope").classList.add("text-black");
+      document.querySelector(".fa-envelope").classList.remove("text-grayBtn");
+      updateLoginButton();
     } else {
-      document.querySelector("i").classList.remove("text-black");
-      document.querySelector("i").classList.add("text-grayBtn");
+      document.querySelector(".fa-envelope").classList.remove("text-black");
+      document.querySelector(".fa-envelope").classList.add("text-grayBtn");
+      updateLoginButton();
     }
   });
+
+  passInput.addEventListener("input", () => {
+    if (passInput.value !== "") {
+      document.querySelector(".fa-lock").classList.add("text-black");
+      document.querySelector(".fa-lock").classList.remove("text-grayBtn");
+      updateLoginButton();
+    } else {
+      document.querySelector(".fa-lock").classList.remove("text-black");
+      document.querySelector(".fa-lock").classList.add("text-grayBtn");
+      updateLoginButton();
+    }
+  });
+}
+
+function updateLoginButton() {
+  const emailInput = document.querySelector("#email");
+  const passInput = document.querySelector("#password");
+  const loginBtn = document.querySelector("#login-btn");
+
+  if (emailInput.value !== "" && passInput.value !== "") {
+    loginBtn.classList.remove("cursor-not-allowed", "bg-grayBtn");
+    loginBtn.removeAttribute("disabled");
+    loginBtn.classList.add("bg-darkBtn");
+  } else {
+    loginBtn.classList.add("cursor-not-allowed", "bg-grayBtn");
+    loginBtn.setAttribute("disabled", true);
+    loginBtn.classList.remove("bg-darkBtn");
+  }
 }
