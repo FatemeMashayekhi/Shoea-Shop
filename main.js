@@ -12,9 +12,11 @@ function render(children) {
 export const routes = {
   home: "/",
   welcome: "/welcome",
+  slider: "/slider",
 };
 
 router
   .on(routes.home, () => render(homePage()))
   .on(routes.welcome, () => render(welcomePage()))
+  .on(routes.slider, sliderPage)
   .resolve();
