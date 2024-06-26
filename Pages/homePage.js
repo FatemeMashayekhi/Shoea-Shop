@@ -1,7 +1,7 @@
 import { router, routes } from "../main.js";
 
 export function homePage() {
-  return `
+  document.querySelector("#app").innerHTML = `
     
     <div class="flex flex-col justify-around min-h-screen items-center">
         <div></div>
@@ -13,7 +13,7 @@ export function homePage() {
     </div>
     `;
 
-  //   setTimeout(() => {
-  //     router.navigate(routes.welcome);
-  //   }, 2000);
+  setTimeout(() => {
+    router.navigate(routes.welcome);
+  }, 2000);
 }

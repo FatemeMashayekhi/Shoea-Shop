@@ -2,7 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 input::-ms-reveal,
 input::-ms-clear {
   display: none;
+}
+
+/* ///////////////Login-checkbox///////////////// */
+
+.pl-7:hover input ~ .w-5 {
+  background-color: #d4d4d4;
+}
+
+.pl-7 input:checked ~ .w-5 {
+  background-color: #000000;
+}
+
+.w-5:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.pl-7 input:checked ~ .w-5:after {
+  display: block;
+}
+
+.pl-7 .w-5:after {
+  left: 6px;
+  top: 3px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }

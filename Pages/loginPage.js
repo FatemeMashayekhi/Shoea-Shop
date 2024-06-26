@@ -38,6 +38,7 @@ export function loginPage() {
   document.querySelector("img").addEventListener("click", () => {
     router.navigate(routes.slider);
   });
+
   login();
 }
 
@@ -45,6 +46,9 @@ function login() {
   const loginBtn = document.querySelector("#login-btn");
   const emailInput = document.querySelector("#email");
   const passInput = document.querySelector("#password");
+
+  emailInput.value = "";
+  passInput.value = "";
 
   emailInput.addEventListener("input", () => {
     document.querySelector("i").classList.remove("text-black");

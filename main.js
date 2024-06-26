@@ -19,8 +19,8 @@ export const routes = {
 };
 
 router
-  .on(routes.home, () => render(homePage()))
-  .on(routes.welcome, () => render(welcomePage()))
+  .on(routes.home, homePage)
+  .on(routes.welcome, welcomePage)
   .on(routes.slider, sliderPage)
   .on(routes.login, loginPage)
   .resolve();
