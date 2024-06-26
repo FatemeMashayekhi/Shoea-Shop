@@ -1,4 +1,5 @@
 import { homePage } from "./Pages/homePage";
+import { sliderPage } from "./Pages/sliderPage";
 import { welcomePage } from "./Pages/welcomePage";
 import "./style.css";
 import Navigo from "navigo";
