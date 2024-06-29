@@ -18,8 +18,8 @@ export const routes = {
   welcome: "/welcome",
   slider: "/slider",
   login: "/login",
-  products: "/products",
   signup: "/signup",
+  products: "/products",
 };
 
 router
@@ -27,6 +27,7 @@ router
   .on(routes.welcome, welcomePage)
   .on(routes.slider, sliderPage)
   .on(routes.login, loginPage)
-  .on(routes.products, productsPage)
   .on(routes.signup, signupPage)
+  .on(routes.products, productsPage)
+
   .resolve();
