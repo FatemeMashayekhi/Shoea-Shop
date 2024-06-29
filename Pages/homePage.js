@@ -1,8 +1,7 @@
 import { router, routes } from "../main.js";
 
 export function homePage() {
-  document.querySelector("#app").innerHTML = `
-    
+  return `
     <div class="flex flex-col justify-around min-h-screen items-center">
         <div></div>
         <div class="flex items-center">
@@ -12,10 +11,9 @@ export function homePage() {
         <div class="h-10 w-10 animate-spin rounded-full border-5 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_2s_linear_infinite] dark:text-black"></div>
     </div>
     `;
-  checkVisitedToken();
 }
 
-function checkVisitedToken() {
+export function checkVisitedToken() {
   const visitedToken = localStorage.getItem("previouslyVisited") ?? false;
   if (!visitedToken) {
     localStorage.setItem("previouslyVisited", "true");
