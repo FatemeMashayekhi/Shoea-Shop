@@ -12,8 +12,19 @@ export function homePage() {
         <div class="h-10 w-10 animate-spin rounded-full border-5 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_2s_linear_infinite] dark:text-black"></div>
     </div>
     `;
+  checkVisitedToken();
+}
 
-  setTimeout(() => {
-    router.navigate(routes.welcome);
-  }, 2000);
+function checkVisitedToken() {
+  const visitedToken = localStorage.getItem("previouslyVisited") ?? false;
+  if (!visitedToken) {
+    localStorage.setItem("previouslyVisited", "true");
+    setTimeout(() => {
+      router.navigate(routes.welcome);
+    }, 2000);
+  } else {
+    setTimeout(() => {
+      router.navigate(routes.login);
+    }, 2000);
+  }
 }
