@@ -134,27 +134,3 @@ function showpass() {
     }
   });
 }
-
-// export const login = () => {
-//     document.querySelector("form").addEventListener("submit", async (e) => {
-//       e.preventDefault();
-
-//       const credentials = {
-//         email: e.target["email"].value,
-//         password: e.target["pass"].value,
-//       };
-
-//       try {
-//         let response = await axios.post("/login", credentials);
-//         if (response.status === 200) {
-//           console.log(response);
-//           localStorage.setItem("accessToken", response.data.accessToken);
-//           localStorage.setItem("email", response.data.user.email);
-//           router.navigate(routes.dashboard);
-//         }
-//       } catch (e) {
-//         console.log(e);
-//         document.querySelector("span").innerHTML = e.response.data;
-//       }
-//     });
-//   };
