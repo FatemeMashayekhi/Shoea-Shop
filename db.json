@@ -1,0 +1,295 @@
+{
+	"users": [
+		{
+
+		}
+	],
+	"products": [
+		{
+      "id": 1,
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 110,
+      "rate": 3.7,
+      "sold": 3758,
+      "in-stock": 1000,
+      "colors": [
+        {
+          "color-name": "Blue",
+          "color-code": "#27aec7"
+        },
+        {
+          "color-name": "Green",
+          "color-code": "#268801"
+        },
+        {
+          "color-name": "Red",
+          "color-code": "#c72800"
+        }
+      ],
+      "sizes": [40, 41, 42],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
+      "images": [
+        ""
+      ]
+    }
+	],
+  "wishList": [
+		{
+      "id": 1,
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 110,
+      "rate": 3.7,
+      "sold": 3758,
+      "in-stock": 1000,
+      "colors": [
+        {
+          "color-name": "Blue",
+          "color-code": "#27aec7"
+        },
+        {
+          "color-name": "Green",
+          "color-code": "#268801"
+        },
+        {
+          "color-name": "Red",
+          "color-code": "#c72800"
+        }
+      ],
+      "sizes": [41, 42, 43],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
+      "images": [
+        ""
+      ]
+    }
+	],
+  "mostPopular": [
+    {
+      "id": 1,
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 110,
+      "rate": 3.7,
+      "sold": 3758,
+      "in-stock": 1000,
+      "colors": [
+        {
+          "color-name": "Blue",
+          "color-code": "#27aec7"
+        },
+        {
+          "color-name": "Green",
+          "color-code": "#268801"
+        },
+        {
+          "color-name": "Red",
+          "color-code": "#c72800"
+        }
+      ],
+      "sizes": [41, 42, 43],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
+      "images": [
+        ""
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 110,
+      "rate": 3.7,
+      "sold": 3758,
+      "in-stock": 1000,
+      "colors": [
+        {
+          "color-name": "Blue",
+          "color-code": "#27aec7"
+        },
+        {
+          "color-name": "Green",
+          "color-code": "#268801"
+        },
+        {
+          "color-name": "Red",
+          "color-code": "#c72800"
+        }
+      ],
+      "sizes": [41, 42, 43],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
+      "images": [
+        ""
+      ]
+    }
+  ],
+	"session": [
+		{
+			"name": "Maral Mashayekhi",
+			"imgUrl": "",
+			"id": 1
+		}
+	],
+  "cart":[
+    {
+      "id": 1,
+      "name": "Adidas Samba",
+      "price": 110,
+      "color": "blue",
+      "hexCode": "#27aec7",
+      "sizes": 41,
+      "quantity": 2,
+      "imgUrl": "./src/assets/adidas/1.png"
+    },
+    {
+      "id": 7,
+      "name": "Nike Pegasus",
+      "price": 110,
+      "color": "blue",
+      "hexCode": "#27aec7",
+      "sizes": 41,
+      "quantity": 1,
+      "imgUrl": "./src/assets/adidas/1.png"
+    }
+  ],
+  "checkout": [
+    {
+      "items":[
+        {
+          "id": 7,
+          "name": "Nike Pegasus",
+          "price": 110,
+          "color": "blue",
+          "hexCode": "#27aec7",
+          "sizes": 41,
+          "quantity": 1,
+          "imgUrl": "./src/assets/adidas/1.png"
+        },
+        {
+          "id": 1,
+          "name": "Adidas Samba",
+          "price": 110,
+          "color": "blue",
+          "hexCode": "#27aec7",
+          "sizes": 41,
+          "quantity": 2,
+          "imgUrl": "./src/assets/adidas/1.png"
+        }
+      ],
+      "ship": {
+        "name": "Regular",
+        "price": 15
+      },
+      "address": {
+        "name": "Home",
+        "address": "Lavasan-Paizan"
+      },
+      "total": 424
+    }
+  ],
+  "active": [
+    {
+      "id": 7,
+      "name": "Nike Pegasus",
+      "price": 110,
+      "color": "blue",
+      "hexCode": "#27aec7",
+      "sizes": 41,
+      "quantity": 1,
+      "imgUrl": "./src/assets/adidas/1.png"
+    },
+    {
+      "id": 1,
+      "name": "Adidas Samba",
+      "price": 110,
+      "color": "blue",
+      "hexCode": "#27aec7",
+      "sizes": 41,
+      "quantity": 2,
+      "imgUrl": "./src/assets/adidas/1.png"
+    }
+  ],
+  "completed": [
+    {
+      "id": 7,
+      "name": "Nike Pegasus",
+      "price": 110,
+      "color": "blue",
+      "hexCode": "#27aec7",
+      "sizes": 41,
+      "quantity": 1,
+      "imgUrl": "./src/assets/adidas/1.png"
+    },
+    {
+      "id": 1,
+      "name": "Adidas Samba",
+      "price": 110,
+      "color": "blue",
+      "hexCode": "#27aec7",
+      "sizes": 41,
+      "quantity": 2,
+      "imgUrl": "./src/assets/adidas/1.png"
+    }
+  ],
+  "addresses": [
+    {
+      "name": "Home",
+      "address": "Lavasan-Paizan"
+    },
+    {
+      "name": "Office",
+      "address": "Tehran-Velenjak"
+    },
+    {
+      "name": "Apartment",
+      "address": "Tehran-Niavaran"
+    },
+    {
+      "name": "Parent's House",
+      "address": "Tehran-Pasdaran"
+    }
+  ],
+  "shipment": [
+    {
+      "name": "Economy",
+      "price": 10,
+      "icon": "./src/assets/icons/economic.png"
+    },
+    {
+      "name": "Regular",
+      "price": 15,
+      "icon": "./src/assets/icons/vip.png"
+    },
+    {
+      "name": "Cargo",
+      "price": 20,
+      "icon": "./src/assets/icons/vip.png"
+    },
+    {
+      "name": "Express",
+      "price": 30,
+      "icon": "./src/assets/icons/vip.png"
+    }
+  ],
+  "payment": [
+    {
+      "name": "My Wallet",
+      "icon": "./src/assets/icons/wallet.png"
+    },
+    {
+      "name": "PayPal",
+      "icon": "./src/assets/icons/paypal.png"
+    },
+    {
+      "name": "Google Pay",
+      "icon": "./src/assets/icons/google.png"
+    },
+    {
+      "name": "Apple Pay",
+      "icon": "./src/assets/icons/apple.png"
+    },
+    {
+      "name": "... ... ... ... 4679",
+      "icon": "./src/assets/icons/apple.png"
+    }
+  ]
+}
