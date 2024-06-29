@@ -3,7 +3,7 @@ import { routes } from "../main";
 
 export function loginPage() {
   document.querySelector("#app").innerHTML = `
-    <a href="/slider" data-navigo class="mt-2">
+    <a href="/slider" class="mt-2">
        <img src="./imges/prev icon.png" alt="prev-icon" class="cursor-pointer" />
     </a>
     <div class="flex flex-col items-center gap-y-32 font-Roboto mt-20">
