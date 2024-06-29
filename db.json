@@ -1,11 +1,19 @@
 {
-	"users": [
-		{
-
-		}
-	],
-	"products": [
-		{
+  "users": [
+    {},
+    {
+      "email": "maral@gmail.com",
+      "password": "$2a$10$cOT/vbFln1CvprQRJBtSUOCJp.jxgoRO4SPy85e9PtkSS3OwTRhRu",
+      "id": 1
+    },
+    {
+      "email": "maralm@gmail.com",
+      "password": "$2a$10$XMFzC28zt/kxi9w6y0IsmuU4GEKvIQ320abmyQpSUgUHsnHDVGx82",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
       "id": 1,
       "name": "Adidas Samba",
       "brand": "Adidas",
@@ -27,15 +35,19 @@
           "color-code": "#c72800"
         }
       ],
-      "sizes": [40, 41, 42],
+      "sizes": [
+        40,
+        41,
+        42
+      ],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
       "images": [
         ""
       ]
     }
-	],
+  ],
   "wishList": [
-		{
+    {
       "id": 1,
       "name": "Adidas Samba",
       "brand": "Adidas",
@@ -57,13 +69,17 @@
           "color-code": "#c72800"
         }
       ],
-      "sizes": [41, 42, 43],
+      "sizes": [
+        41,
+        42,
+        43
+      ],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
       "images": [
         ""
       ]
     }
-	],
+  ],
   "mostPopular": [
     {
       "id": 1,
@@ -87,7 +103,11 @@
           "color-code": "#c72800"
         }
       ],
-      "sizes": [41, 42, 43],
+      "sizes": [
+        41,
+        42,
+        43
+      ],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
       "images": [
         ""
@@ -115,21 +135,25 @@
           "color-code": "#c72800"
         }
       ],
-      "sizes": [41, 42, 43],
+      "sizes": [
+        41,
+        42,
+        43
+      ],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
       "images": [
         ""
       ]
     }
   ],
-	"session": [
-		{
-			"name": "Maral Mashayekhi",
-			"imgUrl": "",
-			"id": 1
-		}
-	],
-  "cart":[
+  "session": [
+    {
+      "name": "Maral Mashayekhi",
+      "imgUrl": "",
+      "id": 1
+    }
+  ],
+  "cart": [
     {
       "id": 1,
       "name": "Adidas Samba",
@@ -153,7 +177,7 @@
   ],
   "checkout": [
     {
-      "items":[
+      "items": [
         {
           "id": 7,
           "name": "Nike Pegasus",

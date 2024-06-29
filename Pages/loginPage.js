@@ -1,3 +1,4 @@
+import axios from "../api";
 import { router } from "../main";
 import { routes } from "../main";
 
@@ -33,8 +34,9 @@ export function loginPage() {
         <div class="flex justify-center mt-2">
         <a href="/signup" data-navigo class="text-grayBtn hover:text-black cursor-pointer">Don't have an account?</a>
         </div>
+        <span id="error" style="color:red;"></span>
       </div>
-      <button id="login-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed mt-24" disabled="true">Sign In</button>
+      <button id="login-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed mt-[75px]" disabled="true">Sign In</button>
     </div>
     `;
 
@@ -75,6 +77,28 @@ export function login() {
       showpass();
     }
   });
+
+  loginBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const credentials = {
+      email: emailInput.value,
+      password: passInput.value,
+    };
+
+    try {
+      let response = await axios.post("/login", credentials);
+      if (response.status === 200) {
+        console.log(response);
+        localStorage.setItem("accessToken", response.data.accessToken);
+        localStorage.setItem("email", response.data.user.email);
+        router.navigate(routes.products);
+      }
+    } catch (e) {
+      console.log(e);
+      document.querySelector("span").innerHTML = e.response.data;
+    }
+  });
 }
 
 function updateLoginButton() {
@@ -110,3 +134,27 @@ function showpass() {
     }
   });
 }
+
+// export const login = () => {
+//     document.querySelector("form").addEventListener("submit", async (e) => {
+//       e.preventDefault();
+
+//       const credentials = {
+//         email: e.target["email"].value,
+//         password: e.target["pass"].value,
+//       };
+
+//       try {
+//         let response = await axios.post("/login", credentials);
+//         if (response.status === 200) {
+//           console.log(response);
+//           localStorage.setItem("accessToken", response.data.accessToken);
+//           localStorage.setItem("email", response.data.user.email);
+//           router.navigate(routes.dashboard);
+//         }
+//       } catch (e) {
+//         console.log(e);
+//         document.querySelector("span").innerHTML = e.response.data;
+//       }
+//     });
+//   };
