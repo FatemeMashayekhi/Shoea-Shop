@@ -30,8 +30,11 @@ export function loginPage() {
           <span class="absolute top-0 left-0 h-5 w-5 bg-white border-1 border-gray-300 rounded-md"></span>
         </label>
         </div>
+        <div class="flex justify-center mt-2">
+        <p class="text-grayBtn hover:text-black cursor-pointer">Don't have an account?</p>
+        </div>
       </div>
-      <button id="login-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed mt-36" disabled="true">Sign In</button>
+      <button id="login-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed mt-24" disabled="true">Sign In</button>
     </div>
     `;
 
