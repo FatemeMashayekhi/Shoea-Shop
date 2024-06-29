@@ -10,6 +10,11 @@
       "email": "maralm@gmail.com",
       "password": "$2a$10$XMFzC28zt/kxi9w6y0IsmuU4GEKvIQ320abmyQpSUgUHsnHDVGx82",
       "id": 2
+    },
+    {
+      "email": "jill@gmail.com",
+      "password": "$2a$10$UbnSOOkq/gvknhc.LR5nMu/UWbipQ8cXCJFizFfr79Oq/.jVbd7yq",
+      "id": 3
     }
   ],
   "products": [

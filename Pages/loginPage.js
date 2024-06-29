@@ -34,9 +34,9 @@ export function loginPage() {
         <div class="flex justify-center mt-2">
         <a href="/signup" data-navigo class="text-grayBtn hover:text-black cursor-pointer">Don't have an account?</a>
         </div>
-        <span id="error" style="color:red;"></span>
+        <span id="error" class="text-red-800 h-7 text-center"></span>
       </div>
-      <button id="login-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed mt-[75px]" disabled="true">Sign In</button>
+      <button id="login-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed mt-[56px]" disabled="true">Sign In</button>
     </div>
     `;
 
@@ -96,7 +96,7 @@ export function login() {
       }
     } catch (e) {
       console.log(e);
-      document.querySelector("span").innerHTML = e.response.data;
+      document.querySelector("#error").innerHTML = e.response.data;
     }
   });
 }

@@ -1,3 +1,5 @@
+import axios from "../api";
+import { router, routes } from "../main";
 export function signupPage() {
   return `
     <a href="/slider" data-navigo class="mt-2">
@@ -36,8 +38,9 @@ export function signupPage() {
         <div class="flex justify-center mt-2">
         <a href="/login" data-navigo class="text-grayBtn hover:text-black cursor-pointer">Already have an account?</a>
         </div>
+        <span id="error" class="text-red-800 h-7 text-center"></span>
       </div>
-      <button id="create-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed mt-10" disabled="true">Create</button>
+      <button id="create-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed" disabled="true">Create</button>
     </div>
   `;
 }
@@ -88,6 +91,30 @@ export function signup() {
       document.querySelector("#repeatPass").classList.add("text-grayBtn");
       updateLoginButton();
       showpass();
+    }
+  });
+
+  createBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    if (repeatPassInput.value !== passInput.value) {
+      document.querySelector("#error").innerHTML =
+        "Password Must be Repeated Exactly";
+    } else {
+      const credentials = {
+        email: emailInput.value,
+        password: passInput.value,
+      };
+
+      try {
+        let response = await axios.post("/signup", credentials);
+        if (response.status === 201) {
+          router.navigate(routes.login);
+        }
+      } catch (e) {
+        console.log(e);
+        document.querySelector("#error").innerHTML = e.response.data;
+      }
     }
   });
 }
