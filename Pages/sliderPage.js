@@ -55,8 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector(".swiper")) {
     const swiper = new Swiper(".swiper", {
       modules: [Navigation, Pagination],
-      // direction: "vertical",
       loop: true,
+      cssMode: true,
       pagination: {
         el: ".swiper-pagination",
       },
