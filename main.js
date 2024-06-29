@@ -1,5 +1,5 @@
 import { homePage, checkVisitedToken } from "./Pages/homePage";
-import { loginPage } from "./Pages/loginPage";
+import { login, loginPage } from "./Pages/loginPage";
 import { productsPage } from "./Pages/productsPage";
 import { signupPage } from "./Pages/signupPage";
 import { sliderPage } from "./Pages/sliderPage";
@@ -39,7 +39,7 @@ router
   .on(routes.home, () => render(homePage(), checkVisitedToken))
   .on(routes.welcome, () => render(welcomePage(), changeRouter))
   .on(routes.slider, () => render(sliderPage()))
-  .on(routes.login, loginPage)
+  .on(routes.login, () => render(loginPage(), login))
   .on(routes.signup, signupPage)
   .on(routes.products, productsPage)
   .resolve();

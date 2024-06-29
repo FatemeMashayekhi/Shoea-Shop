@@ -2,7 +2,7 @@ import { router } from "../main";
 import { routes } from "../main";
 
 export function loginPage() {
-  document.querySelector("#app").innerHTML = `
+  return `
     <a href="/slider" class="mt-2">
        <img src="./imges/prev icon.png" alt="prev-icon" class="cursor-pointer" />
     </a>
@@ -41,12 +41,9 @@ export function loginPage() {
   //   document.querySelector("img").addEventListener("click", () => {
   //     router.navigate(routes.slider);
   //   });
-
-  login();
-  showpass();
 }
 
-function login() {
+export function login() {
   const loginBtn = document.querySelector("#login-btn");
   const emailInput = document.querySelector("#email");
   const passInput = document.querySelector("#password");
@@ -70,10 +67,12 @@ function login() {
       document.querySelector(".fa-lock").classList.add("text-black");
       document.querySelector(".fa-lock").classList.remove("text-grayBtn");
       updateLoginButton();
+      showpass();
     } else {
       document.querySelector(".fa-lock").classList.remove("text-black");
       document.querySelector(".fa-lock").classList.add("text-grayBtn");
       updateLoginButton();
+      showpass();
     }
   });
 }
