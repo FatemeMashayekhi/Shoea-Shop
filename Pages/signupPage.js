@@ -1,5 +1,5 @@
 export function signupPage() {
-  document.querySelector("#app").innerHTML = `
+  return `
     <a href="/slider" data-navigo class="mt-2">
        <img src="./imges/prev icon.png" alt="prev-icon" class="cursor-pointer" />
     </a>
@@ -40,11 +40,9 @@ export function signupPage() {
       <button id="create-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed mt-10" disabled="true">Create</button>
     </div>
   `;
-  signup();
-  showpass();
 }
 
-function signup() {
+export function signup() {
   const createBtn = document.querySelector("#create-btn");
   const emailInput = document.querySelector("#email");
   const passInput = document.querySelector("#password");
@@ -69,10 +67,12 @@ function signup() {
       document.querySelector("#pass").classList.add("text-black");
       document.querySelector("#pass").classList.remove("text-grayBtn");
       updateLoginButton();
+      showpass();
     } else {
       document.querySelector("#pass").classList.remove("text-black");
       document.querySelector("#pass").classList.add("text-grayBtn");
       updateLoginButton();
+      showpass();
     }
   });
 
@@ -82,10 +82,12 @@ function signup() {
       document.querySelector("#repeatPass").classList.add("text-black");
       document.querySelector("#repeatPass").classList.remove("text-grayBtn");
       updateLoginButton();
+      showpass();
     } else {
       document.querySelector("#repeatPass").classList.remove("text-black");
       document.querySelector("#repeatPass").classList.add("text-grayBtn");
       updateLoginButton();
+      showpass();
     }
   });
 }
