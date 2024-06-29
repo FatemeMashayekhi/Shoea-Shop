@@ -7,6 +7,16 @@ import { welcomePage, changeRouter } from "./Pages/welcomePage";
 import "./style.css";
 import Navigo from "navigo";
 
+// core version + navigation, pagination modules:
+import Swiper from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
+// import Swiper and modules styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+// import styles bundle
+import "swiper/css/bundle";
+
 export const router = new Navigo("/");
 
 function render(children, createEventListeners) {
@@ -28,9 +38,8 @@ export const routes = {
 router
   .on(routes.home, () => render(homePage(), checkVisitedToken))
   .on(routes.welcome, () => render(welcomePage(), changeRouter))
-  .on(routes.slider, sliderPage)
+  .on(routes.slider, () => render(sliderPage()))
   .on(routes.login, loginPage)
   .on(routes.signup, signupPage)
   .on(routes.products, productsPage)
-
   .resolve();
