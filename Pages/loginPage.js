@@ -99,6 +99,7 @@ export function login() {
       document.querySelector("#error").innerHTML = e.response.data;
     }
   });
+  showpass();
 }
 
 function updateLoginButton() {
