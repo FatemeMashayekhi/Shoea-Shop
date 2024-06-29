@@ -31,7 +31,7 @@ export function loginPage() {
         </label>
         </div>
         <div class="flex justify-center mt-2">
-        <p class="text-grayBtn hover:text-black cursor-pointer">Don't have an account?</p>
+        <a href="/signup" data-navigo class="text-grayBtn hover:text-black cursor-pointer">Don't have an account?</a>
         </div>
       </div>
       <button id="login-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed mt-24" disabled="true">Sign In</button>

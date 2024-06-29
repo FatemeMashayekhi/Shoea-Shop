@@ -1,6 +1,7 @@
 import { homePage } from "./Pages/homePage";
 import { loginPage } from "./Pages/loginPage";
 import { productsPage } from "./Pages/productsPage";
+import { signupPage } from "./Pages/signupPage";
 import { sliderPage } from "./Pages/sliderPage";
 import { welcomePage } from "./Pages/welcomePage";
 import "./style.css";
@@ -18,6 +19,7 @@ export const routes = {
   slider: "/slider",
   login: "/login",
   products: "/products",
+  signup: "/signup",
 };
 
 router
@@ -26,4 +28,5 @@ router
   .on(routes.slider, sliderPage)
   .on(routes.login, loginPage)
   .on(routes.products, productsPage)
+  .on(routes.signup, signupPage)
   .resolve();
