@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "server": "npx json-server db.json -m ./node_modules/json-server-auth --watch",
     "build": "vite build",
     "preview": "vite preview"
   },
