@@ -13,6 +13,7 @@ export default {
         grayBtn: "#6C757D",
         lightGray: "#FAFAFA",
         textGray: "#757475",
+        placeholderText: "#BAB8BC",
       },
 
       borderWidth: {
