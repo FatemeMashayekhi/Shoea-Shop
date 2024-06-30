@@ -39,11 +39,11 @@ export const mainLayout = (content) => {
       <p class="text-10">Orders</p>
     </a>
     <a href="#" data-navigo>
-      <img src="./public/imges/wallet.png" alt="wallet" />
+      <img src="./public/imges/wallet.png" alt="wallet"/>
       <p class="text-10">Wallet</p>
     </a>
-    <a href="#" data-navigo class="mt-1">
-      <img src="./public/imges/profile.png" alt="profile" />
+    <a href="#" data-navigo>
+      <img src="./public/imges/profile.png" alt="profile"/>
       <p class="text-10">Profile</p>
     </a>
    </div>
