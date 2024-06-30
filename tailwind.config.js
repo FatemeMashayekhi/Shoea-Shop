@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./*.{html,js}", "./Pages/*.js"],
+  content: ["./*.{html,js}", "./Pages/*.js", "./Layouts/main-layout/*.js"],
   theme: {
     extend: {
       fontFamily: {
@@ -12,6 +12,7 @@ export default {
         darkBtn: "#212529",
         grayBtn: "#6C757D",
         lightGray: "#FAFAFA",
+        textGray: "#757475",
       },
 
       borderWidth: {
@@ -21,6 +22,10 @@ export default {
 
       backgroundImage: {
         wallpaperDog: "url('./public/imges/WallpaperDog.png')",
+      },
+
+      fontSize: {
+        10: "10px",
       },
     },
   },
