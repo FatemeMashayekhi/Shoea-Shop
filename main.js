@@ -16,6 +16,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 // import styles bundle
 import "swiper/css/bundle";
+import { mainLayout } from "./Layouts/main-layout/mainLayout";
 
 export const router = new Navigo("/");
 
@@ -41,5 +42,5 @@ router
   .on(routes.slider, () => render(sliderPage()))
   .on(routes.login, () => render(loginPage(), login))
   .on(routes.signup, () => render(signupPage(), signup))
-  .on(routes.products, productsPage)
+  .on(routes.products, () => render(mainLayout(productsPage())))
   .resolve();
