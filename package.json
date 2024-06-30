@@ -7,7 +7,6 @@
     "dev": "vite",
     "server": "json-server db.json -m ./node_modules/json-server-auth --watch",
     "backend": "json-server-auth db.json --watch",
-    "port": "json-server db.json -p 5000 --watch",
     "build": "vite build",
     "preview": "vite preview"
   },
