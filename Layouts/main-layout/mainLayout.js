@@ -25,7 +25,7 @@ export const mainLayout = (content) => {
  </main>
 
  <footer>
-   <div class="flex justify-evenly mb-3 text-center">
+   <div class="flex justify-evenly mb-3 text-center items-center">
     <a href="#" data-navigo>
       <img src="./public/imges/home.png" alt="home" />
       <p class="text-10">Home</p>
