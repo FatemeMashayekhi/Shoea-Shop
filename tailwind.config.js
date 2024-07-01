@@ -14,6 +14,7 @@ export default {
         lightGray: "#FAFAFA",
         textGray: "#757475",
         placeholderText: "#BAB8BC",
+        navBg: "#ECECEC",
       },
 
       borderWidth: {
