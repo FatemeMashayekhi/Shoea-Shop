@@ -59,6 +59,12 @@ export function productsPage() {
     <p class="text-sm">More ..</p>
   </a>
 </div>
+<div class="flex justify-between px-2 font-semibold items-center tracking-wider">
+  <p class="text-xl">Most Popular</p>
+  <a href="#">
+    <p class="text-base">See All</p>
+  </a>
+</div>
 </div>
     `;
   } else {
