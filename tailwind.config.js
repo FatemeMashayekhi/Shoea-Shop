@@ -15,6 +15,8 @@ export default {
         textGray: "#757475",
         placeholderText: "#BAB8BC",
         navBg: "#ECECEC",
+        btnListBg: "#343A40",
+        productsBg: "#F3F3F3",
       },
 
       borderWidth: {

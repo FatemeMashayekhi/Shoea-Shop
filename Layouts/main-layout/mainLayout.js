@@ -1,7 +1,7 @@
 export const mainLayout = (content) => {
   return `
 <div class="min-h-screen flex flex-col font-Roboto">
- <header class="flex justify-between p-5 sticky top-0">
+ <header class="flex justify-between p-5">
   <div class="flex gap-x-3.5">
     <div>
       <img src="./public/imges/safeimagekit-myPic.jpg" alt="parsapic" class="rounded-full"/>
@@ -14,9 +14,9 @@ export const mainLayout = (content) => {
      </div>
    </div>
    <div class="mt-4">
-    <a href="">
+    <div class="cursor-pointer">
       <img src="./public/imges/header.png" alt="header" />
-    </a>
+    </div>
   </div>
  </header>
 
@@ -24,7 +24,7 @@ export const mainLayout = (content) => {
    ${content}
  </main>
 
- <footer class="sticky bottom-0">
+ <footer class="sticky bottom-0 z-40 bg-white">
    <div class="flex justify-evenly mb-3 text-center items-center">
     <a href="#" data-navigo>
       <img src="./public/imges/home.png" alt="home" />
