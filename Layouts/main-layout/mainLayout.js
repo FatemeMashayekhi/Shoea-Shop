@@ -1,3 +1,5 @@
+import { router, routes } from "../../main";
+
 export const mainLayout = (content) => {
   return `
 <div class="min-h-screen flex flex-col font-Roboto">
@@ -14,7 +16,7 @@ export const mainLayout = (content) => {
      </div>
    </div>
    <div class="mt-4">
-    <div class="cursor-pointer">
+    <div class="cursor-pointer" onclick="wishList()">
       <img id="wish" src="./public/imges/header.png" alt="header" />
     </div>
   </div>
@@ -52,7 +54,6 @@ export const mainLayout = (content) => {
     `;
 };
 
-export function wishList() {
-  const wishListPic = document.getElementById("wish");
-  wishListPic.addEventListener("click", () => {});
-}
+// export function wishList() {
+//   router.navigate(routes.wishList);
+// }

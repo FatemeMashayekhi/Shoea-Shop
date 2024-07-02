@@ -18,6 +18,7 @@ import "swiper/css/pagination";
 import "swiper/css/bundle";
 import { mainLayout } from "./Layouts/main-layout/mainLayout";
 import { wishListPage } from "./Pages/wishListPage";
+import { productDetailsPage } from "./Pages/productDetailsPage";
 
 export const router = new Navigo("/");
 
@@ -35,6 +36,7 @@ export const routes = {
   login: "/login",
   signup: "/signup",
   products: "/products",
+  productDetails: "/products/:id",
   wishList: "/wishList",
 };
 
@@ -45,5 +47,6 @@ router
   .on(routes.login, () => render(loginPage(), login))
   .on(routes.signup, () => render(signupPage(), signup))
   .on(routes.products, () => render(mainLayout(productsPage())))
+  .on(routes.productDetails, (match) => render(productDetailsPage(match)))
   .on(routes.wishList, () => render(wishListPage()))
   .resolve();
