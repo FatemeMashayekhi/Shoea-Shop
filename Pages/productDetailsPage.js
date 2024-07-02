@@ -7,8 +7,9 @@ export async function productDetailsPage(match) {
       console.log(response);
       const product = response.data;
       console.log(product);
+      console.log(match.data.id);
 
-      return `${match.data.id}`;
+      return `<p>${match.data.id}</p>`;
     }
   } catch (error) {
     console.log(error);
