@@ -10,60 +10,137 @@ export function productsPage() {
     <input type="text" id="search" placeholder="Search" class="w-96 h-9 bg-lightGray pl-10 placeholder-placeholderText" />
   </label>
 <div class="flex flex-wrap gap-10 justify-center font-Roboto">
-  <a href="#" data-navigo class="text-center flex flex-col gap-y-3">
+  <div class="text-center flex flex-col gap-y-3 cursor-pointer">
     <div class="bg-navBg rounded-full size-[60px] relative">
-      <img src="./public/imges/categories.png" alt="nike-logo" class="absolute top-3 left-3" />
+      <img
+        src="./public/imges/categories.png"
+        alt="nike-logo"
+        class="absolute top-3 left-3"
+      />
     </div>
-    <p class="text-sm ">Nike</p>
-  </a>
-  <a href="#" data-navigo class="text-center flex flex-col gap-y-3">
+    <p class="text-sm">Nike</p>
+  </div>
+  <div class="text-center flex flex-col gap-y-3 cursor-pointer">
     <div class="bg-navBg rounded-full size-[60px] relative">
-      <img src="./public/imges/adidas.png" alt="adidas-logo" class="absolute top-4 left-3" />
+      <img
+        src="./public/imges/adidas.png"
+        alt="adidas-logo"
+        class="absolute top-4 left-3"
+      />
     </div>
     <p class="text-sm">Adidas</p>
-  </a>
-  <a href="#" data-navigo class="text-center flex flex-col gap-y-3">
+  </div>
+  <div class="text-center flex flex-col gap-y-3 cursor-pointer">
     <div class="bg-navBg rounded-full size-[60px] relative">
-      <img src="./public/imges/puma.png" alt="puma-logo" class="absolute top-4 left-2" />
+      <img
+        src="./public/imges/puma.png"
+        alt="puma-logo"
+        class="absolute top-4 left-2"
+      />
     </div>
     <p class="text-sm">Puma</p>
-  </a>
-  <a href="#" data-navigo class="text-center flex flex-col gap-y-3">
+  </div>
+  <div class="text-center flex flex-col gap-y-3 cursor-pointer">
     <div class="bg-navBg rounded-full size-[60px] relative">
-      <img src="./public/imges/asics.png" alt="asics-logo" class="absolute top-3 left-4" />
+      <img
+        src="./public/imges/asics.png"
+        alt="asics-logo"
+        class="absolute top-3 left-4"
+      />
     </div>
     <p class="text-sm">Asics</p>
-  </a>
-  <a href="#" data-navigo class="text-center flex flex-col gap-y-3">
+  </div>
+  <div class="text-center flex flex-col gap-y-3 cursor-pointer">
     <div class="bg-navBg rounded-full size-[60px] relative">
-      <img src="./public/imges/reebok.png" alt="rebook-logo" class="absolute top-4 left-3" />
+      <img
+        src="./public/imges/reebok.png"
+        alt="rebook-logo"
+        class="absolute top-4 left-3"
+      />
     </div>
     <p class="text-sm">Reebok</p>
-  </a>
-  <a href="#" data-navigo class="text-center flex flex-col gap-y-3">
+  </div>
+  <div class="text-center flex flex-col gap-y-3 cursor-pointer">
     <div class="bg-navBg rounded-full size-[60px] relative">
-      <img src="./public/imges/newba.png" alt="newba-logo" class="absolute top-2 left-2" />
+      <img
+        src="./public/imges/newba.png"
+        alt="newba-logo"
+        class="absolute top-2 left-2"
+      />
     </div>
     <p class="text-sm">New Ba..</p>
-  </a>
-  <a href="#" data-navigo class="text-center flex flex-col gap-y-3">
+  </div>
+  <div class="text-center flex flex-col gap-y-3 cursor-pointer">
     <div class="bg-navBg rounded-full size-[60px] relative">
-      <img src="./public/imges/convers.png" alt="converse-logo" class="absolute top-4 left-3" />
+      <img
+        src="./public/imges/convers.png"
+        alt="converse-logo"
+        class="absolute top-4 left-3"
+      />
     </div>
     <p class="text-sm">Converse</p>
-  </a>
-  <a href="#" data-navigo class="text-center flex flex-col gap-y-3">
+  </div>
+  <div class="text-center flex flex-col gap-y-3 cursor-pointer">
     <div class="bg-navBg rounded-full size-[60px] relative">
-      <img src="./public/imges/more.png" alt="more-logo" class="absolute top-3 left-2" />
+      <img
+        src="./public/imges/more.png"
+        alt="more-logo"
+        class="absolute top-3 left-2"
+      />
     </div>
     <p class="text-sm">More ..</p>
-  </a>
+  </div>
 </div>
 <div class="flex justify-between px-2 font-semibold items-center tracking-wider">
   <p class="text-xl">Most Popular</p>
-  <a href="#">
-    <p class="text-base">See All</p>
-  </a>
+  <div>
+    <p class="text-base cursor-pointer">See All</p>
+  </div>
+</div>
+<div id="scroll-container" class="flex gap-x-2 w-full overflow-x-hidden hover:overflow-x-auto">
+  <button type="button" id="btn1" class="bg-btnListBg text-white  border-2 border-btnListBg rounded-full h-10 px-4">All</button>
+  <button type="button" id="btn2" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Nike</button>
+  <button type="button" id="btn3" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Adidas</button>
+  <button type="button" id="btn4" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Puma</button>
+  <button type="button" id="btn5" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Asics</button>
+  <button type="button" id="btn6" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">NewBalance</button>
+  <button type="button" id="btn7" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Converse</button>
+  <button type="button" id="btn8" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Reebok</button>
+  <button type="button" id="btn9" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">IranKafsh</button>
+  <button type="button" id="btn10" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">KafshMeli</button>
+</div>
+<div class="flex flex-wrap justify-center gap-3">
+  <div class="flex flex-col justify-start gap-y-1">
+    <div class="bg-productsBg size-[182px] relative rounded-3xl">
+      <img src="./public/imges/shoe1.png" alt="shoe1" class="absolute top-9 left-5" />
+    </div>
+    <p class="font-semibold text-xl">K-Swiss ista Train...</p>
+    <p class="font-semibold">$ 85.00</p>
+  </div>
+
+  <div class="flex flex-col justify-start gap-y-1">
+    <div class="bg-productsBg size-[182px] relative rounded-3xl">
+      <img src="./public/imges/shoe2.png" alt="shoe2" class="absolute top-9 left-5" />
+    </div>
+    <p class="font-semibold text-xl">K-Swiss ista Train...</p>
+    <p class="font-semibold">$ 85.00</p>
+  </div>
+
+  <div class="flex flex-col justify-start gap-y-1">
+    <div class="bg-productsBg size-[182px] relative rounded-3xl">
+      <img src="./public/imges/shoe2.png" alt="shoe2" class="absolute top-9 left-5" />
+    </div>
+    <p class="font-semibold text-xl">K-Swiss ista Train...</p>
+    <p class="font-semibold">$ 85.00</p>
+  </div>
+
+  <div class="flex flex-col justify-start gap-y-1">
+    <div class="bg-productsBg size-[182px] relative rounded-3xl">
+      <img src="./public/imges/shoe1.png" alt="shoe1" class="absolute top-9 left-5" />
+    </div>
+    <p class="font-semibold text-xl">K-Swiss ista Train...</p>
+    <p class="font-semibold">$ 85.00</p>
+  </div>
 </div>
 </div>
     `;
