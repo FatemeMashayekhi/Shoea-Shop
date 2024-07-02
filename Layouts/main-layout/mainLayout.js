@@ -4,7 +4,7 @@ export const mainLayout = (content) => {
  <header class="flex justify-between p-5">
   <div class="flex gap-x-3.5">
     <div>
-      <img src="./public/imges/safeimagekit-myPic.jpg" alt="parsapic" class="rounded-full"/>
+      <img src="./public/imges/safeimagekit-myPic.jpg" alt="mypic" class="rounded-full"/>
      </div>
      <div class="flex flex-col gap-y-1.5">
       <p class="flex text-textGray">Good Morning
@@ -15,7 +15,7 @@ export const mainLayout = (content) => {
    </div>
    <div class="mt-4">
     <div class="cursor-pointer">
-      <img src="./public/imges/header.png" alt="header" />
+      <img id="wish" src="./public/imges/header.png" alt="header" />
     </div>
   </div>
  </header>
@@ -52,5 +52,7 @@ export const mainLayout = (content) => {
     `;
 };
 
-// fixed top-0 left-0 w-full
-// class="fixed bottom-0 left-0 w-full"
+export function wishList() {
+  const wishListPic = document.getElementById("wish");
+  wishListPic.addEventListener("click", () => {});
+}

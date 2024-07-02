@@ -17,6 +17,7 @@ import "swiper/css/pagination";
 // import styles bundle
 import "swiper/css/bundle";
 import { mainLayout } from "./Layouts/main-layout/mainLayout";
+import { wishListPage } from "./Pages/wishListPage";
 
 export const router = new Navigo("/");
 
@@ -34,6 +35,7 @@ export const routes = {
   login: "/login",
   signup: "/signup",
   products: "/products",
+  wishList: "/wishList",
 };
 
 router
@@ -43,4 +45,5 @@ router
   .on(routes.login, () => render(loginPage(), login))
   .on(routes.signup, () => render(signupPage(), signup))
   .on(routes.products, () => render(mainLayout(productsPage())))
+  .on(routes.wishList, () => render(wishListPage()))
   .resolve();
