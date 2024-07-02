@@ -47,6 +47,8 @@ router
   .on(routes.login, () => render(loginPage(), login))
   .on(routes.signup, () => render(signupPage(), signup))
   .on(routes.products, () => render(mainLayout(productsPage(), getProducts())))
-  .on(routes.productDetails, (match) => render(productDetailsPage(match)))
+  .on(routes.productDetails, async (match) =>
+    render(await productDetailsPage(match))
+  )
   .on(routes.wishList, () => render(wishListPage()))
   .resolve();

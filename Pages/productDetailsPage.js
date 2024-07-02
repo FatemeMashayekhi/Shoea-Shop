@@ -1,17 +1,19 @@
 import axios from "../api";
 
 export async function productDetailsPage(match) {
-  try {
-    const response = await axios.get(`/products/${match.data.id}`);
-    if (response.status === 200) {
-      console.log(response);
-      const product = response.data;
-      console.log(product);
-      console.log(match.data.id);
+  const product = await getProduct(match.data.id);
+  console.log(product);
+  return `<p>${product.name}</p>`;
+}
 
-      return `<p>${match.data.id}</p>`;
+const getProduct = async (productId) => {
+  try {
+    const response = await axios.get(`/products/${productId}`);
+    if (response.status === 200) {
+      const product = response.data;
+      return product;
     }
   } catch (error) {
     console.log(error);
   }
-}
+};
