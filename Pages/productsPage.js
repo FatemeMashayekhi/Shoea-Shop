@@ -1,3 +1,4 @@
+import axios from "../api";
 import { router, routes } from "../main";
 
 export function productsPage() {
@@ -109,31 +110,7 @@ export function productsPage() {
   <button type="button" id="btn9" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">IranKafsh</button>
   <button type="button" id="btn10" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">KafshMeli</button>
 </div>
-<div class="flex flex-wrap justify-center gap-3">
-  <div class="flex flex-col justify-start gap-y-1">
-    <div class="bg-productsBg size-[182px] relative rounded-3xl">
-      <img src="./public/imges/shoe1.png" alt="shoe1" class="absolute top-9 left-5" />
-    </div>
-    <p class="font-semibold text-xl">K-Swiss ista Train...</p>
-    <p class="font-semibold">$ 85.00</p>
-  </div>
-
-  <div class="flex flex-col justify-start gap-y-1">
-    <div class="bg-productsBg size-[182px] relative rounded-3xl">
-      <img src="./public/imges/shoe2.png" alt="shoe2" class="absolute top-9 left-5" />
-    </div>
-    <p class="font-semibold text-xl">K-Swiss ista Train...</p>
-    <p class="font-semibold">$ 85.00</p>
-  </div>
-
-  <div class="flex flex-col justify-start gap-y-1">
-    <div class="bg-productsBg size-[182px] relative rounded-3xl">
-      <img src="./public/imges/shoe2.png" alt="shoe2" class="absolute top-9 left-5" />
-    </div>
-    <p class="font-semibold text-xl">K-Swiss ista Train...</p>
-    <p class="font-semibold">$ 85.00</p>
-  </div>
-
+<div id="products-container" class="flex flex-wrap justify-center gap-3">
   <div class="flex flex-col justify-start gap-y-1">
     <div class="bg-productsBg size-[182px] relative rounded-3xl">
       <img src="./public/imges/shoe1.png" alt="shoe1" class="absolute top-9 left-5" />
@@ -148,3 +125,30 @@ export function productsPage() {
     router.navigate(routes.login);
   }
 }
+
+export const getProducts = async () => {
+  try {
+    const response = await axios.get("/products");
+    if (response.status === 200) {
+      console.log(response);
+      const products = response.data;
+      console.log(products);
+
+      document.getElementById("products-container").innerHTML = "";
+
+      products.forEach((product) => {
+        document.getElementById("products-container").innerHTML += `
+  <div class="flex flex-col justify-start gap-y-1">
+    <a href="/products/${product.id}" class="bg-productsBg size-[182px] relative rounded-3xl">
+      <img src="${product.images[0]}" alt="shoe1" class="absolute top-9 left-5" />
+    </a>
+    <p class="font-semibold text-xl">${product.name}</p>
+    <p class="font-semibold">$ ${product.price}</p>
+  </div>
+        `;
+      });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
