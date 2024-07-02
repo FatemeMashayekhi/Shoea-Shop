@@ -1,6 +1,6 @@
 import { homePage, checkVisitedToken } from "./Pages/homePage";
 import { login, loginPage } from "./Pages/loginPage";
-import { productsPage } from "./Pages/productsPage";
+import { getProducts, productsPage } from "./Pages/productsPage";
 import { signup, signupPage } from "./Pages/signupPage";
 import { sliderPage } from "./Pages/sliderPage";
 import { welcomePage, changeRouter } from "./Pages/welcomePage";
@@ -46,7 +46,7 @@ router
   .on(routes.slider, () => render(sliderPage()))
   .on(routes.login, () => render(loginPage(), login))
   .on(routes.signup, () => render(signupPage(), signup))
-  .on(routes.products, () => render(mainLayout(productsPage())))
+  .on(routes.products, () => render(mainLayout(productsPage(), getProducts())))
   .on(routes.productDetails, (match) => render(productDetailsPage(match)))
   .on(routes.wishList, () => render(wishListPage()))
   .resolve();
