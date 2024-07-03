@@ -28,23 +28,31 @@
       "colors": [
         {
           "color-name": "Blue",
-          "color-code": "#27aec7"
+          "color-code": "blue-500"
         },
         {
           "color-name": "Green",
-          "color-code": "#268801"
+          "color-code": "green-950"
         },
         {
           "color-name": "Red",
-          "color-code": "#c72800"
+          "color-code": "red-700"
         },
         {
             "color-name": "White",
-            "color-code": "#ffffff"
+            "color-code": "neutral-200"
         },
         {
             "color-name": "Black",
-            "color-code": "#000000"
+            "color-code": "black"
+        },
+        {
+            "color-name": "Pink",
+            "color-code": "pink-500"
+        },
+        {
+            "color-name": "Orange",
+            "color-code": "orange-600"
         }
       ],
       "sizes": [
@@ -52,7 +60,7 @@
         41,
         42
       ],
-      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
       "images": [
         "./public/imges/adidas/Miniaturized/2.png",
         "./public/imges/adidas/2.png",
@@ -71,23 +79,31 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "#27aec7"
+            "color-code": "blue-500"
           },
           {
             "color-name": "Green",
-            "color-code": "#268801"
+            "color-code": "green-950"
           },
           {
             "color-name": "Red",
-            "color-code": "#c72800"
+            "color-code": "red-700"
           },
           {
             "color-name": "White",
-            "color-code": "#ffffff"
+            "color-code": "neutral-200"
           },
           {
             "color-name": "Black",
-            "color-code": "#000000"
+            "color-code": "black"
+          },
+          {
+              "color-name": "Pink",
+              "color-code": "pink-500"
+          },
+          {
+              "color-name": "Orange",
+              "color-code": "orange-600"
           }
         ],
         "sizes": [
@@ -95,7 +111,7 @@
           41,
           42
         ],
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
         "images": [
           "./public/imges/Asics/Miniaturized/3.png",
           "./public/imges/Asics/3.jpg",
@@ -114,23 +130,31 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "#27aec7"
+            "color-code": "blue-500"
           },
           {
             "color-name": "Green",
-            "color-code": "#268801"
+            "color-code": "green-950"
           },
           {
             "color-name": "Red",
-            "color-code": "#c72800"
+            "color-code": "red-700"
           },
           {
             "color-name": "White",
-            "color-code": "#ffffff"
+            "color-code": "neutral-200"
           },
           {
             "color-name": "Black",
-            "color-code": "#000000"
+            "color-code": "black"
+          },
+          {
+              "color-name": "Pink",
+              "color-code": "pink-500"
+          },
+          {
+              "color-name": "Orange",
+              "color-code": "orange-600"
           }
         ],
         "sizes": [
@@ -138,7 +162,7 @@
           41,
           42
         ],
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
         "images": [
           "./public/imges/convers/Miniaturized/4.png",
           "./public/imges/convers/4.jpg",
@@ -157,23 +181,31 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "#27aec7"
+            "color-code": "blue-500"
           },
           {
             "color-name": "Green",
-            "color-code": "#268801"
+            "color-code": "green-950"
           },
           {
             "color-name": "Red",
-            "color-code": "#c72800"
+            "color-code": "red-700"
           },
           {
             "color-name": "White",
-            "color-code": "#ffffff"
+            "color-code": "neutral-200"
           },
           {
             "color-name": "Black",
-            "color-code": "#000000"
+            "color-code": "black"
+          },
+          {
+              "color-name": "Pink",
+              "color-code": "pink-500"
+          },
+          {
+              "color-name": "Orange",
+              "color-code": "orange-600"
           }
         ],
         "sizes": [
@@ -181,7 +213,7 @@
           41,
           42
         ],
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
         "images": [
           "./public/imges/irankafsh/Miniaturized/5.png",
           "./public/imges/irankafsh/5.jpg",
@@ -200,23 +232,31 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "#27aec7"
+            "color-code": "blue-500"
           },
           {
             "color-name": "Green",
-            "color-code": "#268801"
+            "color-code": "green-950"
           },
           {
             "color-name": "Red",
-            "color-code": "#c72800"
+            "color-code": "red-700"
           },
           {
             "color-name": "White",
-            "color-code": "#ffffff"
+            "color-code": "neutral-200"
           },
           {
             "color-name": "Black",
-            "color-code": "#000000"
+            "color-code": "black"
+          },
+          {
+              "color-name": "Pink",
+              "color-code": "pink-500"
+          },
+          {
+              "color-name": "Orange",
+              "color-code": "orange-600"
           }
         ],
         "sizes": [
@@ -224,7 +264,7 @@
           41,
           42
         ],
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
         "images": [
           "./public/imges/kafshmeli/Miniaturized/1.png",
           "./public/imges/kafshmeli/1.jpg",
@@ -243,23 +283,31 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "#27aec7"
+            "color-code": "blue-500"
           },
           {
             "color-name": "Green",
-            "color-code": "#268801"
+            "color-code": "green-950"
           },
           {
             "color-name": "Red",
-            "color-code": "#c72800"
+            "color-code": "red-700"
           },
           {
             "color-name": "White",
-            "color-code": "#ffffff"
+            "color-code": "neutral-200"
           },
           {
             "color-name": "Black",
-            "color-code": "#000000"
+            "color-code": "black"
+          },
+          {
+              "color-name": "Pink",
+              "color-code": "pink-500"
+          },
+          {
+              "color-name": "Orange",
+              "color-code": "orange-600"
           }
         ],
         "sizes": [
@@ -267,7 +315,7 @@
           41,
           42
         ],
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
         "images": [
           "./public/imges/neawba/Miniaturized/6.png",
           "./public/imges/neawba/6.jpg",
@@ -286,23 +334,31 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "#27aec7"
+            "color-code": "blue-500"
           },
           {
             "color-name": "Green",
-            "color-code": "#268801"
+            "color-code": "green-950"
           },
           {
             "color-name": "Red",
-            "color-code": "#c72800"
+            "color-code": "red-700"
           },
           {
             "color-name": "White",
-            "color-code": "#ffffff"
+            "color-code": "neutral-200"
           },
           {
             "color-name": "Black",
-            "color-code": "#000000"
+            "color-code": "black"
+          },
+          {
+              "color-name": "Pink",
+              "color-code": "pink-500"
+          },
+          {
+              "color-name": "Orange",
+              "color-code": "orange-600"
           }
         ],
         "sizes": [
@@ -310,7 +366,7 @@
           41,
           42
         ],
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
         "images": [
           "./public/imges/nike/shoe2.png",
           "./public/imges/nike/2_2.png",
@@ -328,23 +384,31 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "#27aec7"
+            "color-code": "blue-500"
           },
           {
             "color-name": "Green",
-            "color-code": "#268801"
+            "color-code": "green-950"
           },
           {
             "color-name": "Red",
-            "color-code": "#c72800"
+            "color-code": "red-700"
           },
           {
             "color-name": "White",
-            "color-code": "#ffffff"
+            "color-code": "neutral-200"
           },
           {
             "color-name": "Black",
-            "color-code": "#000000"
+            "color-code": "black"
+          },
+          {
+              "color-name": "Pink",
+              "color-code": "pink-500"
+          },
+          {
+              "color-name": "Orange",
+              "color-code": "orange-600"
           }
         ],
         "sizes": [
@@ -352,7 +416,7 @@
           41,
           42
         ],
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
         "images": [
           "./public/imges/puma/Miniaturized/5.png",
           "./public/imges/puma/5.webp",
@@ -371,23 +435,31 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "#27aec7"
+            "color-code": "blue-500"
           },
           {
             "color-name": "Green",
-            "color-code": "#268801"
+            "color-code": "green-950"
           },
           {
             "color-name": "Red",
-            "color-code": "#c72800"
+            "color-code": "red-700"
           },
           {
             "color-name": "White",
-            "color-code": "#ffffff"
+            "color-code": "neutral-200"
           },
           {
             "color-name": "Black",
-            "color-code": "#000000"
+            "color-code": "black"
+          },
+          {
+              "color-name": "Pink",
+              "color-code": "pink-500"
+          },
+          {
+              "color-name": "Orange",
+              "color-code": "orange-600"
           }
         ],
         "sizes": [
@@ -395,7 +467,7 @@
           41,
           42
         ],
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
         "images": [
           "./public/imges/reebok/Miniaturized/6.png",
           "./public/imges/reebok/6.jpg",
@@ -416,23 +488,23 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "#27aec7"
+            "color-code": "blue-500"
           },
           {
             "color-name": "Green",
-            "color-code": "#268801"
+            "color-code": "green-950"
           },
           {
             "color-name": "Red",
-            "color-code": "#c72800"
+            "color-code": "red-700"
           },
           {
               "color-name": "White",
-              "color-code": "#ffffff"
+              "color-code": "neutral-200"
           },
           {
               "color-name": "Black",
-              "color-code": "#000000"
+              "color-code": "black"
           }
         ],
         "sizes": [
@@ -440,7 +512,7 @@
           41,
           42
         ],
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
         "images": [
           "./public/imges/adidas/2.png",
           "./public/imges/adidas/2_2.png",
@@ -458,23 +530,23 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "#27aec7"
+            "color-code": "blue-500"
           },
           {
             "color-name": "Green",
-            "color-code": "#268801"
+            "color-code": "green-950"
           },
           {
             "color-name": "Red",
-            "color-code": "#c72800"
+            "color-code": "red-700"
           },
           {
             "color-name": "White",
-            "color-code": "#ffffff"
+            "color-code": "neutral-200"
           },
           {
             "color-name": "Black",
-            "color-code": "#000000"
+            "color-code": "black"
           }
         ],
         "sizes": [
@@ -482,7 +554,7 @@
           41,
           42
         ],
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
         "images": [
           "./public/imges/convers/4.jpg",
           "./public/imges/convers/4_2.jpg",
@@ -502,23 +574,23 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "#27aec7"
+            "color-code": "blue-500"
           },
           {
             "color-name": "Green",
-            "color-code": "#268801"
+            "color-code": "green-950"
           },
           {
             "color-name": "Red",
-            "color-code": "#c72800"
+            "color-code": "red-700"
           },
           {
             "color-name": "White",
-            "color-code": "#ffffff"
+            "color-code": "neutral-200"
           },
           {
             "color-name": "Black",
-            "color-code": "#000000"
+            "color-code": "black"
           }
         ],
         "sizes": [
@@ -526,7 +598,7 @@
           41,
           42
         ],
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
         "images": [
           "./public/imges/irankafsh/5.jpg",
           "./public/imges/irankafsh/5_2.jpg",
@@ -544,23 +616,23 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "#27aec7"
+            "color-code": "blue-500"
           },
           {
             "color-name": "Green",
-            "color-code": "#268801"
+            "color-code": "green-950"
           },
           {
             "color-name": "Red",
-            "color-code": "#c72800"
+            "color-code": "red-700"
           },
           {
             "color-name": "White",
-            "color-code": "#ffffff"
+            "color-code": "neutral-200"
           },
           {
             "color-name": "Black",
-            "color-code": "#000000"
+            "color-code": "black"
           }
         ],
         "sizes": [
@@ -568,7 +640,7 @@
           41,
           42
         ],
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur totam reprehenderit!",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
         "images": [
           "./public/imges/neawba/6.jpg",
           "./public/imges/neawba/6_2.jpg",
@@ -590,7 +662,7 @@
       "brand": "Adidas",
       "price": 100,
       "color": "Red",
-      "colorCode": "#c72800",
+      "colorCode": "red-700",
       "sizes": 42,
       "quantity": 1,
       "imgUrl": "./public/imges/shoe4.png"
@@ -601,7 +673,7 @@
       "brand": "KafshMeli",
       "price": 500,
       "color": "White",
-      "colorCode": "#ffffff",
+      "colorCode": "neutral-200",
       "sizes": 41,
       "quantity": 2,
       "imgUrl": "./public/imges/shoe1.png"
@@ -612,7 +684,7 @@
       "brand": "Puma",
       "price": 49,
       "color": "Black",
-      "colorCode": "#ffffff",
+      "colorCode": "neutral-200",
       "sizes": 40,
       "quantity": 1,
       "imgUrl": "./public/imges/shoe2.png"
@@ -627,7 +699,7 @@
             "brand": "Adidas",
             "price": 100,
             "color": "Red",
-            "colorCode": "#c72800",
+            "colorCode": "red-700",
             "sizes": 42,
             "quantity": 1,
             "imgUrl": "./public/imges/shoe4.png"
@@ -638,7 +710,7 @@
             "brand": "KafshMeli",
             "price": 500,
             "color": "White",
-            "colorCode": "#ffffff",
+            "colorCode": "neutral-200",
             "sizes": 41,
             "quantity": 2,
             "imgUrl": "./public/imges/shoe1.png"
@@ -649,7 +721,7 @@
             "brand": "Puma",
             "price": 49,
             "color": "Black",
-            "colorCode": "#ffffff",
+            "colorCode": "neutral-200",
             "sizes": 40,
             "quantity": 1,
             "imgUrl": "./public/imges/shoe2.png"
@@ -673,7 +745,7 @@
         "brand": "Adidas",
         "price": 100,
         "color": "Red",
-        "colorCode": "#c72800",
+        "colorCode": "red-700",
         "sizes": 42,
         "quantity": 1,
         "imgUrl": "./public/imges/shoe4.png"
@@ -686,7 +758,7 @@
         "brand": "KafshMeli",
         "price": 500,
         "color": "White",
-        "colorCode": "#ffffff",
+        "colorCode": "neutral-200",
         "sizes": 41,
         "quantity": 2,
         "imgUrl": "./public/imges/shoe1.png"
@@ -697,7 +769,7 @@
         "brand": "Puma",
         "price": 49,
         "color": "Black",
-        "colorCode": "#ffffff",
+        "colorCode": "neutral-200",
         "sizes": 40,
         "quantity": 1,
         "imgUrl": "./public/imges/shoe2.png"
