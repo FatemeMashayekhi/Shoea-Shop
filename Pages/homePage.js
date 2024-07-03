@@ -15,14 +15,21 @@ export function homePage() {
 
 export function checkVisitedToken() {
   const visitedToken = localStorage.getItem("previouslyVisited") ?? false;
-  if (!visitedToken) {
-    localStorage.setItem("previouslyVisited", "true");
+  const accessToken = localStorage.getItem("accessToken") ?? false;
+  if (accessToken) {
     setTimeout(() => {
-      router.navigate(routes.welcome);
+      router.navigate(routes.products);
     }, 2000);
   } else {
-    setTimeout(() => {
-      router.navigate(routes.login);
-    }, 2000);
+    if (!visitedToken) {
+      localStorage.setItem("previouslyVisited", "true");
+      setTimeout(() => {
+        router.navigate(routes.welcome);
+      }, 2000);
+    } else {
+      setTimeout(() => {
+        router.navigate(routes.login);
+      }, 2000);
+    }
   }
 }
