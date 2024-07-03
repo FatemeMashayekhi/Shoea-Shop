@@ -19,6 +19,7 @@ export function welcomePage() {
 
 export function changeRouter() {
   setTimeout(() => {
-    router.navigate(routes.slider);
+    // router.navigate(routes.slider);
+    window.location.replace(routes.slider);
   }, 2000);
 }

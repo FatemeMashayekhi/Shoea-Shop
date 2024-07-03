@@ -4,9 +4,9 @@ import { routes } from "../main";
 
 export function loginPage() {
   return `
-    <a href="/slider" class="mt-2">
-       <img src="./imges/prev icon.png" alt="prev-icon" class="cursor-pointer" />
-    </a>
+    <div class="mt-2">
+       <img id="img" src="./imges/prev icon.png" alt="prev-icon" class="cursor-pointer" />
+    </div>
     <div class="flex flex-col items-center gap-y-32 font-Roboto mt-20">
       <div><img src="./imges/logo.png" alt="logo" /></div>
 
@@ -39,10 +39,6 @@ export function loginPage() {
       <button id="login-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed mt-[56px]" disabled="true">Sign In</button>
     </div>
     `;
-
-  //   document.querySelector("img").addEventListener("click", () => {
-  //     router.navigate(routes.slider);
-  //   });
 }
 
 export function login() {
@@ -99,6 +95,12 @@ export function login() {
       document.querySelector("#error").innerHTML = e.response.data;
     }
   });
+
+  document.querySelector("#img").addEventListener("click", () => {
+    // router.navigate(routes.slider);
+    window.location.replace(routes.slider);
+  });
+
   showpass();
 }
 

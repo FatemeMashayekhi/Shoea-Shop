@@ -8,17 +8,17 @@ export async function productDetailsPage(match) {
   return `
   <div>
   <div>
-    <img src="./public/imges/prev icon.png" alt="prev-icon" class="cursor-pointer" />
+    <img src="../public/imges/prev icon.png" alt="prev-icon" class="cursor-pointer" />
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="./public/imges/adidas/1.png" alt="adidas1" />
+          <img src="../public/imges/adidas/1.png" alt="adidas1" />
         </div>
         <div class="swiper-slide">
-          <img src="./public/imges/adidas/1_2.png" alt="adidas1-2" />
+          <img src="../public/imges/adidas/1_2.png" alt="adidas1-2" />
         </div>
         <div class="swiper-slide">
-          <img src="./public/imges/adidas/1_3.png" alt="adidas1-3" />
+          <img src="../public/imges/adidas/1_3.png" alt="adidas1-3" />
         </div>
       </div>
       <div class="swiper-pagination"></div>
@@ -27,11 +27,11 @@ export async function productDetailsPage(match) {
   <div>
     <div>
       <p>${product.name}</p>
-      <img src="./public/imges/like.png" alt="like-icon" />
+      <img src="../public/imges/like.png" alt="like-icon" />
     </div>
     <div>
       <p>${product.sold} sold</p>
-      <img src="./public/imges/star.png" alt="star-logo" />
+      <img src="../public/imges/star.png" alt="star-logo" />
       <p>${product.rate} (5.389 reviews)</p>
     </div>
     <div></div>
@@ -45,9 +45,7 @@ export async function productDetailsPage(match) {
       <div>
         <p>Size</p>
         <div id="size">
-          <button type="button">40</button>
-          <button type="button">41</button>
-          <button type="button">42</button>
+          ${sizesList(product.sizes)}
         </div>
       </div>
       <div>
@@ -90,12 +88,7 @@ const getProduct = async (productId) => {
     const response = await axios.get(`/products/${productId}`);
     if (response.status === 200) {
       const product = response.data;
-      // document.getElementById("size").innerHTML = "";
-      // product.sizes.forEach((size) => {
-      //   document.getElementById("size").innerHTML = `
-      //     <button type="button">${size}</button>
-      //   `;
-      // });  //////////Can't find id=size//////
+
       return product;
     }
   } catch (error) {
@@ -114,3 +107,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+function sizesList(sizes) {
+  let flag = "";
+
+  sizes.forEach((size) => {
+    flag += `<button type="button">${size}</button>`;
+  });
+  return flag;
+}

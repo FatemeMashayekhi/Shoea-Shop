@@ -69,7 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (swiper.activeIndex === 2) {
         document.querySelector("#next-btn").textContent = "Get Started";
         document.querySelector("#next-btn").addEventListener("click", () => {
-          router.navigate(routes.login);
+          // router.navigate(routes.login);
+          window.location.replace(routes.login);
         });
       }
     });
