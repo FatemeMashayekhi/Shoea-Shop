@@ -95,7 +95,7 @@ const getProduct = async (productId) => {
       //   document.getElementById("size").innerHTML = `
       //     <button type="button">${size}</button>
       //   `;
-      // });
+      // });  //////////Can't find id=size//////
       return product;
     }
   } catch (error) {
