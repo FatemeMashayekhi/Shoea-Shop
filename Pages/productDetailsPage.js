@@ -1,4 +1,6 @@
+import Swiper from "swiper";
 import axios from "../api";
+import { Navigation, Pagination } from "swiper/modules";
 
 export async function productDetailsPage(match) {
   const product = await getProduct(match.data.id);
@@ -6,7 +8,7 @@ export async function productDetailsPage(match) {
   return `
   <div>
   <div>
-    <img src="./imges/prev icon.png" alt="prev-icon" class="cursor-pointer" />
+    <img src="./public/imges/prev icon.png" alt="prev-icon" class="cursor-pointer" />
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -24,26 +26,25 @@ export async function productDetailsPage(match) {
   </div>
   <div>
     <div>
-      <p>Runing Sportwear</p>
+      <p>${product.name}</p>
       <img src="./public/imges/like.png" alt="like-icon" />
     </div>
     <div>
-      <p>5.371 sold</p>
+      <p>${product.sold} sold</p>
       <img src="./public/imges/star.png" alt="star-logo" />
-      <p>4.3 (5.389 reviews)</p>
+      <p>${product.rate} (5.389 reviews)</p>
     </div>
     <div></div>
     <div>
       <p>Description</p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-        doloribus consequatur autem nihil!
+        ${product.description}
       </p>
     </div>
     <div>
       <div>
         <p>Size</p>
-        <div>
+        <div id="size">
           <button type="button">40</button>
           <button type="button">41</button>
           <button type="button">42</button>
@@ -89,9 +90,27 @@ const getProduct = async (productId) => {
     const response = await axios.get(`/products/${productId}`);
     if (response.status === 200) {
       const product = response.data;
+      // document.getElementById("size").innerHTML = "";
+      // product.sizes.forEach((size) => {
+      //   document.getElementById("size").innerHTML = `
+      //     <button type="button">${size}</button>
+      //   `;
+      // });
       return product;
     }
   } catch (error) {
     console.log(error);
   }
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (document.querySelector(".swiper")) {
+    const swiper = new Swiper(".swiper", {
+      modules: [Navigation, Pagination],
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  }
+});
