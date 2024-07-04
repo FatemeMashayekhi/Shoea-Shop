@@ -12,7 +12,7 @@ export const mainLayout = (content) => {
       <p class="flex text-textGray">Good Morning
         <img src="./public/imges/waving-hand_1f44b.png" alt="wave-hand" class="size-4 ml-2 mt-1" />
       </p>
-      <p class="font-semibold">Maral Mashayekhi</p>
+      <p id="user-name" class="font-semibold">Maral Mashayekhi</p>
      </div>
    </div>
    <div class="mt-4">
