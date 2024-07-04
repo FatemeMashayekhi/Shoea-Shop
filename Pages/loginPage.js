@@ -96,11 +96,6 @@ export function login() {
     }
   });
 
-  document.querySelector("#img").addEventListener("click", () => {
-    // router.navigate(routes.slider);
-    window.location.replace(routes.slider);
-  });
-
   showpass();
 }
 
