@@ -98,7 +98,7 @@ export function productsPage() {
     <p class="text-base cursor-pointer">See All</p>
   </div>
 </div>
-<div id="scroll-container" class="flex gap-x-2 w-full overflow-x-hidden hover:overflow-x-auto">
+<div id="scroll-container" class="flex gap-x-2 w-full overflow-x-scroll">
   <button type="button" id="btn1" class="bg-btnListBg text-white  border-2 border-btnListBg rounded-full h-10 px-4">All</button>
   <button type="button" id="btn2" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Nike</button>
   <button type="button" id="btn3" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Adidas</button>
