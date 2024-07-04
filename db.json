@@ -28,31 +28,31 @@
       "colors": [
         {
           "color-name": "Blue",
-          "color-code": "blue-500"
+          "color-code": "#3b82f6"
         },
         {
           "color-name": "Green",
-          "color-code": "green-950"
+          "color-code": "#052e16"
         },
         {
           "color-name": "Red",
-          "color-code": "red-700"
+          "color-code": "#b91c1c"
         },
         {
             "color-name": "White",
-            "color-code": "neutral-200"
+            "color-code": "#e5e5e5"
         },
         {
             "color-name": "Black",
-            "color-code": "black"
+            "color-code": "#000000"
         },
         {
             "color-name": "Pink",
-            "color-code": "pink-500"
+            "color-code": "#ec4899"
         },
         {
             "color-name": "Orange",
-            "color-code": "orange-600"
+            "color-code": "#ea580c"
         }
       ],
       "sizes": [
@@ -79,31 +79,31 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "blue-500"
+            "color-code": "#3b82f6"
           },
           {
             "color-name": "Green",
-            "color-code": "green-950"
+            "color-code": "#052e16"
           },
           {
             "color-name": "Red",
-            "color-code": "red-700"
+            "color-code": "#b91c1c"
           },
           {
             "color-name": "White",
-            "color-code": "neutral-200"
+            "color-code": "#e5e5e5"
           },
           {
             "color-name": "Black",
-            "color-code": "black"
+            "color-code": "#000000"
           },
           {
               "color-name": "Pink",
-              "color-code": "pink-500"
+              "color-code": "#ec4899"
           },
           {
               "color-name": "Orange",
-              "color-code": "orange-600"
+              "color-code": "#ea580c"
           }
         ],
         "sizes": [
@@ -130,31 +130,31 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "blue-500"
+            "color-code": "#3b82f6"
           },
           {
             "color-name": "Green",
-            "color-code": "green-950"
+            "color-code": "#052e16"
           },
           {
             "color-name": "Red",
-            "color-code": "red-700"
+            "color-code": "#b91c1c"
           },
           {
             "color-name": "White",
-            "color-code": "neutral-200"
+            "color-code": "#e5e5e5"
           },
           {
             "color-name": "Black",
-            "color-code": "black"
+            "color-code": "#000000"
           },
           {
               "color-name": "Pink",
-              "color-code": "pink-500"
+              "color-code": "#ec4899"
           },
           {
               "color-name": "Orange",
-              "color-code": "orange-600"
+              "color-code": "#ea580c"
           }
         ],
         "sizes": [
@@ -181,31 +181,31 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "blue-500"
+            "color-code": "#3b82f6"
           },
           {
             "color-name": "Green",
-            "color-code": "green-950"
+            "color-code": "#052e16"
           },
           {
             "color-name": "Red",
-            "color-code": "red-700"
+            "color-code": "#b91c1c"
           },
           {
             "color-name": "White",
-            "color-code": "neutral-200"
+            "color-code": "#e5e5e5"
           },
           {
             "color-name": "Black",
-            "color-code": "black"
+            "color-code": "#000000"
           },
           {
               "color-name": "Pink",
-              "color-code": "pink-500"
+              "color-code": "#ec4899"
           },
           {
               "color-name": "Orange",
-              "color-code": "orange-600"
+              "color-code": "#ea580c"
           }
         ],
         "sizes": [
@@ -232,31 +232,31 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "blue-500"
+            "color-code": "#3b82f6"
           },
           {
             "color-name": "Green",
-            "color-code": "green-950"
+            "color-code": "#052e16"
           },
           {
             "color-name": "Red",
-            "color-code": "red-700"
+            "color-code": "#b91c1c"
           },
           {
             "color-name": "White",
-            "color-code": "neutral-200"
+            "color-code": "#e5e5e5"
           },
           {
             "color-name": "Black",
-            "color-code": "black"
+            "color-code": "#000000"
           },
           {
               "color-name": "Pink",
-              "color-code": "pink-500"
+              "color-code": "#ec4899"
           },
           {
               "color-name": "Orange",
-              "color-code": "orange-600"
+              "color-code": "#ea580c"
           }
         ],
         "sizes": [
@@ -283,31 +283,31 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "blue-500"
+            "color-code": "#3b82f6"
           },
           {
             "color-name": "Green",
-            "color-code": "green-950"
+            "color-code": "#052e16"
           },
           {
             "color-name": "Red",
-            "color-code": "red-700"
+            "color-code": "#b91c1c"
           },
           {
             "color-name": "White",
-            "color-code": "neutral-200"
+            "color-code": "#e5e5e5"
           },
           {
             "color-name": "Black",
-            "color-code": "black"
+            "color-code": "#000000"
           },
           {
               "color-name": "Pink",
-              "color-code": "pink-500"
+              "color-code": "#ec4899"
           },
           {
               "color-name": "Orange",
-              "color-code": "orange-600"
+              "color-code": "#ea580c"
           }
         ],
         "sizes": [
@@ -334,31 +334,31 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "blue-500"
+            "color-code": "#3b82f6"
           },
           {
             "color-name": "Green",
-            "color-code": "green-950"
+            "color-code": "#052e16"
           },
           {
             "color-name": "Red",
-            "color-code": "red-700"
+            "color-code": "#b91c1c"
           },
           {
             "color-name": "White",
-            "color-code": "neutral-200"
+            "color-code": "#e5e5e5"
           },
           {
             "color-name": "Black",
-            "color-code": "black"
+            "color-code": "#000000"
           },
           {
               "color-name": "Pink",
-              "color-code": "pink-500"
+              "color-code": "#ec4899"
           },
           {
               "color-name": "Orange",
-              "color-code": "orange-600"
+              "color-code": "#ea580c"
           }
         ],
         "sizes": [
@@ -384,31 +384,31 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "blue-500"
+            "color-code": "#3b82f6"
           },
           {
             "color-name": "Green",
-            "color-code": "green-950"
+            "color-code": "#052e16"
           },
           {
             "color-name": "Red",
-            "color-code": "red-700"
+            "color-code": "#b91c1c"
           },
           {
             "color-name": "White",
-            "color-code": "neutral-200"
+            "color-code": "#e5e5e5"
           },
           {
             "color-name": "Black",
-            "color-code": "black"
+            "color-code": "#000000"
           },
           {
               "color-name": "Pink",
-              "color-code": "pink-500"
+              "color-code": "#ec4899"
           },
           {
               "color-name": "Orange",
-              "color-code": "orange-600"
+              "color-code": "#ea580c"
           }
         ],
         "sizes": [
@@ -435,31 +435,31 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "blue-500"
+            "color-code": "#3b82f6"
           },
           {
             "color-name": "Green",
-            "color-code": "green-950"
+            "color-code": "#052e16"
           },
           {
             "color-name": "Red",
-            "color-code": "red-700"
+            "color-code": "#b91c1c"
           },
           {
             "color-name": "White",
-            "color-code": "neutral-200"
+            "color-code": "#e5e5e5"
           },
           {
             "color-name": "Black",
-            "color-code": "black"
+            "color-code": "#000000"
           },
           {
               "color-name": "Pink",
-              "color-code": "pink-500"
+              "color-code": "#ec4899"
           },
           {
               "color-name": "Orange",
-              "color-code": "orange-600"
+              "color-code": "#ea580c"
           }
         ],
         "sizes": [
@@ -488,23 +488,23 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "blue-500"
+            "color-code": "#3b82f6"
           },
           {
             "color-name": "Green",
-            "color-code": "green-950"
+            "color-code": "#052e16"
           },
           {
             "color-name": "Red",
-            "color-code": "red-700"
+            "color-code": "#b91c1c"
           },
           {
               "color-name": "White",
-              "color-code": "neutral-200"
+              "color-code": "#e5e5e5"
           },
           {
               "color-name": "Black",
-              "color-code": "black"
+              "color-code": "#000000"
           }
         ],
         "sizes": [
@@ -530,23 +530,23 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "blue-500"
+            "color-code": "#3b82f6"
           },
           {
             "color-name": "Green",
-            "color-code": "green-950"
+            "color-code": "#052e16"
           },
           {
             "color-name": "Red",
-            "color-code": "red-700"
+            "color-code": "#b91c1c"
           },
           {
             "color-name": "White",
-            "color-code": "neutral-200"
+            "color-code": "#e5e5e5"
           },
           {
             "color-name": "Black",
-            "color-code": "black"
+            "color-code": "#000000"
           }
         ],
         "sizes": [
@@ -574,23 +574,23 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "blue-500"
+            "color-code": "#3b82f6"
           },
           {
             "color-name": "Green",
-            "color-code": "green-950"
+            "color-code": "#052e16"
           },
           {
             "color-name": "Red",
-            "color-code": "red-700"
+            "color-code": "#b91c1c"
           },
           {
             "color-name": "White",
-            "color-code": "neutral-200"
+            "color-code": "#e5e5e5"
           },
           {
             "color-name": "Black",
-            "color-code": "black"
+            "color-code": "#000000"
           }
         ],
         "sizes": [
@@ -616,23 +616,23 @@
         "colors": [
           {
             "color-name": "Blue",
-            "color-code": "blue-500"
+            "color-code": "#3b82f6"
           },
           {
             "color-name": "Green",
-            "color-code": "green-950"
+            "color-code": "#052e16"
           },
           {
             "color-name": "Red",
-            "color-code": "red-700"
+            "color-code": "#b91c1c"
           },
           {
             "color-name": "White",
-            "color-code": "neutral-200"
+            "color-code": "#e5e5e5"
           },
           {
             "color-name": "Black",
-            "color-code": "black"
+            "color-code": "#000000"
           }
         ],
         "sizes": [
@@ -662,7 +662,7 @@
       "brand": "Adidas",
       "price": 100,
       "color": "Red",
-      "colorCode": "red-700",
+      "colorCode": "#b91c1c",
       "sizes": 42,
       "quantity": 1,
       "imgUrl": "./public/imges/shoe4.png"
@@ -673,7 +673,7 @@
       "brand": "KafshMeli",
       "price": 500,
       "color": "White",
-      "colorCode": "neutral-200",
+      "colorCode": "#e5e5e5",
       "sizes": 41,
       "quantity": 2,
       "imgUrl": "./public/imges/shoe1.png"
@@ -684,7 +684,7 @@
       "brand": "Puma",
       "price": 49,
       "color": "Black",
-      "colorCode": "neutral-200",
+      "colorCode": "#e5e5e5",
       "sizes": 40,
       "quantity": 1,
       "imgUrl": "./public/imges/shoe2.png"
@@ -699,7 +699,7 @@
             "brand": "Adidas",
             "price": 100,
             "color": "Red",
-            "colorCode": "red-700",
+            "colorCode": "#b91c1c",
             "sizes": 42,
             "quantity": 1,
             "imgUrl": "./public/imges/shoe4.png"
@@ -710,7 +710,7 @@
             "brand": "KafshMeli",
             "price": 500,
             "color": "White",
-            "colorCode": "neutral-200",
+            "colorCode": "#e5e5e5",
             "sizes": 41,
             "quantity": 2,
             "imgUrl": "./public/imges/shoe1.png"
@@ -721,7 +721,7 @@
             "brand": "Puma",
             "price": 49,
             "color": "Black",
-            "colorCode": "neutral-200",
+            "colorCode": "#e5e5e5",
             "sizes": 40,
             "quantity": 1,
             "imgUrl": "./public/imges/shoe2.png"
@@ -745,7 +745,7 @@
         "brand": "Adidas",
         "price": 100,
         "color": "Red",
-        "colorCode": "red-700",
+        "colorCode": "#b91c1c",
         "sizes": 42,
         "quantity": 1,
         "imgUrl": "./public/imges/shoe4.png"
@@ -758,7 +758,7 @@
         "brand": "KafshMeli",
         "price": 500,
         "color": "White",
-        "colorCode": "neutral-200",
+        "colorCode": "#e5e5e5",
         "sizes": 41,
         "quantity": 2,
         "imgUrl": "./public/imges/shoe1.png"
@@ -769,7 +769,7 @@
         "brand": "Puma",
         "price": 49,
         "color": "Black",
-        "colorCode": "neutral-200",
+        "colorCode": "#e5e5e5",
         "sizes": 40,
         "quantity": 1,
         "imgUrl": "./public/imges/shoe2.png"
