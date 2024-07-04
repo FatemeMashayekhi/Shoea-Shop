@@ -20,8 +20,7 @@ export async function productDetailsPage(match) {
     if (document.querySelector(".swiper")) {
       const swiper = new Swiper(".swiper", {
         modules: [Navigation, Pagination],
-        loop: true,
-        cssMode: true,
+
         pagination: {
           el: ".swiper-pagination",
         },
@@ -31,14 +30,15 @@ export async function productDetailsPage(match) {
 
   const html = `
     <div class="font-Roboto">
-      <div class="relative bg-navBg w-full h-96">
+      <div class="relative bg-navBg w-full h-[440px]">
         <img src="../public/imges/prev icon.png" alt="prev-icon" id="prev" class="cursor-pointer absolute z-40" />
         <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
+          <div class="swiper-wrapper mt-12">
             ${imagesList(product.images)}
           </div>
-          <div class="swiper-pagination"></div>
+          
         </div>
+        <div class="swiper-pagination"></div>
       </div>
       <div class="flex flex-col p-6 gap-y-4">
         <div class="flex justify-between">
@@ -62,7 +62,7 @@ export async function productDetailsPage(match) {
             <span class="text-sm text-btnListBg font-semibold tracking-wide cursor-pointer">view more..</span>
           </p>
         </div>
-        <div class="flex gap-x-6 overflow-x-hidden">
+        <div class="flex gap-x-6 overflow-x-hidden hover:overflow-x-auto">
           <div class="flex flex-col gap-y-2">
             <p class="font-semibold text-lg">Size</p>
             <div id="size" class="flex gap-x-3">
