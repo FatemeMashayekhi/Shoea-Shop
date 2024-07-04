@@ -16,7 +16,7 @@ export const mainLayout = (content) => {
      </div>
    </div>
    <div class="mt-4">
-    <div class="cursor-pointer" onclick="wishList()">
+    <div class="cursor-pointer">
       <img id="wish" src="./public/imges/header.png" alt="header" />
     </div>
   </div>
@@ -54,6 +54,10 @@ export const mainLayout = (content) => {
     `;
 };
 
-// export function wishList() {
-//   router.navigate(routes.wishList);
-// }
+// document.addEventListener("DOMContentLoaded", function () {
+//   if (document.querySelector("#wish")) {
+//     document.querySelector("#wish").addEventListener("click", () => {
+//       router.navigate(routes.wishList);
+//     });
+//   }
+// });
