@@ -7,7 +7,6 @@ import { welcomePage, changeRouter } from "./Pages/welcomePage";
 import "./style.css";
 import Navigo from "navigo";
 
-// core version + navigation, pagination modules:
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 // import Swiper and modules styles
@@ -47,8 +46,9 @@ router
   .on(routes.login, () => render(loginPage(), login))
   .on(routes.signup, () => render(signupPage(), signup))
   .on(routes.products, () => render(mainLayout(productsPage(), getProducts())))
-  .on(routes.productDetails, async (match) =>
-    render(await productDetailsPage(match))
-  )
+  .on(routes.productDetails, async (match) => {
+    const { html, createEventListeners } = await productDetailsPage(match);
+    render(html, createEventListeners);
+  })
   .on(routes.wishList, () => render(wishListPage()))
   .resolve();
