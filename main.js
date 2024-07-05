@@ -19,7 +19,7 @@ import "swiper/css/bundle";
 import { mainLayout } from "./Layouts/main-layout/mainLayout";
 import { wishListPage } from "./Pages/wishListPage";
 import { productDetailsPage } from "./Pages/productDetailsPage";
-import { searchPage } from "./Pages/searchPage";
+import { searchPage, searching } from "./Pages/searchPage";
 
 export const router = new Navigo("/");
 
@@ -54,5 +54,5 @@ router
     render(html, createEventListeners);
   })
   .on(routes.wishList, () => render(wishListPage()))
-  .on(routes.search, () => render(searchPage()))
+  .on(routes.search, (match) => render(searchPage(), searching(match.params)))
   .resolve();
