@@ -1,8 +1,8 @@
-export const mainLayout = (content) => {
+export const secondLayout = (content) => {
   return `
 <div class="min-h-screen flex flex-col font-Roboto">
 
- <main class="grow px-4">
+ <main class="grow">
    ${content}
  </main>
 
