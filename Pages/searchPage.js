@@ -14,6 +14,29 @@ export function searchPage() {
 
   <div class="border-1"></div>
 
+<div class="flex flex-col gap-y-6">
+  <div class="flex justify-between items-center">
+    <p class="text-textGray">Nike Wrapshot Classic</p>
+    <div class="border-2 rounded-lg size-6 relative border-textGray">
+      <i class="fa-solid fa-xmark absolute left-1 top-1 text-xs pl-0.5 text-textGray"></i>
+    </div>
+  </div>
+
+  <div class="flex justify-between items-center">
+    <p class="text-textGray">Nike Wrapshot Classic</p>
+    <div class="border-2 rounded-lg size-6 relative border-textGray">
+      <i class="fa-solid fa-xmark absolute left-1 top-1 text-xs pl-0.5 text-textGray"></i>
+    </div>
+  </div>
+
+  <div class="flex justify-between items-center">
+    <p class="text-textGray">Nike Wrapshot Classic</p>
+    <div class="border-2 rounded-lg size-6 relative border-textGray">
+      <i class="fa-solid fa-xmark absolute left-1 top-1 text-xs pl-0.5 text-textGray"></i>
+    </div>
+  </div>
+</div>
+
 </div>
   `;
 }
