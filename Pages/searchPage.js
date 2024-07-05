@@ -1,3 +1,5 @@
+import axios from "../api";
+
 export function searchPage() {
   return `
 <div class="p-6 flex flex-col gap-y-5 font-Roboto">
@@ -8,35 +10,108 @@ export function searchPage() {
   </label>
 
   <div class="flex justify-between font-semibold items-center">
-    <p class="text-xl">Recent</p>
-    <p>Clear All</p>
+    <p id="p1" class="text-xl">Recent</p>
+    <p id="p2">Clear All</p>
   </div>
 
   <div class="border-1"></div>
 
-<div class="flex flex-col gap-y-6">
-  <div class="flex justify-between items-center">
-    <p class="text-textGray">Nike Wrapshot Classic</p>
-    <div class="border-2 rounded-lg size-6 relative border-textGray">
-      <i class="fa-solid fa-xmark absolute left-1 top-1 text-xs pl-0.5 text-textGray"></i>
+<div id="container">
+  <div class="flex flex-col gap-y-6">
+    <div class="flex justify-between items-center">
+      <p class="text-textGray">Nike Wrapshot Classic</p>
+      <div class="border-2 rounded-lg size-6 relative border-textGray">
+        <i class="fa-solid fa-xmark absolute left-1 top-1 text-xs pl-0.5 text-textGray"></i>
+      </div>
     </div>
-  </div>
-
-  <div class="flex justify-between items-center">
-    <p class="text-textGray">Nike Wrapshot Classic</p>
-    <div class="border-2 rounded-lg size-6 relative border-textGray">
-      <i class="fa-solid fa-xmark absolute left-1 top-1 text-xs pl-0.5 text-textGray"></i>
+  
+    <div class="flex justify-between items-center">
+      <p class="text-textGray">Nike Wrapshot Classic</p>
+      <div class="border-2 rounded-lg size-6 relative border-textGray">
+        <i class="fa-solid fa-xmark absolute left-1 top-1 text-xs pl-0.5 text-textGray"></i>
+      </div>
     </div>
-  </div>
-
-  <div class="flex justify-between items-center">
-    <p class="text-textGray">Nike Wrapshot Classic</p>
-    <div class="border-2 rounded-lg size-6 relative border-textGray">
-      <i class="fa-solid fa-xmark absolute left-1 top-1 text-xs pl-0.5 text-textGray"></i>
+  
+    <div class="flex justify-between items-center">
+      <p class="text-textGray">Nike Wrapshot Classic</p>
+      <div class="border-2 rounded-lg size-6 relative border-textGray">
+        <i class="fa-solid fa-xmark absolute left-1 top-1 text-xs pl-0.5 text-textGray"></i>
+      </div>
     </div>
   </div>
 </div>
 
 </div>
   `;
+}
+
+export const fetchSearch = async (query) => {
+  try {
+    const response = await axios(`/products?q=${query}`);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export async function searching(params) {
+  const result = await fetchSearch(params.q);
+  console.log(result);
+
+  let searchBox = document.getElementById("search-box");
+  searchBox.value = params.q;
+
+  let p1 = document.getElementById("p1");
+  p1.innerHTML = "";
+  p1.innerHTML = `Results for "${params.q}"`;
+
+  let p2 = document.getElementById("p2");
+  p2.innerHTML = "";
+  if (result.length === 1) {
+    p2.innerHTML = `${result.length} found`;
+  } else if (result.length > 1) {
+    p2.innerHTML = `${result.length} founds`;
+  } else {
+    p2.innerHTML = `${result.length} found`;
+  }
+
+  if (result.length !== 0) {
+    let container = document.getElementById("container");
+    container.innerHTML = "";
+    result.forEach((item) => {
+      container.innerHTML = `
+    <div class="flex flex-col justify-start gap-y-2">
+      <div class="bg-productsBg size-[182px] relative rounded-3xl">
+      <img src="./imges/love.png" alt="love-icon" class="absolute right-3 top-3 z-30" />
+        <img
+          src="${item.images[1]}"
+          alt="${item.name}"
+          class="absolute top-9 left-0"
+        />
+      </div>
+      <p class="font-semibold text-xl">${item.name}</p>
+      <div class="flex gap-x-2 text-center">
+        <img src="../public/imges/star.png" alt="star" class="size-5" />
+        <p class="text-textGray">${item.rate}</p>
+        <span>|</span>
+        <p class="bg-navBg text-xs w-20 h-6 rounded-md pt-1">${item.sold} sold</p>
+      </div>
+      <p class="font-semibold tracking-tighter">$${item.price}</p>
+    </div>
+    `;
+    });
+  } else {
+    let container = document.getElementById("container");
+    container.innerHTML = "";
+    container.innerHTML = `
+<div class="font-Roboto flex flex-col justify-center items-center mt-28 gap-y-4">
+  <img src="./public/imges/notfound.png" alt="notFound" class="size-72" />
+  <p class="font-semibold text-2xl">Not Found</p>
+  <p class="text-center">
+    Sorry , the keyword you entered cannot be found , please check again or
+    search with another keyword.
+  </p>
+</div>
+    `;
+  }
 }

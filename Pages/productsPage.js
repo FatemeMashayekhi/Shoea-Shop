@@ -7,7 +7,7 @@ export function productsPage() {
     return `
 <div class="flex flex-col gap gap-y-5">
   <label for="search" class="relative">
-    <i class="fa-solid fa-magnifying-glass absolute top-2 left-4 pt-0.5 text-grayBtn"></i>
+    <i id="search-icon" class="fa-solid fa-magnifying-glass absolute top-2 left-4 pt-0.5 text-grayBtn cursor-pointer"></i>
     <input type="text" id="search" placeholder="Search" class="w-96 h-9 bg-lightGray pl-10 placeholder-placeholderText" />
   </label>
 <div class="flex flex-wrap gap-10 justify-center font-Roboto">
@@ -195,3 +195,13 @@ export const getProducts = async () => {
     console.log(error);
   }
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (document.querySelector("#search-icon")) {
+    document.querySelector("#search-icon").addEventListener("click", () => {
+      const searchInput = document.getElementById("search");
+      const query = searchInput.value.toLowerCase().trim();
+      router.navigate(`/search?q=${query}`);
+    });
+  }
+});
