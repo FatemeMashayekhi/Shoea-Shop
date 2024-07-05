@@ -84,9 +84,9 @@ export async function searching(params) {
       <div class="bg-productsBg size-[182px] relative rounded-3xl">
       <img src="./imges/love.png" alt="love-icon" class="absolute right-3 top-3 z-30" />
         <img
-          src="${item.images[1]}"
+          src="${item.images[0]}"
           alt="${item.name}"
-          class="absolute top-9 left-0"
+          class="absolute top-9 left-5"
         />
       </div>
       <p class="font-semibold text-xl">${item.name}</p>

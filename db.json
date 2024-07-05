@@ -514,6 +514,7 @@
         ],
         "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
         "images": [
+          "./public/imges/adidas/Miniaturized/2.png",
           "./public/imges/adidas/2.png",
           "./public/imges/adidas/2_2.png",
           "./public/imges/adidas/2_3.png"
@@ -556,6 +557,7 @@
         ],
         "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
         "images": [
+          "./public/imges/convers/Miniaturized/4.png",
           "./public/imges/convers/4.jpg",
           "./public/imges/convers/4_2.jpg",
           "./public/imges/convers/4_3.jpg"

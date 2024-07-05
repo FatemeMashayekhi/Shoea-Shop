@@ -17,9 +17,11 @@ import "swiper/css/pagination";
 import "swiper/css/bundle";
 
 import { mainLayout } from "./Layouts/main-layout/mainLayout";
-import { wishListPage } from "./Pages/wishListPage";
+import { getWishes, wishListPage } from "./Pages/wishListPage";
 import { productDetailsPage } from "./Pages/productDetailsPage";
 import { searchPage, searching } from "./Pages/searchPage";
+import { cartPage } from "./Pages/cartPage";
+import { secondLayout } from "./Layouts/secondary-layout/secondLayout";
 
 export const router = new Navigo("/");
 
@@ -40,6 +42,7 @@ export const routes = {
   productDetails: "/products/:id",
   wishList: "/wishList",
   search: "/search",
+  cart: "/cart",
 };
 
 router
@@ -53,6 +56,7 @@ router
     const { html, createEventListeners } = await productDetailsPage(match);
     render(html, createEventListeners);
   })
-  .on(routes.wishList, () => render(wishListPage()))
+  .on(routes.cart, () => render(secondLayout(cartPage())))
+  .on(routes.wishList, () => render(wishListPage(), getWishes))
   .on(routes.search, (match) => render(searchPage(), searching(match.params)))
   .resolve();
