@@ -1,11 +1,13 @@
+import { router } from "../main";
 import axios from "../api";
+import { routes } from "../main";
 
 export function wishListPage() {
   return `
 <div class="flex flex-col gap-y-5 font-Roboto p-5">
   <div class="flex justify-between items-center ml-0">
     <div class="flex items-center">
-      <img src="./imges/prev icon.png" alt="prev-icon" class="cursor-pointer -ml-7" />
+      <img src="./imges/prev icon.png" alt="prev-icon" id="prev-icon" class="cursor-pointer -ml-7" />
       <p class="font-bold text-2xl">My Wishlist</p>
     </div>
     <i class="fas fa-search text-2xl text-btnListBg mr-3 cursor-pointer"></i>
@@ -134,6 +136,12 @@ export const getWishes = async () => {
         `;
       });
     }
+
+    //////////////prev Handler//////////////
+    const prev = document.getElementById("prev-icon");
+    prev.addEventListener("click", () => {
+      router.navigate(routes.products);
+    });
   } catch (error) {
     console.log(error);
   }
