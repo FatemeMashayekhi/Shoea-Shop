@@ -12,11 +12,11 @@ export const mainLayout = (content) => {
       <p class="flex text-textGray">Good Morning
         <img src="./public/imges/waving-hand_1f44b.png" alt="wave-hand" class="size-4 ml-2 mt-1" />
       </p>
-      <p class="font-semibold">Maral Mashayekhi</p>
+      <p id="user-name" class="font-semibold">Maral Mashayekhi</p>
      </div>
    </div>
    <div class="mt-4">
-    <div class="cursor-pointer" onclick="wishList()">
+    <div class="cursor-pointer">
       <img id="wish" src="./public/imges/header.png" alt="header" />
     </div>
   </div>
@@ -54,6 +54,10 @@ export const mainLayout = (content) => {
     `;
 };
 
-// export function wishList() {
-//   router.navigate(routes.wishList);
-// }
+// document.addEventListener("DOMContentLoaded", function () {
+//   if (document.querySelector("#wish")) {
+//     document.querySelector("#wish").addEventListener("click", () => {
+//       router.navigate(routes.wishList);
+//     });
+//   }
+// });

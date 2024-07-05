@@ -62,7 +62,7 @@ export async function productDetailsPage(match) {
             <span class="text-sm text-btnListBg font-semibold tracking-wide cursor-pointer">view more..</span>
           </p>
         </div>
-        <div class="flex gap-x-6 overflow-x-hidden hover:overflow-x-auto">
+        <div class="flex gap-x-6 overflow-x-scroll">
           <div class="flex flex-col gap-y-2">
             <p class="font-semibold text-lg">Size</p>
             <div id="size" class="flex gap-x-3">

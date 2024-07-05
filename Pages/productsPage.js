@@ -98,7 +98,7 @@ export function productsPage() {
     <p class="text-base cursor-pointer">See All</p>
   </div>
 </div>
-<div id="scroll-container" class="flex gap-x-2 w-full overflow-x-hidden hover:overflow-x-auto">
+<div id="scroll-container" class="flex gap-x-2 w-full overflow-x-scroll">
   <button type="button" id="btn1" class="bg-btnListBg text-white  border-2 border-btnListBg rounded-full h-10 px-4">All</button>
   <button type="button" id="btn2" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Nike</button>
   <button type="button" id="btn3" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Adidas</button>
@@ -111,13 +111,7 @@ export function productsPage() {
   <button type="button" id="btn10" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">KafshMeli</button>
 </div>
 <div id="products-container" class="flex flex-wrap justify-center gap-3">
-  <div class="flex flex-col justify-start gap-y-1">
-    <div class="bg-productsBg size-[182px] relative rounded-3xl">
-      <img src="./public/imges/shoe1.png" alt="shoe1" class="absolute top-9 left-5" />
-    </div>
-    <p class="font-semibold text-xl">K-Swiss ista Train...</p>
-    <p class="font-semibold">$ 85.00</p>
-  </div>
+
 </div>
 </div>
     `;
@@ -126,27 +120,76 @@ export function productsPage() {
   }
 }
 
+// export const getProducts = async () => {
+//   try {
+//     const response = await axios.get("/products");
+//     if (response.status === 200) {
+//       console.log(response);
+//       const products = response.data;
+//       console.log(products);
+
+//       document.getElementById("products-container").innerHTML = "";
+
+//       products.forEach((product) => {
+//         document.getElementById("products-container").innerHTML += `
+//   <div class="flex flex-col justify-start gap-y-1">
+//     <a href="/products/${product.id}" class="bg-productsBg size-[182px] relative rounded-3xl">
+//       <img src="${product.images[0]}" alt="shoe1" class="absolute top-9 left-5" />
+//     </a>
+//     <p class="font-semibold text-xl">${product.name}</p>
+//     <p class="font-semibold">$ ${product.price}</p>
+//   </div>
+//         `;
+//       });
+//     }
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+window.addEventListener("scroll", async () => {
+  const scrollPosition = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const documentHeight = document.documentElement.scrollHeight;
+
+  if (scrollPosition + windowHeight >= documentHeight * 1) {
+    await getProducts();
+  }
+});
+
+let productsLoaded = false;
+let currentBatch = 0;
+
 export const getProducts = async () => {
   try {
-    const response = await axios.get("/products");
-    if (response.status === 200) {
-      console.log(response);
-      const products = response.data;
-      console.log(products);
+    if (!productsLoaded) {
+      const response = await axios.get("/products");
+      if (response.status === 200) {
+        const products = response.data;
+        const container = document.getElementById("products-container");
 
-      document.getElementById("products-container").innerHTML = "";
+        const batchSize = 4;
+        const startIdx = currentBatch * batchSize;
+        const endIdx = startIdx + batchSize;
 
-      products.forEach((product) => {
-        document.getElementById("products-container").innerHTML += `
-  <div class="flex flex-col justify-start gap-y-1">
-    <a href="/products/${product.id}" class="bg-productsBg size-[182px] relative rounded-3xl">
-      <img src="${product.images[0]}" alt="shoe1" class="absolute top-9 left-5" />
-    </a>
-    <p class="font-semibold text-xl">${product.name}</p>
-    <p class="font-semibold">$ ${product.price}</p>
-  </div>
-        `;
-      });
+        for (let i = startIdx; i < endIdx; i++) {
+          const product = products[i];
+          if (!product) break;
+
+          container.innerHTML += `
+                        <div class="flex flex-col justify-start gap-y-1">
+                            <a href="/products/${product.id}" class="bg-productsBg size-[182px] relative rounded-3xl">
+                                <img src="${product.images[0]}" alt="shoe1" class="absolute top-9 left-5" />
+                            </a>
+                            <p class="font-semibold text-xl">${product.name}</p>
+                            <p class="font-semibold">$ ${product.price}</p>
+                        </div>
+                    `;
+        }
+
+        currentBatch++;
+        productsLoaded = currentBatch * batchSize >= products.length;
+      }
     }
   } catch (error) {
     console.log(error);
