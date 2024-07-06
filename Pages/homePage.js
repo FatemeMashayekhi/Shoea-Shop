@@ -14,22 +14,14 @@ export function homePage() {
 }
 
 export function checkVisitedToken() {
-  const visitedToken = localStorage.getItem("previouslyVisited") ?? false;
   const accessToken = localStorage.getItem("accessToken") ?? false;
   if (accessToken) {
     setTimeout(() => {
       router.navigate(routes.products);
     }, 2000);
   } else {
-    if (!visitedToken) {
-      localStorage.setItem("previouslyVisited", "true");
-      setTimeout(() => {
-        router.navigate(routes.welcome);
-      }, 2000);
-    } else {
-      setTimeout(() => {
-        router.navigate(routes.login);
-      }, 2000);
-    }
+    setTimeout(() => {
+      router.navigate(routes.welcome);
+    }, 2000);
   }
 }

@@ -3,7 +3,11 @@ import { router } from "../main";
 import { routes } from "../main";
 
 export function loginPage() {
-  return `
+  const accessToken = localStorage.getItem("accessToken") ?? false;
+  if (accessToken) {
+    router.navigate(routes.products);
+  } else {
+    return `
     <div class="mt-2">
        <img id="img" src="./imges/prev icon.png" alt="prev-icon" class="cursor-pointer" />
     </div>
@@ -39,6 +43,7 @@ export function loginPage() {
       <button id="login-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed mt-[56px]" disabled="true">Sign In</button>
     </div>
     `;
+  }
 }
 
 export function login() {
