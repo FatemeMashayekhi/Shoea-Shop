@@ -59,6 +59,34 @@ export async function productDetailsPage(match) {
     if (plus) {
       plus.addEventListener("click", incrementQuantity);
     }
+
+    function selectedSize() {
+      const sizes = document.querySelectorAll("#size-btn");
+      let selectedButton = null;
+      sizes.forEach((size) => {
+        size.addEventListener("click", () => {
+          size.classList.remove("text-textGray", "border-textGray");
+          size.classList.add("text-white", "bg-black", "border-black");
+
+          if (selectedButton) {
+            selectedButton.classList.remove(
+              "text-white",
+              "bg-black",
+              "border-black"
+            );
+            selectedButton.classList.add("text-textGray", "border-textGray");
+          }
+
+          ////////add classes to the clicked button///////////
+          size.classList.remove("text-textGray", "border-textGray");
+          size.classList.add("text-white", "bg-black", "border-black");
+
+          ///////update the selected button reference///////////
+          selectedButton = size;
+        });
+      });
+    }
+    selectedSize();
   };
 
   const html = `
@@ -152,7 +180,7 @@ const getProduct = async (productId) => {
 function sizesList(sizes) {
   let flag = "";
   sizes.forEach((size) => {
-    flag += `<button type="button" class="rounded-full border-2 text-textGray border-textGray size-9">${size}</button>`;
+    flag += `<button id="size-btn" type="button" class="rounded-full border-2 text-textGray border-textGray size-9">${size}</button>`;
   });
   return flag;
 }
@@ -162,7 +190,7 @@ function colorsList(colors) {
   const color = colors.map((color) => color["color-code"]);
   console.log(color);
   color.forEach((code) => {
-    flag += `<button style="background-color:${code};" type="button" class="rounded-full size-9"></button>`;
+    flag += `<button id="color-btn" style="background-color:${code};" type="button" class="rounded-full size-9"></button>`;
   });
   return flag;
 }
