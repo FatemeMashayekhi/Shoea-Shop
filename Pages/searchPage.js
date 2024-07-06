@@ -58,12 +58,10 @@ export async function searching(params) {
 
   let p2 = document.getElementById("p2");
   p2.innerHTML = "";
-  if (result.length === 1) {
+  if (result.length === 1 || result.length === 0) {
     p2.innerHTML = `${result.length} found`;
-  } else if (result.length > 1) {
-    p2.innerHTML = `${result.length} founds`;
   } else {
-    p2.innerHTML = `${result.length} found`;
+    p2.innerHTML = `${result.length} founds`;
   }
 
   if (result.length !== 0) {
