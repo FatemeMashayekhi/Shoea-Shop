@@ -11,6 +11,29 @@ export async function productDetailsPage(match) {
     window.location.replace(routes.products);
   };
 
+  let currentQuantity = 0;
+
+  function incrementQuantity() {
+    currentQuantity = Math.min(currentQuantity + 1);
+    updateQuantityDisplay();
+  }
+
+  function decrementQuantity() {
+    currentQuantity = Math.max(currentQuantity - 1, 0);
+    updateQuantityDisplay();
+  }
+
+  function updateQuantityDisplay() {
+    document.getElementById("num").textContent = currentQuantity;
+
+    function updateTotalPrice() {
+      const totalPrice = product.price * currentQuantity;
+
+      document.getElementById("price").textContent = `$${totalPrice}`;
+    }
+    updateTotalPrice();
+  }
+
   const createEventListeners = () => {
     const prevButton = document.getElementById("prev");
     if (prevButton) {
@@ -25,6 +48,16 @@ export async function productDetailsPage(match) {
           el: ".swiper-pagination",
         },
       });
+    }
+
+    const minus = document.getElementById("minus");
+    if (minus) {
+      minus.addEventListener("click", decrementQuantity);
+    }
+
+    const plus = document.getElementById("plus");
+    if (plus) {
+      plus.addEventListener("click", incrementQuantity);
     }
   };
 
@@ -79,16 +112,16 @@ export async function productDetailsPage(match) {
         <div class="flex gap-x-5 items-center">
           <p class="font-semibold text-lg tracking-wide">Quantity</p>
           <div class="bg-navBg rounded-3xl w-32 p-2 font-semibold text-lg flex justify-center gap-x-6 items-center">
-            <i class="fa-solid fa-minus cursor-pointer"></i>
-            <span>2</span>
-            <i class="fa-solid fa-plus cursor-pointer"></i>
+            <i id="minus" class="fa-solid fa-minus cursor-pointer"></i>
+            <span id="num">0</span>
+            <i id="plus" class="fa-solid fa-plus cursor-pointer"></i>
           </div>
         </div>
         <div class="border-1"></div>
         <div class="flex justify-between">
           <div class="flex flex-col">
             <p class="text-xs text-textGray">Total price</p>
-            <p class="font-semibold text-2xl">$240.00</p>
+            <p id="price" class="font-semibold text-2xl">0</p>
           </div>
           <div class="relative">
             <button type="button" class="bg-black text-white p-4 rounded-full w-64">
