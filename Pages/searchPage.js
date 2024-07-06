@@ -49,11 +49,8 @@ export const fetchSearch = async (query) => {
 };
 
 export async function searching(params) {
-  const result = await fetchSearch(params.q);
+  const result = await fetchSearch(params?.q);
   console.log(result);
-
-  let searchBox = document.getElementById("search-box");
-  searchBox.value = params.q;
 
   let p1 = document.getElementById("p1");
   p1.innerHTML = "";
