@@ -1,7 +1,11 @@
 import axios from "../api";
 import { router, routes } from "../main";
 export function signupPage() {
-  return `
+  const accessToken = localStorage.getItem("accessToken") ?? false;
+  if (accessToken) {
+    return window.location.replace(routes.products);
+  } else {
+    return `
     <a href="/slider" data-navigo class="mt-2">
        <img src="./imges/prev icon.png" alt="prev-icon" class="cursor-pointer" />
     </a>
@@ -43,6 +47,7 @@ export function signupPage() {
       <button id="create-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed" disabled="true">Create</button>
     </div>
   `;
+  }
 }
 
 export function signup() {

@@ -1,9 +1,14 @@
 import axios from "../api";
-import { router } from "../main";
-import { routes } from "../main";
+import { router, routes } from "../main";
 
 export function loginPage() {
-  return `
+  const accessToken = localStorage.getItem("accessToken");
+  console.log(accessToken);
+  if (accessToken) {
+    console.log("first");
+    return window.location.replace(routes.products);
+  } else {
+    return `
     <div class="mt-2">
        <img id="img" src="./imges/prev icon.png" alt="prev-icon" class="cursor-pointer" />
     </div>
@@ -39,6 +44,7 @@ export function loginPage() {
       <button id="login-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed mt-[56px]" disabled="true">Sign In</button>
     </div>
     `;
+  }
 }
 
 export function login() {

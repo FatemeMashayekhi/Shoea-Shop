@@ -108,6 +108,36 @@ export async function productDetailsPage(match) {
       });
     }
     selectedColor();
+
+    // const addCartBtn = document.getElementById("add-cart");
+    // const quantity = document.getElementById("num");
+    // const price = document.getElementById("price");
+    // if (addCartBtn) {
+    //   addCartBtn.addEventListener("click", async (e) => {
+    //     e.preventDefault();
+
+    //     const specifications = {
+    //       name: product.name ,
+    //       brand: product.brand ,
+    //       price: price,
+    //       color:,
+    //       colorCode:,
+    //       sizes:,
+    //       quantity: quantity,
+    //       imgUrl: product.images[0],
+    //     };
+
+    //     try {
+    //       let response = await axios.post("/cart", specifications);
+    //       if (response.status === 200) {
+    //         console.log(response);
+
+    //       }
+    //     } catch (e) {
+    //       console.log(e);
+    //     }
+    //   });
+    // }
   };
 
   const html = `
@@ -173,7 +203,7 @@ export async function productDetailsPage(match) {
             <p id="price" class="font-semibold text-2xl">0</p>
           </div>
           <div class="relative">
-            <button type="button" class="bg-black text-white p-4 rounded-full w-64">
+            <button type="button" id="add-cart" class="bg-black text-white p-4 rounded-full w-64">
               Add to Cart
             </button>
             <i class="fas fa-shopping-bag text-white absolute left-14 top-5"></i>
