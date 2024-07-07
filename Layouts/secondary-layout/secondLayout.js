@@ -8,11 +8,11 @@ export const secondLayout = (content) => {
 
  <footer class="sticky bottom-0 z-40 bg-white">
    <div class="flex justify-evenly mb-3 text-center items-center">
-    <a href="#" data-navigo>
+    <a href="/products" data-navigo>
       <img src="./public/imges/home-2.png" alt="home" />
       <p class="text-10">Home</p>
     </a>
-    <a href="#" data-navigo>
+    <a href="/cart" data-navigo>
       <img src="./public/imges/cart-2.png" alt="cart" />
       <p class="text-10">Cart</p>
     </a>
