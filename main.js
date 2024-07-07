@@ -51,7 +51,10 @@ router
   .on(routes.slider, () => render(sliderPage()))
   .on(routes.login, () => render(loginPage(), login))
   .on(routes.signup, () => render(signupPage(), signup))
-  .on(routes.products, () => render(mainLayout(productsPage(), getProducts())))
+  .on(routes.products, async () => {
+    render(mainLayout(productsPage()));
+    await getProducts();
+  })
   .on(routes.productDetails, async (match) => {
     const { html, createEventListeners } = await productDetailsPage(match);
     render(html, createEventListeners);

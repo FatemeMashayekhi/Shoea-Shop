@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector("#search-icon")) {
     document.querySelector("#search-icon").addEventListener("click", () => {
       const searchInput = document.getElementById("search");
-      const query = searchInput.value.toLowerCase().trim();
+      const query = searchInput?.value.toLowerCase().trim();
       router.navigate(`/search?q=${query}`);
     });
   }
