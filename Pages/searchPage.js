@@ -2,7 +2,7 @@ import axios from "../api";
 
 export function searchPage() {
   return `
-<div class="p-6 flex flex-col gap-y-5 font-Roboto">
+<div class="p-6 flex flex-col gap-y-5 font-Roboto min-h-screen pb-0">
   <label for="search-box" class="relative">
     <i class="fas fa-search absolute top-4 left-3 text-placeholderText text-xl"></i>
     <input type="text" id="search-box" class="w-full h-14 bg-productsBg px-11 rounded-2xl" />
@@ -16,7 +16,7 @@ export function searchPage() {
 
   <div class="border-1"></div>
 
-  <div id="container">
+  <div id="container" class="grow">
     <div class="flex flex-col gap-y-6">
       <div class="flex justify-between items-center">
         <p class="text-textGray">Nike Wrapshot Classic</p>
@@ -34,6 +34,31 @@ export function searchPage() {
       </div>
     </div>
   </div>
+
+  <footer class="sticky bottom-0 z-40 bg-white">
+   <div class="flex justify-evenly mb-3 text-center items-center">
+    <a href="/products" data-navigo>
+      <img src="./public/imges/home-2.png" alt="home" />
+      <p class="text-10">Home</p>
+    </a>
+    <a href="/cart" data-navigo>
+      <img src="./public/imges/cart.png" alt="cart" />
+      <p class="text-10">Cart</p>
+    </a>
+    <a href="#" data-navigo>
+      <img src="./public/imges/shoppi.png" alt="order" />
+      <p class="text-10">Orders</p>
+    </a>
+    <a href="#" data-navigo>
+      <img src="./public/imges/wallet.png" alt="wallet"/>
+      <p class="text-10">Wallet</p>
+    </a>
+    <a href="#" data-navigo>
+      <img src="./public/imges/profile.png" alt="profile"/>
+      <p class="text-10">Profile</p>
+    </a>
+   </div>
+ </footer>
 </div>
   `;
 }
