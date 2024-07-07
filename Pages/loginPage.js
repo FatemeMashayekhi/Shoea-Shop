@@ -3,9 +3,7 @@ import { router, routes } from "../main";
 
 export function loginPage() {
   const accessToken = localStorage.getItem("accessToken");
-  console.log(accessToken);
   if (accessToken) {
-    console.log("first");
     return window.location.replace(routes.products);
   } else {
     return `
@@ -91,7 +89,6 @@ export function login() {
     try {
       let response = await axios.post("/login", credentials);
       if (response.status === 200) {
-        console.log(response);
         localStorage.setItem("accessToken", response.data.accessToken);
         localStorage.setItem("email", response.data.user.email);
         router.navigate(routes.products);
