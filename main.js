@@ -59,7 +59,8 @@ router
   .on(routes.cart, () => render(secondLayout(cartPage(), getCart())))
   .on(routes.wishList, () => render(wishListPage(), getWishes))
   .on(routes.search, async (match) => {
-    const data = await searching(match.params);
-    render(searchPage(), data);
+    
+     render(searchPage());
+     await searching(match.params);
   })
   .resolve();
