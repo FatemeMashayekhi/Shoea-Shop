@@ -31,6 +31,10 @@ export default {
       fontSize: {
         10: "10px",
       },
+
+      borderRadius: {
+        45: "45px",
+      },
     },
   },
   plugins: [],

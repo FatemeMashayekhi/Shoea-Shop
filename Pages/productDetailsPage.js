@@ -107,7 +107,7 @@ export async function productDetailsPage(match) {
           }
 
           ////////add classes to the clicked button///////////
-          size.classList.add("fa-solid", "fa-check");
+          color.classList.add("fa-solid", "fa-check");
 
           ///////update the selected button reference///////////
           selectedButton = color;
@@ -123,8 +123,6 @@ export async function productDetailsPage(match) {
     selectedColor();
 
     const addCartBtn = document.getElementById("add-cart");
-    const quantity = document.getElementById("num");
-    const price = document.getElementById("price");
     if (addCartBtn) {
       addCartBtn.addEventListener("click", async (e) => {
         e.preventDefault();
@@ -142,14 +140,20 @@ export async function productDetailsPage(match) {
 
         try {
           let response = await axios.post("/cart", specifications);
-          if (response.status === 200) {
+          if (response.status === 201) {
             console.log(response);
+            const modal = document.getElementById("myModal");
+            modal.style.display = "block";
           }
         } catch (e) {
           console.log(e);
         }
       });
     }
+    document.getElementById("continue-btn").addEventListener("click", () => {
+      const modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    });
   };
 
   const html = `
@@ -220,6 +224,19 @@ export async function productDetailsPage(match) {
             </button>
             <i class="fas fa-shopping-bag text-white absolute left-14 top-5"></i>
           </div>
+          <div id="myModal" class="hidden fixed z-50 bottom-0 left-0 w-full h-screen overflow-auto bg-black/50">
+            <div id="modal-content" class="bg-white p-6 h-96 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5">
+              <div class="border-1 w-8"></div>
+              <div class="flex flex-col gap-y-5 mt-8 items-center justify-center">
+                  <div></div>
+                  <p class="font-semibold text-2xl">The Product has been Successfully Added to your Cart.</p>
+                  <p>Press button to continue</p>
+                  <button id="continue-btn" type="button" class="bg-black text-white p-4 rounded-full w-64">Continue</button>
+              </div>
+              
+           </div>
+         </div>
+        </div>
         </div>
       </div>
     </div>
