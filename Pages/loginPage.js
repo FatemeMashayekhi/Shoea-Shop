@@ -1,11 +1,12 @@
 import axios from "../api";
-import { router } from "../main";
-import { routes } from "../main";
+import { router, routes } from "../main";
 
 export function loginPage() {
-  const accessToken = localStorage.getItem("accessToken") ?? false;
+  const accessToken = localStorage.getItem("accessToken");
+  console.log(accessToken);
   if (accessToken) {
-    router.navigate(routes.products);
+    console.log("first");
+    return window.location.replace(routes.products);
   } else {
     return `
     <div class="mt-2">

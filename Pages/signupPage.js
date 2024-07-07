@@ -3,7 +3,7 @@ import { router, routes } from "../main";
 export function signupPage() {
   const accessToken = localStorage.getItem("accessToken") ?? false;
   if (accessToken) {
-    router.navigate(routes.products);
+    return window.location.replace(routes.products);
   } else {
     return `
     <a href="/slider" data-navigo class="mt-2">

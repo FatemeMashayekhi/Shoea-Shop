@@ -60,6 +60,6 @@ router
   .on(routes.wishList, () => render(wishListPage(), getWishes))
   .on(routes.search, async (match) => {
     const data = await searching(match.params);
-    render(searchPage, data);
+    render(searchPage(), data);
   })
   .resolve();
