@@ -11,29 +11,6 @@ export async function productDetailsPage(match) {
     window.location.replace(routes.products);
   };
 
-  let currentQuantity = 0;
-
-  function incrementQuantity() {
-    currentQuantity = Math.min(currentQuantity + 1);
-    updateQuantityDisplay();
-  }
-
-  function decrementQuantity() {
-    currentQuantity = Math.max(currentQuantity - 1, 0);
-    updateQuantityDisplay();
-  }
-
-  function updateQuantityDisplay() {
-    document.getElementById("num").textContent = currentQuantity;
-
-    function updateTotalPrice() {
-      const totalPrice = product.price * currentQuantity;
-
-      document.getElementById("price").textContent = `$${totalPrice}`;
-    }
-    updateTotalPrice();
-  }
-
   const createEventListeners = () => {
     const prevButton = document.getElementById("prev");
     if (prevButton) {
@@ -50,6 +27,30 @@ export async function productDetailsPage(match) {
       });
     }
 
+    let currentQuantity = 0;
+
+    function incrementQuantity() {
+      currentQuantity = Math.min(currentQuantity + 1);
+      updateQuantityDisplay();
+    }
+
+    function decrementQuantity() {
+      currentQuantity = Math.max(currentQuantity - 1, 0);
+      updateQuantityDisplay();
+    }
+
+    let totalPrice = null;
+    function updateQuantityDisplay() {
+      document.getElementById("num").textContent = currentQuantity;
+
+      function updateTotalPrice() {
+        totalPrice = product.price * currentQuantity;
+
+        document.getElementById("price").textContent = `$${totalPrice}`;
+      }
+      updateTotalPrice();
+    }
+
     const minus = document.getElementById("minus");
     if (minus) {
       minus.addEventListener("click", decrementQuantity);
@@ -60,6 +61,7 @@ export async function productDetailsPage(match) {
       plus.addEventListener("click", incrementQuantity);
     }
 
+    let selectedSizeValue = null;
     function selectedSize() {
       const sizes = document.querySelectorAll(".size-btn");
       let selectedButton = null;
@@ -83,11 +85,16 @@ export async function productDetailsPage(match) {
 
           ///////update the selected button reference///////////
           selectedButton = size;
+
+          selectedSizeValue = size.textContent;
+          console.log(selectedSizeValue);
         });
       });
     }
     selectedSize();
 
+    let colorName = null;
+    let colorCode = null;
     function selectedColor() {
       const colors = document.querySelectorAll(".color-btn");
       let selectedButton = null;
@@ -104,40 +111,45 @@ export async function productDetailsPage(match) {
 
           ///////update the selected button reference///////////
           selectedButton = color;
+
+          colorName = color.dataset.colorName;
+          colorCode = color.dataset.colorCode;
+
+          console.log("Selected color name:", colorName);
+          console.log("Selected color code:", colorCode);
         });
       });
     }
     selectedColor();
 
-    // const addCartBtn = document.getElementById("add-cart");
-    // const quantity = document.getElementById("num");
-    // const price = document.getElementById("price");
-    // if (addCartBtn) {
-    //   addCartBtn.addEventListener("click", async (e) => {
-    //     e.preventDefault();
+    const addCartBtn = document.getElementById("add-cart");
+    const quantity = document.getElementById("num");
+    const price = document.getElementById("price");
+    if (addCartBtn) {
+      addCartBtn.addEventListener("click", async (e) => {
+        e.preventDefault();
 
-    //     const specifications = {
-    //       name: product.name ,
-    //       brand: product.brand ,
-    //       price: price,
-    //       color:,
-    //       colorCode:,
-    //       sizes:,
-    //       quantity: quantity,
-    //       imgUrl: product.images[0],
-    //     };
+        const specifications = {
+          name: product.name,
+          brand: product.brand,
+          price: totalPrice,
+          color: colorName,
+          colorCode: colorCode,
+          sizes: selectedSizeValue,
+          quantity: currentQuantity,
+          imgUrl: product.images[0],
+        };
 
-    //     try {
-    //       let response = await axios.post("/cart", specifications);
-    //       if (response.status === 200) {
-    //         console.log(response);
-
-    //       }
-    //     } catch (e) {
-    //       console.log(e);
-    //     }
-    //   });
-    // }
+        try {
+          let response = await axios.post("/cart", specifications);
+          if (response.status === 200) {
+            console.log(response);
+          }
+        } catch (e) {
+          console.log(e);
+        }
+      });
+    }
   };
 
   const html = `
@@ -238,10 +250,9 @@ function sizesList(sizes) {
 
 function colorsList(colors) {
   let flag = "";
-  const color = colors.map((color) => color["color-code"]);
-  console.log(color);
-  color.forEach((code) => {
-    flag += `<button style="background-color:${code};" type="button" class="color-btn rounded-full size-9"></button>`;
+  colors.forEach((color) => {
+    const { "color-name": name, "color-code": code } = color;
+    flag += `<button style="background-color:${code};" type="button" data-color-name="${name}" data-color-code="${code}" class="color-btn rounded-full size-9"></button>`;
   });
   return flag;
 }
