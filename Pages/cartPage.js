@@ -59,7 +59,7 @@ export function cartPage() {
       }
 
       ////////////////delete click event/////////
-      console.log(document.querySelectorAll("#trash-icon"));
+
       let trashIcons = document.querySelectorAll("#trash-icon");
       trashIcons.forEach((icon) => {
         icon.addEventListener("click", (event) => {
