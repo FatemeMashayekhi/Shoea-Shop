@@ -12,7 +12,7 @@ export function cartPage() {
     </div>
     <label for="search-box" class="relative">
       <i id="search" class="fas fa-search absolute top-4 left-3 text-btnListBg text-xl cursor-pointer"></i>
-      <input type="text" id="search-box" class="w-full h-14 bg-productsBg px-11 rounded-2xl placeholder-placeholderText" placeholder="Search.." />
+      <input type="text" id="search-input" class="w-full h-14 bg-productsBg px-11 rounded-2xl placeholder-placeholderText" placeholder="Search.." />
   </label>
     <div id="cart-container" class="flex flex-col gap-y-6">
       <div class="flex bg-white rounded-3xl p-6 gap-x-6">
@@ -46,15 +46,27 @@ export function cartPage() {
   `;
 }
 
-export const getCart = async () => {
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("search-input");
+  searchInput.addEventListener("input", () => {
+    const searchQuery = searchInput.value.toLowerCase();
+    getCart(searchQuery);
+  });
+});
+
+export const getCart = async (searchQuery) => {
   try {
     const response = await axios.get("/cart");
     if (response.status === 200) {
-      console.log(response);
       const cart = response.data;
       console.log(cart);
+
+      const filteredProducts = searchQuery
+        ? cart.filter((item) => item.name.toLowerCase().includes(searchQuery))
+        : cart;
+
       document.getElementById("cart-container").innerHTML = "";
-      cart.forEach((item) => {
+      filteredProducts.forEach((item) => {
         document.getElementById("cart-container").innerHTML += `
     <div class="flex bg-white rounded-3xl p-6 gap-x-6">
         <div class="bg-navBg rounded-2xl w-48 h-28 flex justify-center items-center">
