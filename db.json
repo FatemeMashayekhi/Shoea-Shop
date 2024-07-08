@@ -679,6 +679,17 @@
       "quantity": 3,
       "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
       "id": 2
+    },
+    {
+      "name": "All Star Lift Cozy",
+      "brand": "Converse",
+      "price": 150,
+      "color": "White",
+      "colorCode": "#e5e5e5",
+      "sizes": "41",
+      "quantity": 2,
+      "imgUrl": "./public/imges/convers/Miniaturized/4.png",
+      "id": 3
     }
   ],
   "checkout": [

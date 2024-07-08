@@ -125,11 +125,11 @@ export const getCart = async (searchQuery) => {
             <span>Size = ${item.sizes}</span>
           </div>
           <div class="flex items-center justify-between">
-            <p class="font-semibold text-lg">$${item.price}</p>
+            <p id="single-price" class="font-semibold text-lg">$${item.price}</p>
             <div class="bg-navBg rounded-3xl w-24 p-2 font-semibold flex justify-center gap-x-4 items-center text-sm">
-              <i class="fa-solid fa-minus cursor-pointer"></i>
-              <span>${item.quantity}</span>
-              <i class="fa-solid fa-plus cursor-pointer"></i>
+              <i id="minus" class="fa-solid fa-minus cursor-pointer"></i>
+              <span id="quantity">${item.quantity}</span>
+              <i id="plus" class="fa-solid fa-plus cursor-pointer"></i>
             </div>
           </div>
         </div>
@@ -162,3 +162,39 @@ export async function deleteCart(productId) {
     console.log(error);
   }
 }
+
+////////////////////////
+// let currentQuantity = 0;
+// function incrementQuantity() {
+//   currentQuantity = Math.min(currentQuantity + 1);
+//   updateQuantityDisplay();
+// }
+
+// function decrementQuantity() {
+//   currentQuantity = Math.max(currentQuantity - 1, 0);
+//   updateQuantityDisplay();
+// }
+
+// let singlePrice = null;
+// function updateQuantityDisplay() {
+//   document.getElementById("quantity").textContent = currentQuantity;
+
+//   function updateSinglePrice() {
+//     singlePrice = (product.price / product.quantity) * currentQuantity;
+
+//     document.getElementById("single-price").textContent = `$${singlePrice}`;
+//   }
+//   updateSinglePrice();
+// }
+
+// const minus = document.getElementById("minus");
+// if (minus) {
+//   minus.addEventListener("click", decrementQuantity);
+// }
+
+// const plus = document.getElementById("plus");
+// if (plus) {
+//   plus.addEventListener("click", incrementQuantity);
+// }
+
+////////////////////////
