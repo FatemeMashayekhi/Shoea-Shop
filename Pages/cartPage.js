@@ -9,8 +9,11 @@ export function cartPage() {
         <img src="./public/imges/logo.png" alt="logo" class="w-4" />
         <p class="font-bold text-2xl">My Cart</p>
       </div>
-      <i class="fas fa-search text-2xl text-btnListBg cursor-pointer"></i>
     </div>
+    <label for="search-box" class="relative">
+      <i id="search" class="fas fa-search absolute top-4 left-3 text-btnListBg text-xl cursor-pointer"></i>
+      <input type="text" id="search-box" class="w-full h-14 bg-productsBg px-11 rounded-2xl placeholder-placeholderText" placeholder="Search.." />
+  </label>
     <div id="cart-container" class="flex flex-col gap-y-6">
       <div class="flex bg-white rounded-3xl p-6 gap-x-6">
         <div class="bg-navBg rounded-2xl size-20">
