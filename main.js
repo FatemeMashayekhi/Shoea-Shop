@@ -7,8 +7,6 @@ import { welcomePage, changeRouter } from "./Pages/welcomePage";
 import "./style.css";
 import Navigo from "navigo";
 
-import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
 // import Swiper and modules styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -21,6 +19,7 @@ import { getWishes, wishListPage } from "./Pages/wishListPage";
 import { productDetailsPage } from "./Pages/productDetailsPage";
 import { searchPage, searching } from "./Pages/searchPage";
 import { cartPage, getCart } from "./Pages/cartPage";
+import { checkoutPage } from "./Pages/checkoutPage";
 
 export const router = new Navigo("/");
 
@@ -42,6 +41,7 @@ export const routes = {
   wishList: "/wishList",
   search: "/search",
   cart: "/cart",
+  checkout: "/checkout",
 };
 
 router
@@ -63,5 +63,9 @@ router
   .on(routes.search, async (match) => {
     render(searchPage());
     await searching(match.params);
+  })
+  .on(routes.checkout, async () => {
+    const { html, createEventListeners } = await checkoutPage();
+    render(html, createEventListeners);
   })
   .resolve();
