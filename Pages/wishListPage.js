@@ -10,8 +10,11 @@ export function wishListPage() {
       <img src="./imges/prev icon.png" alt="prev-icon" id="prev-icon" class="cursor-pointer -ml-7" />
       <p class="font-bold text-2xl">My Wishlist</p>
     </div>
-    <i class="fas fa-search text-2xl text-btnListBg mr-3 cursor-pointer"></i>
   </div>
+  <label for="search-box" class="relative">
+      <i id="search-icon" class="fas fa-search absolute top-4 left-3 text-btnListBg text-xl cursor-pointer"></i>
+      <input type="text" id="search-box" class="w-full h-14 bg-productsBg px-11 rounded-2xl placeholder-placeholderText" placeholder="Search.." />
+  </label>
   <div id="scroll-container" class="flex gap-x-2 w-full overflow-x-scroll">
     <button type="button" id="btn1" class="bg-black text-white  border-2 border-black rounded-full h-10 px-4">All</button>
     <button type="button" id="btn2" class="text-black font-semibold border-2 border-black rounded-full h-10 px-5">Nike</button>
