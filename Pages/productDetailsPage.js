@@ -122,6 +122,67 @@ export async function productDetailsPage(match) {
     }
     selectedColor();
 
+    ///////////add wish handler////////////////
+    const like = document.getElementById("like");
+    if (like) {
+      like.addEventListener("click", async (e) => {
+        e.preventDefault();
+        console.log(product);
+
+        try {
+          let response = await axios.post("/wishList", product);
+          if (response.status === 201) {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "block";
+            modal.innerHTML = "";
+            modal.innerHTML = `
+              <div id="modal-content" class="bg-white p-6 h-96 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5">
+                <div class="border-1 w-8"></div>
+                <div class="flex flex-col gap-y-5 mt-8 items-center justify-center">
+                  <div></div>
+                  <p class="font-semibold text-2xl">This Product has been Successfully added to your Wish List</p>
+                  <p>Press button to continue</p>
+                  <button id="continue-btn" type="button" class="bg-black text-white p-4 rounded-full w-64">Continue</button>
+               </div>
+             </div>
+            `;
+            document
+              .getElementById("continue-btn")
+              .addEventListener("click", () => {
+                const modal = document.getElementById("myModal");
+                modal.style.display = "none";
+              });
+          }
+        } catch (e) {
+          if (e.response && e.response.status === 500) {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "block";
+            modal.innerHTML = "";
+            modal.innerHTML = `
+              <div id="modal-content" class="bg-white p-6 h-96 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5">
+                <div class="border-1 w-8"></div>
+                <div class="flex flex-col gap-y-5 mt-8 items-center justify-center">
+                  <div></div>
+                  <p class="font-semibold text-2xl">You Already have this Product in your Wishes</p>
+                  <p>Press button to continue</p>
+                  <button id="continue-btn" type="button" class="bg-black text-white p-4 rounded-full w-64">Continue</button>
+               </div>
+             </div>
+            `;
+            document
+              .getElementById("continue-btn")
+              .addEventListener("click", () => {
+                const modal = document.getElementById("myModal");
+                modal.style.display = "none";
+              });
+          } else {
+            console.error("Other error:", e);
+          }
+        }
+      });
+    }
+
+    //////////add Cart btn handler////////////
     const addCartBtn = document.getElementById("add-cart");
     if (addCartBtn) {
       addCartBtn.addEventListener("click", async (e) => {
@@ -171,7 +232,7 @@ export async function productDetailsPage(match) {
       <div class="flex flex-col p-6 gap-y-4">
         <div class="flex justify-between">
           <p class="font-semibold text-4xl">${product.name}</p>
-          <img src="../public/imges/like.png" alt="like-icon" class="size-7 cursor-pointer" />
+          <img src="../public/imges/like.png" alt="like-icon" id="like" class="size-7 cursor-pointer" />
         </div>
         <div class="flex gap-x-4 items-center">
           <p class="bg-navBg text-xs w-20 h-6 rounded-md pt-1 text-center">${
