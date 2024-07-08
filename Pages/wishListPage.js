@@ -121,7 +121,7 @@ export const getWishes = async () => {
         <img
           src="${wish.images[0]}"
           alt="${wish.name}"
-          class="absolute top-9 left-5"
+          class="absolute top-9 left-5 mix-blend-darken"
         />
       </div>
       <p class="font-semibold text-xl">${wish.name}</p>
