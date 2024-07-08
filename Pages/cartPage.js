@@ -55,7 +55,7 @@ export const getCart = async () => {
         document.getElementById("cart-container").innerHTML += `
     <div class="flex bg-white rounded-3xl p-6 gap-x-6">
         <div class="bg-navBg rounded-2xl w-48 h-28 flex justify-center items-center">
-          <img src="${item.imgUrl}" alt="${item.name}" class="top-10">
+          <img src="${item.imgUrl}" alt="${item.name}" class="top-10 mix-blend-darken">
         </div>
         <div class="flex flex-col gap-y-3 w-full">
           <div class="flex justify-between">

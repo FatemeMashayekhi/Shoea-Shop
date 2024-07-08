@@ -179,7 +179,7 @@ export const getProducts = async () => {
           container.innerHTML += `
                         <div class="flex flex-col justify-start gap-y-1">
                             <a href="/products/${product.id}" class="bg-productsBg size-[182px] relative rounded-3xl">
-                                <img src="${product.images[0]}" alt="shoe1" class="absolute top-9 left-5" />
+                                <img src="${product.images[0]}" alt="shoe1" class="absolute top-9 left-5 mix-blend-darken" />
                             </a>
                             <p class="font-semibold text-xl">${product.name}</p>
                             <p class="font-semibold">$ ${product.price}</p>
