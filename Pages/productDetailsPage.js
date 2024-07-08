@@ -132,6 +132,8 @@ export async function productDetailsPage(match) {
         try {
           let response = await axios.post("/wishList", product);
           if (response.status === 201) {
+            like.src = "../public/imges/favorite.png";
+            like.classList.add("size-11");
             const modal = document.getElementById("myModal");
             modal.style.display = "block";
             modal.innerHTML = "";
