@@ -75,7 +75,7 @@ export const getCart = async (searchQuery) => {
         <div class="flex flex-col gap-y-3 w-full">
           <div class="flex justify-between">
             <p class="font-semibold">${item.name}</p>
-            <img src="./public/imges/bin.png" alt="trash-icon" class="w-5 h-6">
+            <img src="./public/imges/bin.png" alt="trash-icon" class="w-5 h-6 cursor-pointer">
           </div>
           <div class="flex gap-x-3 items-center text-xs text-textGray">
             <span style="background-color:${item.colorCode};" class="rounded-full size-4"></span>
