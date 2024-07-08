@@ -140,7 +140,8 @@ export const getWishes = async () => {
     //////////////prev Handler//////////////
     const prev = document.getElementById("prev-icon");
     prev.addEventListener("click", () => {
-      router.navigate(routes.products);
+      // router.navigate(routes.products);
+      window.location.replace(routes.products);
     });
   } catch (error) {
     console.log(error);
