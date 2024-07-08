@@ -201,18 +201,64 @@ export async function productDetailsPage(match) {
           imgUrl: product.images[0],
         };
 
-        try {
-          let response = await axios.post("/cart", specifications);
-          if (response.status === 201) {
-            console.log(response);
-            const modal = document.getElementById("myModal");
-            modal.style.display = "block";
+        /////////check if the product already exists in the cart//////////////
+        const existingCartItems = await fetchExistingCartItems();
+
+        const isDifferent = existingCartItems.every((item) => {
+          return (
+            item.name !== specifications.name ||
+            item.color !== specifications.color ||
+            item.sizes !== specifications.sizes
+          );
+        });
+
+        if (isDifferent) {
+          // Allow adding the product to the cart
+          try {
+            let response = await axios.post("/cart", specifications);
+            if (response.status === 201) {
+              console.log(response);
+              const modal = document.getElementById("myModal");
+              modal.style.display = "block";
+            }
+          } catch (e) {
+            console.log(e);
           }
-        } catch (e) {
-          console.log(e);
+        } else {
+          const modal = document.getElementById("myModal");
+          modal.style.display = "block";
+          modal.innerHTML = "";
+          modal.innerHTML = `
+              <div id="modal-content" class="bg-white p-6 h-96 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5">
+                <div class="border-1 w-8"></div>
+                <div class="flex flex-col gap-y-5 mt-8 items-center justify-center">
+                  <div></div>
+                  <p class="font-semibold text-2xl">You Already have this Product in your Cart</p>
+                  <p>Press button to continue</p>
+                  <button id="continue-btn" type="button" class="bg-black text-white p-4 rounded-full w-64">Continue</button>
+               </div>
+             </div>
+            `;
+          document
+            .getElementById("continue-btn")
+            .addEventListener("click", () => {
+              const modal = document.getElementById("myModal");
+              modal.style.display = "none";
+            });
         }
       });
     }
+
+    async function fetchExistingCartItems() {
+      try {
+        const response = await axios.get("/cart");
+        return response.data;
+      } catch (error) {
+        console.log(error);
+        return [];
+      }
+    }
+
     document.getElementById("continue-btn").addEventListener("click", () => {
       const modal = document.getElementById("myModal");
       modal.style.display = "none";
@@ -340,7 +386,6 @@ function colorsList(colors) {
 function imagesList(images) {
   let flag = "";
   images.slice(1).forEach((img) => {
-    console.log(img);
     flag += `
       <div class="swiper-slide">
         <img src=".${img}" alt="pic" />
