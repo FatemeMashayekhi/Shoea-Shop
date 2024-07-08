@@ -3,7 +3,8 @@ import axios from "../api";
 export function cartPage() {
   return `
 
-  <div class="bg-lightGray flex flex-col font-Roboto p-6 gap-y-8">
+  <div class="min-h-screen flex flex-col font-Roboto">
+  <div class="bg-lightGray flex flex-col font-Roboto p-6 gap-y-8 grow">
     <div class="flex justify-between items-center">
       <div class="flex gap-x-5 items-center">
         <img src="./public/imges/logo.png" alt="logo" class="w-4" />
@@ -13,7 +14,7 @@ export function cartPage() {
     <label for="search-box" class="relative">
       <i id="search" class="fas fa-search absolute top-4 left-3 text-btnListBg text-xl cursor-pointer"></i>
       <input type="text" id="search-input" class="w-full h-14 bg-productsBg px-11 rounded-2xl placeholder-placeholderText" placeholder="Search.." />
-  </label>
+    </label>
     <div id="cart-container" class="flex flex-col gap-y-6">
       <div class="flex bg-white rounded-3xl p-6 gap-x-6">
         <div class="bg-navBg rounded-2xl size-20">
@@ -41,6 +42,46 @@ export function cartPage() {
         </div>
       </div>
     </div>
+  </div>
+<footer class="sticky bottom-0 z-40 bg-white">
+  <div class="h-48 flex flex-col gap-y-5">
+    <div class="flex justify-between p-6 rounded-t-45 shadow-inner ">
+      <div>
+        <p class="text-xs text-textGray">Total price</p>
+        <p class="font-semibold text-2xl">$585.00</p>
+      </div>
+      <div class="relative">
+      <button type="button" class="bg-black text-white p-4 rounded-full w-64 text-center">
+        Checkout
+      </button>
+      <img src="./public/imges/gocheckout.png" alt="checkout-icon" class="right-14 top-5 absolute" />
+      </div>
+    </div>
+    <div class="flex justify-evenly mb-3 text-center items-center">
+      <a href="/products" data-navigo>
+        <img src="./public/imges/home-2.png" alt="home" />
+        <p class="text-10">Home</p>
+      </a>
+      <a href="/cart" data-navigo>
+        <img src="./public/imges/cart-2.png" alt="cart" />
+        <p class="text-10">Cart</p>
+      </a>
+      <a href="#" data-navigo>
+        <img src="./public/imges/shoppi.png" alt="order" />
+        <p class="text-10">Orders</p>
+      </a>
+      <a href="#" data-navigo>
+        <img src="./public/imges/wallet.png" alt="wallet" />
+        <p class="text-10">Wallet</p>
+      </a>
+      <a href="#" data-navigo>
+        <img src="./public/imges/profile.png" alt="profile" />
+        <p class="text-10">Profile</p>
+      </a>
+    </div>
+  </div>
+</footer>
+
   </div>
 
   `;
@@ -75,7 +116,7 @@ export const getCart = async (searchQuery) => {
         <div class="flex flex-col gap-y-3 w-full">
           <div class="flex justify-between">
             <p class="font-semibold">${item.name}</p>
-            <img src="./public/imges/bin.png" alt="trash-icon" class="w-5 h-6">
+            <img src="./public/imges/bin.png" alt="trash-icon" class="w-5 h-6 cursor-pointer">
           </div>
           <div class="flex gap-x-3 items-center text-xs text-textGray">
             <span style="background-color:${item.colorCode};" class="rounded-full size-4"></span>
