@@ -668,6 +668,28 @@
       "quantity": 3,
       "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
       "id": 2
+    },
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 200,
+      "color": "Red",
+      "colorCode": "#b91c1c",
+      "sizes": "40",
+      "quantity": 2,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "id": 3
+    },
+    {
+      "name": "White Sport",
+      "brand": "KafshMeli",
+      "price": 1000,
+      "color": "White",
+      "colorCode": "#e5e5e5",
+      "sizes": "42",
+      "quantity": 2,
+      "imgUrl": "./public/imges/kafshmeli/Miniaturized/1.png",
+      "id": 4
     }
   ],
   "checkout": [
