@@ -681,6 +681,30 @@
       "quantity": 4,
       "imgUrl": "./public/imges/kafshmeli/Miniaturized/1.png",
       "id": 3
+    },
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 200,
+      "pricePerUnit": 100,
+      "color": "Red",
+      "colorCode": "#b91c1c",
+      "sizes": "40",
+      "quantity": 2,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "id": 4
+    },
+    {
+      "name": "Training Shoe",
+      "brand": "Puma",
+      "price": 49,
+      "pricePerUnit": 49,
+      "color": "Black",
+      "colorCode": "#000000",
+      "sizes": "41",
+      "quantity": 1,
+      "imgUrl": "./public/imges/puma/Miniaturized/5.png",
+      "id": 5
     }
   ],
   "checkout": [
