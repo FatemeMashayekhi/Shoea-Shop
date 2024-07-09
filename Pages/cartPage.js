@@ -1,4 +1,5 @@
 import axios from "../api";
+import { router, routes } from "../main";
 
 export async function cartPage() {
   const cart = await getCart();
@@ -149,12 +150,30 @@ export async function cartPage() {
     document.querySelectorAll(".trash-icon").forEach((icon) => {
       icon.addEventListener("click", showDeleteModal);
     });
+
+    const checkoutBtn = document.querySelector("#checkout-btn");
+    if (checkoutBtn) {
+      checkoutBtn.addEventListener("click", foreachItem);
+    }
+
+    async function handleCheckoutForItem(item) {
+      try {
+        const response = await axios.post("/checkout", item);
+        console.log(`Checkout successful for item ${item.id}:`, response.data);
+      } catch (error) {
+        console.error(`Error during checkout for item ${item.id}:`, error);
+        // Handle errors (e.g., display an error message)
+      }
+    }
+
+    function foreachItem() {
+      cart.forEach(handleCheckoutForItem);
+      router.navigate(routes.checkout);
+      // window.location.replace(routes.checkout);
+    }
+
+    // Iterate through each cart item and call handleCheckoutForItem
   };
-  //   const searchInput = document.getElementById("search-input");
-  //   searchInput.addEventListener("input", () => {
-  //     const searchQuery = searchInput.value.toLowerCase();
-  //     getCart(searchQuery);
-  //   });
 
   ////////////////delete method///////////
   async function deleteCart(event) {
@@ -233,7 +252,7 @@ export async function cartPage() {
         <p id="total-price" class="font-semibold text-2xl">$0</p>
       </div>
       <div class="relative">
-      <button type="button" class="bg-black text-white p-4 rounded-full w-64 text-center">
+      <button type="button" id="checkout-btn" class="bg-black text-white p-4 rounded-full w-64 text-center">
         Checkout
       </button>
       <img src="./public/imges/gocheckout.png" alt="checkout-icon" class="right-14 top-5 absolute" />
