@@ -354,6 +354,7 @@ export async function productDetailsPage(match) {
             </button>
             <i class="fas fa-shopping-bag text-white absolute left-14 top-5"></i>
           </div>
+
           <div id="myModal" class="hidden fixed z-50 bottom-0 left-0 w-full h-screen overflow-auto bg-black/50">
             <div id="modal-content" class="bg-white p-6 h-96 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5">
               <div class="border-1 w-8"></div>
@@ -363,9 +364,9 @@ export async function productDetailsPage(match) {
                   <p>Press button to continue</p>
                   <button id="continue-btn" type="button" class="bg-black text-white p-4 rounded-full w-64">Continue</button>
               </div>
-              
            </div>
          </div>
+         
         </div>
         </div>
       </div>

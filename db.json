@@ -659,28 +659,6 @@
   ],
   "cart": [
     {
-      "name": "Adidas Samba",
-      "brand": "Adidas",
-      "price": 300,
-      "color": "Green",
-      "colorCode": "#052e16",
-      "sizes": "41",
-      "quantity": 3,
-      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
-      "id": 2
-    },
-    {
-      "name": "Adidas Samba",
-      "brand": "Adidas",
-      "price": 200,
-      "color": "Red",
-      "colorCode": "#b91c1c",
-      "sizes": "40",
-      "quantity": 2,
-      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
-      "id": 3
-    },
-    {
       "name": "White Sport",
       "brand": "KafshMeli",
       "price": 1000,
@@ -692,17 +670,6 @@
       "id": 4
     },
     {
-      "name": "All Star Lift Cozy",
-      "brand": "Converse",
-      "price": 150,
-      "color": "Pink",
-      "colorCode": "#ec4899",
-      "sizes": "41",
-      "quantity": 2,
-      "imgUrl": "./public/imges/convers/Miniaturized/4.png",
-      "id": 5
-    },
-    {
       "name": "Chabok Aramesh",
       "brand": "IranKafsh",
       "price": 1314,
@@ -712,6 +679,28 @@
       "quantity": 3,
       "imgUrl": "./public/imges/irankafsh/Miniaturized/5.png",
       "id": 6
+    },
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 200,
+      "color": "Red",
+      "colorCode": "#b91c1c",
+      "sizes": "40",
+      "quantity": 2,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "id": 7
+    },
+    {
+      "name": "9060",
+      "brand": "NewBalance",
+      "price": 596,
+      "color": "Green",
+      "colorCode": "#052e16",
+      "sizes": "42",
+      "quantity": 4,
+      "imgUrl": "./public/imges/neawba/Miniaturized/6.png",
+      "id": 9
     }
   ],
   "checkout": [
