@@ -712,6 +712,39 @@
       "quantity": 0,
       "imgUrl": "./public/imges/nike/shoe2.png",
       "id": 10
+    },
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 100,
+      "color": "Red",
+      "colorCode": "#b91c1c",
+      "sizes": "41",
+      "quantity": 1,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "id": 11
+    },
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 100,
+      "color": "Blue",
+      "colorCode": "#3b82f6",
+      "sizes": "41",
+      "quantity": 1,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "id": 12
+    },
+    {
+      "name": "Gel-Cumulus 26",
+      "brand": "Asics",
+      "price": 180,
+      "color": "White",
+      "colorCode": "#e5e5e5",
+      "sizes": "42",
+      "quantity": 1,
+      "imgUrl": "./public/imges/Asics/Miniaturized/3.png",
+      "id": 13
     }
   ],
   "checkout": [

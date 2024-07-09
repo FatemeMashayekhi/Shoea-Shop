@@ -153,7 +153,7 @@ export async function productDetailsPage(match) {
             modal.style.display = "block";
             modal.innerHTML = "";
             modal.innerHTML = `
-              <div id="modal-content" class="bg-white p-6 h-96 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5">
+              <div id="modal-content" class="bg-white p-6 h-96 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5 absolute">
                 <div class="border-1 w-8"></div>
                 <div class="flex flex-col gap-y-5 mt-8 items-center justify-center">
                   <div></div>
@@ -177,7 +177,7 @@ export async function productDetailsPage(match) {
             modal.style.display = "block";
             modal.innerHTML = "";
             modal.innerHTML = `
-              <div id="modal-content" class="bg-white p-6 h-96 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5">
+              <div id="modal-content" class="bg-white p-6 h-96 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5 absolute">
                 <div class="border-1 w-8"></div>
                 <div class="flex flex-col gap-y-5 mt-8 items-center justify-center">
                   <div></div>
@@ -247,7 +247,7 @@ export async function productDetailsPage(match) {
           modal.style.display = "block";
           modal.innerHTML = "";
           modal.innerHTML = `
-              <div id="modal-content" class="bg-white p-6 h-96 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5">
+              <div id="modal-content" class="bg-white p-6 h-96 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5 absolute">
                 <div class="border-1 w-8"></div>
                 <div class="flex flex-col gap-y-5 mt-8 items-center justify-center">
                   <div></div>
@@ -356,7 +356,7 @@ export async function productDetailsPage(match) {
           </div>
 
           <div id="myModal" class="hidden fixed z-50 bottom-0 left-0 w-full h-screen overflow-auto bg-black/50">
-            <div id="modal-content" class="bg-white p-6 h-96 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5">
+            <div id="modal-content" class="bg-white p-6 h-96 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5 absolute">
               <div class="border-1 w-8"></div>
               <div class="flex flex-col gap-y-5 mt-8 items-center justify-center">
                   <div></div>
@@ -366,7 +366,7 @@ export async function productDetailsPage(match) {
               </div>
            </div>
          </div>
-         
+
         </div>
         </div>
       </div>
