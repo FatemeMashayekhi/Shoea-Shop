@@ -4,11 +4,145 @@ export async function cartPage() {
   const cart = await getCart();
 
   const createEventListeners = () => {
-    console.log(document.querySelectorAll(".plus"));
     document.querySelectorAll("#plus").forEach((plusElement) => {
-      plusElement.addEventListener("click", () => {
-        console.log("plus button clicked");
+      plusElement.addEventListener("click", (event) => {
+        event.preventDefault();
+        const itemId = event.target.getAttribute("data-item-id");
+        const item = cart.find((item) => item.id === +itemId);
+
+        if (item) {
+          item.quantity++;
+          item.price = item.quantity * item.pricePerUnit;
+          updateQuantityDisplay(itemId, item.quantity);
+          updateSinglePrice(itemId, item.pricePerUnit, item.quantity);
+          updateTotalPrice();
+        }
       });
+    });
+
+    document.querySelectorAll("#minus").forEach((minusElement) => {
+      minusElement.addEventListener("click", (event) => {
+        event.preventDefault();
+        const itemId = event.target.getAttribute("data-item-id");
+        const item = cart.find((item) => item.id === +itemId);
+
+        if (item && item.quantity > 0) {
+          item.quantity--;
+          item.price = item.quantity * item.pricePerUnit;
+          updateQuantityDisplay(itemId, item.quantity);
+          updateSinglePrice(itemId, item.pricePerUnit, item.quantity);
+          updateTotalPrice();
+        }
+        if (item.quantity === 0) {
+          deleteCart(item.id);
+        }
+      });
+    });
+
+    function updateQuantityDisplay(itemId, quantity) {
+      const quantitySpan = document.querySelectorAll(
+        `[data-item-id="${itemId}"]`
+      )[2];
+
+      if (quantitySpan) {
+        quantitySpan.textContent = quantity;
+      }
+    }
+
+    function updateSinglePrice(itemId, pricePerUnit, quantity) {
+      const singlePriceSpan = document.querySelectorAll(
+        `[data-item-id="${itemId}"]`
+      )[0];
+      if (singlePriceSpan) {
+        const updatedPrice = +(pricePerUnit * quantity);
+        singlePriceSpan.textContent = `$${updatedPrice}`;
+        console.log(cart);
+      }
+    }
+
+    function updateTotalPrice() {
+      const totalPriceSpan = document.querySelector("#total-price");
+      const price = cart
+        .map((item) => item.price)
+        .reduce((acc, item) => {
+          return acc + item;
+        });
+      totalPriceSpan.textContent = `$${price}`;
+      console.log(price);
+    }
+    updateTotalPrice();
+
+    function showDeleteModal(event) {
+      console.log(cart);
+      const productId = event.target.getAttribute("data-productid");
+      const item = cart.filter((item) => item.id === +productId)[0];
+      const modal = document.getElementById("modal-container");
+      console.log(item);
+      modal.style.display = "block";
+      modal.innerHTML = `
+    <div
+      id="modal-content"
+      class="bg-white p-6 h-96 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5 absolute"
+    >
+      <div>
+        <img src="./public/imges/modaltop.png" alt="modal-top" />
+        <p>Remove From Cart?</p>
+      </div>
+      <div></div>
+      <div>
+        <div id="card" class="flex bg-white rounded-3xl p-6 gap-x-6">
+          <div
+            class="bg-navBg rounded-2xl w-48 h-28 flex justify-center items-center"
+          >
+            <img
+              src="${item.imgUrl}"
+              alt="${item.name}"
+              class="top-10 mix-blend-darken"
+            />
+          </div>
+          <div class="flex flex-col gap-y-3 w-full">
+            <div class="flex justify-between">
+              <p class="font-semibold">${item.name}</p>
+            </div>
+            <div class="flex gap-x-3 items-center text-xs text-textGray">
+              <span
+                style="background-color:${item.colorCode};"
+                class="rounded-full size-4"
+              ></span>
+              <span>${item.color}</span>
+              <span>|</span>
+              <span>Size = ${item.sizes}</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <p id="single-price" class="font-semibold text-lg">$${item.price}</p>
+              <div
+                class="bg-navBg rounded-3xl w-24 p-2 font-semibold flex justify-center gap-x-4 items-center text-sm"
+              >
+                <i id="minus" class="fa-solid fa-minus cursor-pointer"></i>
+                <span id="quantity">${item.quantity}</span>
+                <i id="plus" class="fa-solid fa-plus cursor-pointer"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div></div>
+      <div>
+        <button type="button" onclick="cancelDelete()">Cancel</button>
+        <button type="button" id="delete-btn" data-productid="${item.id}">
+          Yes, Remove
+        </button>
+      </div>
+    </div>
+    `;
+
+      document
+        .querySelector("#delete-btn")
+        .addEventListener("click", deleteCart);
+    }
+
+    document.querySelectorAll(".trash-icon").forEach((icon) => {
+      icon.addEventListener("click", showDeleteModal);
     });
   };
   //   const searchInput = document.getElementById("search-input");
@@ -17,14 +151,21 @@ export async function cartPage() {
   //     getCart(searchQuery);
   //   });
 
-  //////////////get Data and filter///////////////
-
   ////////////////delete method///////////
-  async function deleteCart(productId) {
+  async function deleteCart(event) {
+    let productId;
+    if (typeof event.target !== "undefined") {
+      productId = event.target.getAttribute("data-productid");
+    } else {
+      productId = event;
+    }
+
     try {
       const response = await axios.delete(`/cart/${productId}`);
       if (response.status === 200) {
-        getCart();
+        await cartPage();
+        const modal = document.getElementById("modal-container");
+        modal.style.display = "none";
       }
     } catch (error) {
       console.log(error);
@@ -56,7 +197,7 @@ export async function cartPage() {
         <div class="flex flex-col gap-y-3 w-full">
         <div class="flex justify-between">
         <p class="font-semibold">${item.name}</p>
-        <img src="./public/imges/bin.png" alt="trash-icon" data-productId="${item.id}" id="trash-icon" class="w-5 h-6 cursor-pointer">
+        <img src="./public/imges/bin.png" data-productId="${item.id}" alt="trash-icon" class="trash-icon w-5 h-6 cursor-pointer">
         </div>
         <div class="flex gap-x-3 items-center text-xs text-textGray">
         <span style="background-color:${item.colorCode};" class="rounded-full size-4"></span>
@@ -65,11 +206,11 @@ export async function cartPage() {
         <span>Size = ${item.sizes}</span>
         </div>
         <div class="flex items-center justify-between">
-        <p id="single-price" class="font-semibold text-lg">$${item.price}</p>
+        <p id="single-price" data-item-id="${item.id}" class="font-semibold text-lg">$${item.price}</p>
         <div class="bg-navBg rounded-3xl w-24 p-2 font-semibold flex justify-center gap-x-4 items-center text-sm">
-        <i id="minus" class="fa-solid fa-minus cursor-pointer"></i>
-        <span id="quantity">${item.quantity}</span>
-        <i id="plus"  class="fa-solid fa-plus cursor-pointer"></i>
+        <i id="minus" data-item-id="${item.id}" class="fa-solid fa-minus cursor-pointer"></i>
+        <span id="quantityDisplay" data-item-id="${item.id}">${item.quantity}</span>
+        <i id="plus" data-item-id="${item.id}" class="fa-solid fa-plus cursor-pointer"></i>
         </div>
         </div>
         </div>
@@ -84,7 +225,7 @@ export async function cartPage() {
     <div class="flex justify-between p-6 rounded-t-45 shadow-inner ">
       <div>
         <p class="text-xs text-textGray">Total price</p>
-        <p class="font-semibold text-2xl">$585.00</p>
+        <p id="total-price" class="font-semibold text-2xl">$0</p>
       </div>
       <div class="relative">
       <button type="button" class="bg-black text-white p-4 rounded-full w-64 text-center">
@@ -131,130 +272,6 @@ export async function cartPage() {
 
   return { html, createEventListeners };
 }
-
-////////////////////////
-// let currentQuantity = 0;
-// function incrementQuantity() {
-//   currentQuantity = Math.min(currentQuantity + 1);
-//   updateQuantityDisplay();
-// }
-
-// function decrementQuantity() {
-//   currentQuantity = Math.max(currentQuantity - 1, 0);
-//   updateQuantityDisplay();
-// }
-
-// let singlePrice = null;
-// function updateQuantityDisplay() {
-//   document.getElementById("quantity").textContent = currentQuantity;
-
-//   function updateSinglePrice() {
-//     singlePrice = (product.price / product.quantity) * currentQuantity;
-
-//     document.getElementById("single-price").textContent = `$${singlePrice}`;
-//   }
-//   updateSinglePrice();
-// }
-
-// const minus = document.getElementById("minus");
-// if (minus) {
-//   minus.addEventListener("click", decrementQuantity);
-// }
-
-// const plus = document.getElementById("plus");
-// if (plus) {
-//   plus.addEventListener("click", incrementQuantity);
-// }
-
-////////////////////////
-
-// async function deleteHandler() {
-//   try {
-//     const response = await axios.get("/cart");
-//     if (response.status === 200) {
-//       const cart = response.data;
-//       let trashIcons = document.querySelectorAll("#trash-icon");
-//       cart.forEach((item) => {
-//         trashIcons.forEach((icon) => {
-//           icon.addEventListener("click", (event) => {
-//             event.preventDefault();
-//             const modal = document.getElementById("modal-container");
-//             modal.style.display = "block";
-//             modal.innerHTML = `
-// <div
-//   id="modal-content"
-//   class="bg-white p-6 h-96 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5"
-// >
-//   <div>
-//     <img src="./public/imges/modaltop.png" alt="modal-top" />
-//     <p>Remove From Cart?</p>
-//   </div>
-//   <div></div>
-//   <div>
-//     <div id="card" class="flex bg-white rounded-3xl p-6 gap-x-6">
-//       <div
-//         class="bg-navBg rounded-2xl w-48 h-28 flex justify-center items-center"
-//       >
-//         <img
-//           src="${item.imgUrl}"
-//           alt="${item.name}"
-//           class="top-10 mix-blend-darken"
-//         />
-//       </div>
-//       <div class="flex flex-col gap-y-3 w-full">
-//         <div class="flex justify-between">
-//           <p class="font-semibold">${item.name}</p>
-//         </div>
-//         <div class="flex gap-x-3 items-center text-xs text-textGray">
-//           <span
-//             style="background-color:${item.colorCode};"
-//             class="rounded-full size-4"
-//           ></span>
-//           <span>${item.color}</span>
-//           <span>|</span>
-//           <span>Size = ${item.sizes}</span>
-//         </div>
-//         <div class="flex items-center justify-between">
-//           <p id="single-price" class="font-semibold text-lg">$${item.price}</p>
-//           <div
-//             class="bg-navBg rounded-3xl w-24 p-2 font-semibold flex justify-center gap-x-4 items-center text-sm"
-//           >
-//             <i id="minus" class="fa-solid fa-minus cursor-pointer"></i>
-//             <span id="quantity">${item.quantity}</span>
-//             <i id="plus" class="fa-solid fa-plus cursor-pointer"></i>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-//   <div></div>
-//   <div>
-//     <button type="button" onclick="cancelDelete()">Cancel</button>
-//     <button type="button" onclick="confirmDelete(${item.id})">
-//       Yes, Remove
-//     </button>
-//   </div>
-// </div>
-// `;
-//             const cancelDelete = () => {
-//               const modal = document.getElementById("modal-container");
-//               modal.style.display = "none";
-//             };
-//             const confirmDelete = (productId) => {
-//               // const productId = event.target.dataset.productid;
-//               deleteCart(productId);
-//               // Close the modal after deletion (you can add more logic here)
-//               cancelDelete();
-//             };
-//             confirmDelete();
-//           });
-//         });
-//       });
-//     }
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
 
 const getCart = async () => {
   try {

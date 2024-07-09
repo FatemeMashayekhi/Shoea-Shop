@@ -210,6 +210,7 @@ export async function productDetailsPage(match) {
           name: product.name,
           brand: product.brand,
           price: totalPrice,
+          pricePerUnit: product.price,
           color: colorName,
           colorCode: colorCode,
           sizes: selectedSizeValue,
