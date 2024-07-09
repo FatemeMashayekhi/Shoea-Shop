@@ -1,4 +1,3 @@
-import { router } from "../main";
 import axios from "../api";
 import { routes } from "../main";
 
@@ -153,10 +152,12 @@ export function wishListPage() {
 
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("search-box");
-  searchInput.addEventListener("input", () => {
-    const searchQuery = searchInput.value.toLowerCase();
-    getWishes(searchQuery);
-  });
+  if (searchInput) {
+    searchInput.addEventListener("input", () => {
+      const searchQuery = searchInput.value.toLowerCase();
+      getWishes(searchQuery);
+    });
+  }
 });
 
 export const getWishes = async (searchQuery) => {
