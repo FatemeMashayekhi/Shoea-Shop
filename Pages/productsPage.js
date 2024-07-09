@@ -148,12 +148,14 @@ export function productsPage() {
 // };
 
 window.addEventListener("scroll", async () => {
-  const scrollPosition = window.scrollY;
-  const windowHeight = window.innerHeight;
-  const documentHeight = document.documentElement.scrollHeight;
+  if (window.location.pathname === "/products") {
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
 
-  if (scrollPosition + windowHeight >= documentHeight * 1) {
-    await getProducts();
+    if (scrollPosition + windowHeight >= documentHeight * 1) {
+      await getProducts();
+    }
   }
 });
 

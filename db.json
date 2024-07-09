@@ -659,92 +659,28 @@
   ],
   "cart": [
     {
-      "name": "White Sport",
-      "brand": "KafshMeli",
-      "price": 1000,
-      "color": "White",
-      "colorCode": "#e5e5e5",
-      "sizes": "42",
-      "quantity": 2,
-      "imgUrl": "./public/imges/kafshmeli/Miniaturized/1.png",
-      "id": 4
-    },
-    {
-      "name": "Chabok Aramesh",
-      "brand": "IranKafsh",
-      "price": 1314,
-      "color": "Orange",
-      "colorCode": "#ea580c",
-      "sizes": "42",
-      "quantity": 3,
-      "imgUrl": "./public/imges/irankafsh/Miniaturized/5.png",
-      "id": 6
-    },
-    {
-      "name": "Adidas Samba",
-      "brand": "Adidas",
-      "price": 200,
+      "name": "All Star Lift Cozy",
+      "brand": "Converse",
+      "price": 300,
+      "pricePerUnit": 75,
       "color": "Red",
       "colorCode": "#b91c1c",
-      "sizes": "40",
-      "quantity": 2,
-      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
-      "id": 7
-    },
-    {
-      "name": "9060",
-      "brand": "NewBalance",
-      "price": 596,
-      "color": "Green",
-      "colorCode": "#052e16",
       "sizes": "42",
       "quantity": 4,
-      "imgUrl": "./public/imges/neawba/Miniaturized/6.png",
-      "id": 9
+      "imgUrl": "./public/imges/convers/Miniaturized/4.png",
+      "id": 2
     },
     {
-      "name": "Nike Initiator",
-      "brand": "Nike",
-      "price": null,
+      "name": "White Sport",
+      "brand": "KafshMeli",
+      "price": 2000,
+      "pricePerUnit": 500,
       "color": "White",
       "colorCode": "#e5e5e5",
-      "sizes": "42",
-      "quantity": 0,
-      "imgUrl": "./public/imges/nike/shoe2.png",
-      "id": 10
-    },
-    {
-      "name": "Adidas Samba",
-      "brand": "Adidas",
-      "price": 100,
-      "color": "Red",
-      "colorCode": "#b91c1c",
       "sizes": "41",
-      "quantity": 1,
-      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
-      "id": 11
-    },
-    {
-      "name": "Adidas Samba",
-      "brand": "Adidas",
-      "price": 100,
-      "color": "Blue",
-      "colorCode": "#3b82f6",
-      "sizes": "41",
-      "quantity": 1,
-      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
-      "id": 12
-    },
-    {
-      "name": "Gel-Cumulus 26",
-      "brand": "Asics",
-      "price": 180,
-      "color": "White",
-      "colorCode": "#e5e5e5",
-      "sizes": "42",
-      "quantity": 1,
-      "imgUrl": "./public/imges/Asics/Miniaturized/3.png",
-      "id": 13
+      "quantity": 4,
+      "imgUrl": "./public/imges/kafshmeli/Miniaturized/1.png",
+      "id": 3
     }
   ],
   "checkout": [
