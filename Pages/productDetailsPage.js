@@ -7,19 +7,27 @@ export async function productDetailsPage(match) {
   const product = await getProduct(match.data.id);
   console.log(product);
 
+  ///////////////back icon///////////////
   const prevHandler = () => {
     window.location.replace(routes.products);
   };
 
   const createEventListeners = () => {
+    ////////////////back icon select////////////
     const prevButton = document.getElementById("prev");
     if (prevButton) {
       prevButton.addEventListener("click", prevHandler);
     }
 
+    ////////////////////swiper////////////////////
     if (document.querySelector(".swiper")) {
       const swiper = new Swiper(".swiper", {
         modules: [Navigation, Pagination],
+
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
 
         pagination: {
           el: ".swiper-pagination",
@@ -27,22 +35,30 @@ export async function productDetailsPage(match) {
       });
     }
 
+    ////////////////variables//////////////
     let currentQuantity = 0;
+    let totalPrice = null;
+    let selectedSizeValue = null;
+    let colorName = null;
+    let colorCode = null;
 
+    //////////////plus handler//////////////
     function incrementQuantity() {
       currentQuantity = Math.min(currentQuantity + 1);
       updateQuantityDisplay();
     }
 
+    //////////////minus handler//////////////
     function decrementQuantity() {
       currentQuantity = Math.max(currentQuantity - 1, 0);
       updateQuantityDisplay();
     }
 
-    let totalPrice = null;
+    //////////////number input//////////////
     function updateQuantityDisplay() {
       document.getElementById("num").textContent = currentQuantity;
 
+      //////////////total price handler//////////////
       function updateTotalPrice() {
         totalPrice = product.price * currentQuantity;
 
@@ -61,7 +77,7 @@ export async function productDetailsPage(match) {
       plus.addEventListener("click", incrementQuantity);
     }
 
-    let selectedSizeValue = null;
+    ///////////////to select between sizes and get the size value///////////
     function selectedSize() {
       const sizes = document.querySelectorAll(".size-btn");
       let selectedButton = null;
@@ -93,8 +109,7 @@ export async function productDetailsPage(match) {
     }
     selectedSize();
 
-    let colorName = null;
-    let colorCode = null;
+    ///////////////to select between colors and get the color value///////////
     function selectedColor() {
       const colors = document.querySelectorAll(".color-btn");
       let selectedButton = null;
@@ -156,6 +171,7 @@ export async function productDetailsPage(match) {
               });
           }
         } catch (e) {
+          ////////////if added with same id///////////////
           if (e.response && e.response.status === 500) {
             const modal = document.getElementById("myModal");
             modal.style.display = "block";
@@ -202,7 +218,8 @@ export async function productDetailsPage(match) {
         };
 
         /////////check if the product already exists in the cart//////////////
-        const existingCartItems = await fetchExistingCartItems();
+
+        const existingCartItems = await fetchExistingCartItems(); //////get what is in cart now for comparing///////
 
         const isDifferent = existingCartItems.every((item) => {
           return (
@@ -213,7 +230,7 @@ export async function productDetailsPage(match) {
         });
 
         if (isDifferent) {
-          // Allow adding the product to the cart
+          /////////allow adding the product to the cart///////////
           try {
             let response = await axios.post("/cart", specifications);
             if (response.status === 201) {
@@ -225,6 +242,7 @@ export async function productDetailsPage(match) {
             console.log(e);
           }
         } else {
+          //////////////if color or size was same , not allowed to add////////////
           const modal = document.getElementById("myModal");
           modal.style.display = "block";
           modal.innerHTML = "";
@@ -249,6 +267,7 @@ export async function productDetailsPage(match) {
       });
     }
 
+    ////////////////get cart items////////////////
     async function fetchExistingCartItems() {
       try {
         const response = await axios.get("/cart");
@@ -259,6 +278,7 @@ export async function productDetailsPage(match) {
       }
     }
 
+    /////////////modal close btn//////////////
     document.getElementById("continue-btn").addEventListener("click", () => {
       const modal = document.getElementById("myModal");
       modal.style.display = "none";
@@ -273,7 +293,8 @@ export async function productDetailsPage(match) {
           <div class="swiper-wrapper mt-12">
             ${imagesList(product.images)}
           </div>
-          
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
         </div>
         <div class="swiper-pagination"></div>
       </div>
@@ -354,6 +375,7 @@ export async function productDetailsPage(match) {
   return { html, createEventListeners };
 }
 
+/////////////////get clicked product from products base on their id////////////
 const getProduct = async (productId) => {
   try {
     const response = await axios.get(`/products/${productId}`);
@@ -366,6 +388,7 @@ const getProduct = async (productId) => {
   }
 };
 
+//////////////////////create sizes btns///////////////
 function sizesList(sizes) {
   let flag = "";
   sizes.forEach((size) => {
@@ -374,6 +397,7 @@ function sizesList(sizes) {
   return flag;
 }
 
+//////////////////////create colors btns///////////////
 function colorsList(colors) {
   let flag = "";
   colors.forEach((color) => {
@@ -383,6 +407,7 @@ function colorsList(colors) {
   return flag;
 }
 
+//////////////////////create imgs for slider///////////////
 function imagesList(images) {
   let flag = "";
   images.slice(1).forEach((img) => {
