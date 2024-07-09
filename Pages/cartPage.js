@@ -82,15 +82,15 @@ export async function cartPage() {
       modal.innerHTML = `
     <div
       id="modal-content"
-      class="bg-white p-6 h-96 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5 absolute"
+      class="bg-lightGray p-6 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5 absolute"
     >
-      <div>
+      <div class="flex flex-col items-center justify-center gap-y-3">
         <img src="./public/imges/modaltop.png" alt="modal-top" />
-        <p>Remove From Cart?</p>
+        <p class="font-semibold text-2xl">Remove From Cart?</p>
       </div>
-      <div></div>
+      <div class="border-1 w-full"></div>
       <div>
-        <div id="card" class="flex bg-white rounded-3xl p-6 gap-x-6">
+        <div id="card" class="flex bg-white rounded-3xl p-6 gap-x-6 shadow-sm">
           <div
             class="bg-navBg rounded-2xl w-48 h-28 flex justify-center items-center"
           >
@@ -126,10 +126,10 @@ export async function cartPage() {
           </div>
         </div>
       </div>
-      <div></div>
-      <div>
-        <button type="button" id="cancel-btn">Cancel</button>
-        <button type="button" id="delete-btn" data-productid="${item.id}">
+      <div class="border-1 w-full"></div>
+      <div class="flex gap-x-4 items-center">
+        <button type="button" id="cancel-btn" class="bg-navBg text-btnListBg font-semibold w-44 rounded-full p-4">Cancel</button>
+        <button type="button" id="delete-btn" class="bg-black text-white font-semibold w-40 rounded-full p-4" data-productid="${item.id}">
           Yes, Remove
         </button>
       </div>
