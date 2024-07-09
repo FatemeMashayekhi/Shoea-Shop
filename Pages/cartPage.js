@@ -128,13 +128,18 @@ export async function cartPage() {
       </div>
       <div></div>
       <div>
-        <button type="button" onclick="cancelDelete()">Cancel</button>
+        <button type="button" id="cancel-btn">Cancel</button>
         <button type="button" id="delete-btn" data-productid="${item.id}">
           Yes, Remove
         </button>
       </div>
     </div>
     `;
+
+      document.querySelector("#cancel-btn").addEventListener("click", () => {
+        const modal = document.getElementById("modal-container");
+        modal.style.display = "none";
+      });
 
       document
         .querySelector("#delete-btn")
