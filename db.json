@@ -681,54 +681,80 @@
       "quantity": 4,
       "imgUrl": "./public/imges/kafshmeli/Miniaturized/1.png",
       "id": 3
+    },
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 200,
+      "pricePerUnit": 100,
+      "color": "Red",
+      "colorCode": "#b91c1c",
+      "sizes": "40",
+      "quantity": 2,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "id": 4
+    },
+    {
+      "name": "Training Shoe",
+      "brand": "Puma",
+      "price": 49,
+      "pricePerUnit": 49,
+      "color": "Black",
+      "colorCode": "#000000",
+      "sizes": "41",
+      "quantity": 1,
+      "imgUrl": "./public/imges/puma/Miniaturized/5.png",
+      "id": 5
     }
   ],
   "checkout": [
     {
-      "items": [
-        {
-          "id": 1,
-          "name": "Adidas Samba",
-          "brand": "Adidas",
-          "price": 100,
-          "color": "Red",
-          "colorCode": "#b91c1c",
-          "sizes": 42,
-          "quantity": 1,
-          "imgUrl": "./public/imges/shoe4.png"
-        },
-        {
-          "id": 5,
-          "name": "White Sport",
-          "brand": "KafshMeli",
-          "price": 500,
-          "color": "White",
-          "colorCode": "#e5e5e5",
-          "sizes": 41,
-          "quantity": 2,
-          "imgUrl": "./public/imges/shoe1.png"
-        },
-        {
-          "id": 8,
-          "name": "Training Shoe",
-          "brand": "Puma",
-          "price": 49,
-          "color": "Black",
-          "colorCode": "#e5e5e5",
-          "sizes": 40,
-          "quantity": 1,
-          "imgUrl": "./public/imges/shoe2.png"
-        }
-      ],
-      "ship": {
-        "name": "Regular",
-        "price": 15
-      },
-      "address": {
-        "name": "Home",
-        "address": "Lavasan-Paizan"
-      },
-      "total": 424
+      "name": "All Star Lift Cozy",
+      "brand": "Converse",
+      "price": 75,
+      "pricePerUnit": 75,
+      "color": "Red",
+      "colorCode": "#b91c1c",
+      "sizes": "42",
+      "quantity": 1,
+      "imgUrl": "./public/imges/convers/Miniaturized/4.png",
+      "id": 2
+    },
+    {
+      "name": "White Sport",
+      "brand": "KafshMeli",
+      "price": 500,
+      "pricePerUnit": 500,
+      "color": "White",
+      "colorCode": "#e5e5e5",
+      "sizes": "41",
+      "quantity": 1,
+      "imgUrl": "./public/imges/kafshmeli/Miniaturized/1.png",
+      "id": 3
+    },
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 100,
+      "pricePerUnit": 100,
+      "color": "Red",
+      "colorCode": "#b91c1c",
+      "sizes": "40",
+      "quantity": 1,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "id": 4
+    },
+    {
+      "name": "Training Shoe",
+      "brand": "Puma",
+      "price": 98,
+      "pricePerUnit": 49,
+      "color": "Black",
+      "colorCode": "#000000",
+      "sizes": "41",
+      "quantity": 2,
+      "imgUrl": "./public/imges/puma/Miniaturized/5.png",
+      "id": 5
     }
   ],
   "active": [

@@ -1,4 +1,5 @@
 import axios from "../api";
+import { router, routes } from "../main";
 
 export async function cartPage() {
   const cart = await getCart();
@@ -82,15 +83,15 @@ export async function cartPage() {
       modal.innerHTML = `
     <div
       id="modal-content"
-      class="bg-white p-6 h-96 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5 absolute"
+      class="bg-lightGray p-6 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5 absolute"
     >
-      <div>
+      <div class="flex flex-col items-center justify-center gap-y-3">
         <img src="./public/imges/modaltop.png" alt="modal-top" />
-        <p>Remove From Cart?</p>
+        <p class="font-semibold text-2xl">Remove From Cart?</p>
       </div>
-      <div></div>
+      <div class="border-1 w-full"></div>
       <div>
-        <div id="card" class="flex bg-white rounded-3xl p-6 gap-x-6">
+        <div id="card" class="flex bg-white rounded-3xl p-6 gap-x-6 shadow-sm">
           <div
             class="bg-navBg rounded-2xl w-48 h-28 flex justify-center items-center"
           >
@@ -126,15 +127,20 @@ export async function cartPage() {
           </div>
         </div>
       </div>
-      <div></div>
-      <div>
-        <button type="button" onclick="cancelDelete()">Cancel</button>
-        <button type="button" id="delete-btn" data-productid="${item.id}">
+      <div class="border-1 w-full"></div>
+      <div class="flex gap-x-4 items-center">
+        <button type="button" id="cancel-btn" class="bg-navBg text-btnListBg font-semibold w-44 rounded-full p-4">Cancel</button>
+        <button type="button" id="delete-btn" class="bg-black text-white font-semibold w-40 rounded-full p-4" data-productid="${item.id}">
           Yes, Remove
         </button>
       </div>
     </div>
     `;
+
+      document.querySelector("#cancel-btn").addEventListener("click", () => {
+        const modal = document.getElementById("modal-container");
+        modal.style.display = "none";
+      });
 
       document
         .querySelector("#delete-btn")
@@ -144,12 +150,30 @@ export async function cartPage() {
     document.querySelectorAll(".trash-icon").forEach((icon) => {
       icon.addEventListener("click", showDeleteModal);
     });
+
+    const checkoutBtn = document.querySelector("#checkout-btn");
+    if (checkoutBtn) {
+      checkoutBtn.addEventListener("click", foreachItem);
+    }
+
+    async function handleCheckoutForItem(item) {
+      try {
+        const response = await axios.post("/checkout", item);
+        console.log(`Checkout successful for item ${item.id}:`, response.data);
+      } catch (error) {
+        console.error(`Error during checkout for item ${item.id}:`, error);
+        // Handle errors (e.g., display an error message)
+      }
+    }
+
+    function foreachItem() {
+      cart.forEach(handleCheckoutForItem);
+      router.navigate(routes.checkout);
+      // window.location.replace(routes.checkout);
+    }
+
+    // Iterate through each cart item and call handleCheckoutForItem
   };
-  //   const searchInput = document.getElementById("search-input");
-  //   searchInput.addEventListener("input", () => {
-  //     const searchQuery = searchInput.value.toLowerCase();
-  //     getCart(searchQuery);
-  //   });
 
   ////////////////delete method///////////
   async function deleteCart(event) {
@@ -228,7 +252,7 @@ export async function cartPage() {
         <p id="total-price" class="font-semibold text-2xl">$0</p>
       </div>
       <div class="relative">
-      <button type="button" class="bg-black text-white p-4 rounded-full w-64 text-center">
+      <button type="button" id="checkout-btn" class="bg-black text-white p-4 rounded-full w-64 text-center">
         Checkout
       </button>
       <img src="./public/imges/gocheckout.png" alt="checkout-icon" class="right-14 top-5 absolute" />
