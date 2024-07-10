@@ -659,16 +659,28 @@
   ],
   "cart": [
     {
-      "name": "Adidas Samba",
-      "brand": "Adidas",
-      "price": 100,
-      "pricePerUnit": 100,
-      "color": "Green",
-      "colorCode": "#052e16",
-      "sizes": "42",
-      "quantity": 1,
-      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
-      "id": 1
+      "name": "All Star Lift Cozy",
+      "brand": "Converse",
+      "price": 150,
+      "pricePerUnit": 75,
+      "color": "White",
+      "colorCode": "#e5e5e5",
+      "sizes": "41",
+      "quantity": 2,
+      "imgUrl": "./public/imges/convers/Miniaturized/4.png",
+      "id": 2
+    },
+    {
+      "name": "Chabok Aramesh",
+      "brand": "IranKafsh",
+      "price": 876,
+      "pricePerUnit": 438,
+      "color": "Red",
+      "colorCode": "#b91c1c",
+      "sizes": "41",
+      "quantity": 2,
+      "imgUrl": "./public/imges/irankafsh/Miniaturized/5.png",
+      "id": 3
     }
   ],
   "checkout": [
