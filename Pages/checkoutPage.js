@@ -51,12 +51,16 @@ export async function checkoutPage() {
     let amount;
     function updateAmount() {
       const amountSpan = document.querySelector("#amount");
-      amount = orders
-        .map((item) => item.price)
-        .reduce((acc, item) => {
-          return acc + item;
-        });
-      amountSpan.textContent = `$${amount}`;
+      if (orders && orders.length > 0) {
+        amount = orders
+          .map((item) => item.price)
+          .reduce((acc, item) => {
+            return acc + item;
+          });
+        amountSpan.textContent = `$${amount}`;
+      } else {
+        amountSpan.textContent = "$0";
+      }
     }
     updateAmount();
 
@@ -84,7 +88,6 @@ export async function checkoutPage() {
       updateTotal();
     });
 
-    console.log(reducedAmount);
     function updateTotal() {
       if (reducedAmount !== undefined) {
         const total = document.querySelector("#total-price");
