@@ -4,7 +4,33 @@ export async function shipPage() {
   const shipment = await getShipType();
   console.log(shipment);
 
-  const createEventListeners = () => {};
+  const createEventListeners = () => {
+    let shipType = null;
+    function selectedShipType() {
+      const buttons = document.querySelectorAll(".select-btn");
+      let selectedButton = null;
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          btn.classList.add("bg-black");
+
+          if (selectedButton) {
+            selectedButton.classList.remove("bg-black");
+          }
+
+          ////////add classes to the clicked button///////////
+          btn.classList.add("bg-black");
+
+          ///////update the selected button reference///////////
+          selectedButton = btn;
+
+          shipType = btn.getAttribute("data-name");
+          console.log(shipType);
+        });
+      });
+    }
+    selectedShipType();
+    console.log(shipType);
+  };
 
   const html = `
     <div class="flex flex-col gap-y-4 bg-lightGray font-Roboto min-h-screen">
@@ -38,8 +64,8 @@ export async function shipPage() {
         </div>
       </div>
       <span class="font-semibold text-lg">$${item.price}</span>
-      <div data-name="${item.name}" class="radio-btn border-3 border-black rounded-full size-5 flex items-center justify-center cursor-pointer">
-         <div class="radio bg-black rounded-full"></div>
+      <div data-name="${item.name}" class="select-btn border-3 border-black rounded-full size-5 flex items-center justify-center cursor-pointer">
+         <div class="bg-black rounded-full"></div>
       </div>
     </div>
         `;
