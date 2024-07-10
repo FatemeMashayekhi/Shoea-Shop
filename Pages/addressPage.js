@@ -5,7 +5,7 @@ export async function addressPage() {
   console.log(addresses);
 
   const createEventListeners = () => {
-    let addressName = null;
+    let addressName = "Home";
     function selectedAddress() {
       const buttons = document.querySelectorAll(".radio-btn");
       let selectedButton = null;
@@ -29,6 +29,7 @@ export async function addressPage() {
       });
     }
     selectedAddress();
+    console.log(addressName);
   };
 
   const html = `
