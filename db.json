@@ -816,22 +816,26 @@
     {
       "name": "Economy",
       "price": 10,
-      "icon": "./public/imges/chooseshipping/1.png"
+      "icon": "./public/imges/chooseshipping/1.png",
+      "description": "Estimated Arrival, Dec 20-23"
     },
     {
       "name": "Regular",
       "price": 15,
-      "icon": "./public/imges/chooseshipping/2.png"
+      "icon": "./public/imges/chooseshipping/2.png",
+      "description": "Estimated Arrival, Dec 20-23"
     },
     {
       "name": "Cargo",
       "price": 20,
-      "icon": "./public/imges/chooseshipping/3.png"
+      "icon": "./public/imges/chooseshipping/3.png",
+      "description": "Estimated Arrival, Dec 20-23"
     },
     {
       "name": "Express",
       "price": 30,
-      "icon": "./public/imges/chooseshipping/4.png"
+      "icon": "./public/imges/chooseshipping/4.png",
+      "description": "Estimated Arrival, Dec 20-23"
     }
   ],
   "payment": [
