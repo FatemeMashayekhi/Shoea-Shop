@@ -1,4 +1,5 @@
 import axios from "../api";
+import { router, routes } from "../main";
 
 export async function addressPage() {
   const addresses = await getAddresses();
@@ -30,6 +31,11 @@ export async function addressPage() {
     }
     selectedAddress();
     console.log(addressName);
+
+    /////////////prev icon handler/////////////
+    document.querySelector("#back-icon").addEventListener("click", () => {
+      router.navigate(routes.checkout);
+    });
   };
 
   const html = `
@@ -40,7 +46,7 @@ export async function addressPage() {
       <img
         src="./imges/prev icon.png"
         alt="prev-icon"
-        id="prev-icon"
+        id="back-icon"
         class="cursor-pointer -ml-7"
       />
       <p class="font-bold text-2xl">Shipping Address</p>

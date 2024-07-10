@@ -1,8 +1,18 @@
-export function checkoutPage() {
+import axios from "../api";
+import { router, routes } from "../main";
+
+export async function checkoutPage() {
+  const orders = await getOrderList();
+  console.log(orders);
   const createEventListeners = () => {
-    const p = document.querySelector("p");
-    p.addEventListener("click", () => {
-      alert("hiii");
+    ////////////prev icon handler////////////
+    document.querySelector("#prev").addEventListener("click", () => {
+      router.navigate(routes.cart);
+    });
+
+    ///////////////choose address handler///////
+    document.querySelector("#edit-address").addEventListener("click", () => {
+      router.navigate(routes.address);
     });
   };
 
@@ -14,7 +24,7 @@ export function checkoutPage() {
         <img
           src="./imges/prev icon.png"
           alt="prev-icon"
-          id="prev-icon"
+          id="prev"
           class="cursor-pointer -ml-7"
         />
         <p class="font-bold text-2xl">Checkout</p>
@@ -33,7 +43,7 @@ export function checkoutPage() {
            <p class="text-sm text-textGray">61480 Sunbrook Park, PC 5679</p>
          </div>
         </div>
-        <img src="./public/imges/edit.png" alt="edit-icon" class="w-5" />
+        <img src="./public/imges/edit.png" alt="edit-icon" id="edit-address" class="w-5 cursor-pointer" />
       </div>
     </div>
     <div class="border-1"></div>
@@ -41,35 +51,43 @@ export function checkoutPage() {
 
     <div class="flex flex-col gap-y-5">
       <p class="text-xl font-semibold">Order List</p>
-      <div>
+      <div id="order-container" class="flex flex-col gap-y-6">
 
-        <div id="card" class="flex bg-white rounded-3xl p-5 gap-x-6">
-          <div
-            class="bg-navBg rounded-2xl w-48 h-28 flex justify-center items-center"
-          >
-            <img
-              src="./public/imges/shoe1.png"
-              alt="shoe1"
-              class="top-10 mix-blend-darken"
-            />
-          </div>
-          <div class="flex flex-col gap-y-3 w-full">
-            <p class="font-semibold">Air Jordan 3 Retro</p>
-            <div class="flex gap-x-3 items-center text-xs text-textGray">
-              <span
-                style="background-color: black"
-                class="rounded-full size-4"
-              ></span>
-              <span>Black</span>
-              <span>|</span>
-              <span>Size = 42</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <p id="single-price" class="font-semibold text-lg">$105.00</p>
-              <p class="rounded-full bg-productsBg size-8 flex items-center justify-center">1</p>
-            </div>
-          </div>
-        </div>
+
+      ${orders
+        .map((item) => {
+          return `
+              <div id="card" class="flex bg-white rounded-3xl p-5 gap-x-6">
+                <div
+                  class="bg-navBg rounded-2xl w-48 h-28 flex justify-center items-center"
+                >
+                  <img
+                    src="${item.imgUrl}"
+                    alt="shoe1"
+                    class="top-10 mix-blend-darken"
+                  />
+                </div>
+                <div class="flex flex-col gap-y-3 w-full">
+                  <p class="font-semibold">${item.name}</p>
+                  <div class="flex gap-x-3 items-center text-xs text-textGray">
+                    <span
+                      style="background-color: ${item.colorCode}"
+                      class="rounded-full size-4"
+                    ></span>
+                    <span>${item.color}</span>
+                    <span>|</span>
+                    <span>Size = ${item.sizes}</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <p id="single-price" class="font-semibold text-lg">$${item.price}</p>
+                    <p class="rounded-full bg-productsBg size-8 flex items-center justify-center">${item.quantity}</p>
+                  </div>
+                </div>
+              </div>
+        `;
+        })
+        .join("")}
+
 
       </div>
     </div>
@@ -147,3 +165,15 @@ export function checkoutPage() {
 
   return { html, createEventListeners };
 }
+
+const getOrderList = async () => {
+  try {
+    const response = await axios.get("/checkout");
+    if (response.status === 200) {
+      const orders = response.data;
+      return orders;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
