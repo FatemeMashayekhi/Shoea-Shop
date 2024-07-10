@@ -1,4 +1,5 @@
 import axios from "../api";
+import { router, routes } from "../main";
 
 export async function shipPage() {
   const shipment = await getShipType();
@@ -6,6 +7,7 @@ export async function shipPage() {
 
   const createEventListeners = () => {
     let shipType = null;
+    let selectedType;
     function selectedShipType() {
       const buttons = document.querySelectorAll(".select-btn");
       let selectedButton = null;
@@ -24,12 +26,23 @@ export async function shipPage() {
           selectedButton = btn;
 
           shipType = btn.getAttribute("data-name");
-          console.log(shipType);
+          selectedType = shipment.find((item) => item.name === shipType);
+          console.log(selectedType);
         });
       });
     }
     selectedShipType();
     console.log(shipType);
+
+    document.querySelector("#apply-btn").addEventListener("click", () => {
+      const type = JSON.stringify(selectedType);
+      localStorage.setItem("selectedType", type);
+      router.navigate(routes.checkout);
+    });
+
+    document.querySelector("#prev-icon").addEventListener("click", () => {
+      router.navigate(routes.checkout);
+    });
   };
 
   const html = `
@@ -78,7 +91,7 @@ export async function shipPage() {
   </div>
   
   <div class="sticky bottom-0 z-40 bg-white rounded-t-3xl shadow-inner text-center p-7">
-    <button type="button" class="bg-black text-white p-4 rounded-full w-[364px]">Apply</button>
+    <button type="button" id="apply-btn" class="bg-black text-white p-4 rounded-full w-[364px]">Apply</button>
   </div>
 </div>
   `;
