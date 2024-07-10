@@ -291,7 +291,7 @@ export async function cartPage() {
 
 <div
   id="modal-container"
-  class="hidden fixed z-50 bottom-0 left-0 w-full h-screen overflow-auto bg-black/50"
+  class="hidden fixed z-50 bottom-0 left-0 w-full h-screen bg-black/50"
 >
 
 </div>
