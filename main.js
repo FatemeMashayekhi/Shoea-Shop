@@ -17,19 +17,23 @@ import "swiper/css/bundle";
 import { mainLayout } from "./Layouts/main-layout/mainLayout";
 import { getWishes, wishListPage } from "./Pages/wishListPage";
 import { productDetailsPage } from "./Pages/productDetailsPage";
-import { searchPage, searching } from "./Pages/searchPage";
+import { ownSearch, searchPage, searching } from "./Pages/searchPage";
 import { cartPage } from "./Pages/cartPage";
 import { checkoutPage } from "./Pages/checkoutPage";
 import { addressPage } from "./Pages/addressPage";
 import { shipPage } from "./Pages/shipPage";
 import { paymentPage } from "./Pages/paymentPage";
+import { orderPage } from "./Pages/orderPage";
 
 export const router = new Navigo("/");
 
-function render(children, createEventListeners) {
+function render(children, createEventListeners, event) {
   document.querySelector("#app").innerHTML = `<div>${children}</div>`;
   if (createEventListeners) {
     createEventListeners();
+  }
+  if (event) {
+    event();
   }
 }
 
@@ -48,6 +52,7 @@ export const routes = {
   address: "/address",
   ship: "/ship",
   payment: "/payment",
+  order: "/order",
 };
 
 router
@@ -70,7 +75,7 @@ router
   })
   .on(routes.wishList, () => render(wishListPage(), getWishes))
   .on(routes.search, async (match) => {
-    render(searchPage());
+    render(searchPage(), ownSearch);
     await searching(match.params);
   })
   .on(routes.checkout, async () => {
@@ -87,6 +92,10 @@ router
   })
   .on(routes.payment, async () => {
     const { html, createEventListeners } = await paymentPage();
+    render(html, createEventListeners);
+  })
+  .on(routes.order, async () => {
+    const { html, createEventListeners } = await orderPage();
     render(html, createEventListeners);
   })
   .resolve();

@@ -76,14 +76,15 @@ export const fetchSearch = async (query) => {
 
 export async function searching(params) {
   const result = await fetchSearch(params?.q);
-  console.log(params);
+  console.log(params.q);
 
-  // Ensure the DOM elements are available before setting their content
+  ///////ensure the DOM elements are available before setting their content/////
   let p1 = document.getElementById("p1");
   let p2 = document.getElementById("p2");
   let container = document.getElementById("container");
   const home = document.getElementById("home");
   const cart = document.getElementById("cart");
+  const searchInput = document.querySelector("#search-box");
 
   home.addEventListener("click", () => {
     window.location.replace(routes.products);
@@ -92,6 +93,10 @@ export async function searching(params) {
   cart.addEventListener("click", () => {
     window.location.replace(routes.cart);
   });
+
+  if (searchInput) {
+    searchInput.value = params.q;
+  }
 
   if (!p1 || !p2 || !container) {
     console.error("One or more elements are not found in the DOM");
@@ -113,7 +118,7 @@ export async function searching(params) {
       <img
         src="${item.images[0]}"
         alt="${item.name}"
-        class="absolute top-9 left-5"
+        class="absolute top-9 left-5 mix-blend-darken"
       />
     </div>
     <p class="font-semibold text-xl">${item.name}</p>
@@ -140,4 +145,16 @@ export async function searching(params) {
 </div>
     `;
   }
+}
+
+export function ownSearch() {
+  document.querySelector("#search-icon").addEventListener("click", () => {
+    const searchInput = document.querySelector("#search-box");
+    if (searchInput.value !== "") {
+      console.log("first");
+      const query = searchInput?.value.toLowerCase().trim();
+      // window.location.replace(`/search?q=${query}`);
+      router.navigate(`/search?q=${query}`);
+    }
+  });
 }

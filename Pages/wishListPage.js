@@ -170,37 +170,42 @@ export const getWishes = async (searchQuery) => {
         ? wishes.filter((wish) => wish.name.toLowerCase().includes(searchQuery))
         : wishes;
 
-      document.getElementById("wish-container").innerHTML = "";
-      filteredWishes.forEach((wish) => {
-        document.getElementById("wish-container").innerHTML += `
-        <div class="flex flex-col justify-start gap-y-2">
-          <div class="bg-productsBg size-[182px] relative rounded-3xl">
-          <img src="./imges/love.png" alt="love-icon" class="absolute right-3 top-3 z-30" />
-            <img
-              src="${wish.images[0]}"
-              alt="${wish.name}"
-              class="absolute top-9 left-5 mix-blend-darken"
-            />
+      const container = document.getElementById("wish-container");
+      if (container) {
+        container.innerHTML = "";
+        filteredWishes.forEach((wish) => {
+          container += `
+          <div class="flex flex-col justify-start gap-y-2">
+            <div class="bg-productsBg size-[182px] relative rounded-3xl">
+            <img src="./imges/love.png" alt="love-icon" class="absolute right-3 top-3 z-30" />
+              <img
+                src="${wish.images[0]}"
+                alt="${wish.name}"
+                class="absolute top-9 left-5 mix-blend-darken"
+              />
+            </div>
+            <p class="font-semibold text-xl">${wish.name}</p>
+            <div class="flex gap-x-2 text-center">
+              <img src="./public/imges/star.png" alt="star" class="size-5" />
+              <p class="text-textGray">${wish.rate}</p>
+              <span>|</span>
+              <p class="bg-navBg text-xs w-20 h-6 rounded-md pt-1">${wish.sold} sold</p>
+            </div>
+            <p class="font-semibold tracking-tighter">$${wish.price}</p>
           </div>
-          <p class="font-semibold text-xl">${wish.name}</p>
-          <div class="flex gap-x-2 text-center">
-            <img src="./public/imges/star.png" alt="star" class="size-5" />
-            <p class="text-textGray">${wish.rate}</p>
-            <span>|</span>
-            <p class="bg-navBg text-xs w-20 h-6 rounded-md pt-1">${wish.sold} sold</p>
-          </div>
-          <p class="font-semibold tracking-tighter">$${wish.price}</p>
-        </div>
-            `;
-      });
+              `;
+        });
+      }
     }
 
     //////////////prev Handler//////////////
     const prev = document.getElementById("prev-icon");
-    prev.addEventListener("click", () => {
-      // router.navigate(routes.products);
-      window.location.replace(routes.products);
-    });
+    if (prev) {
+      prev.addEventListener("click", () => {
+        // router.navigate(routes.products);
+        window.location.replace(routes.products);
+      });
+    }
   } catch (error) {
     console.log(error);
   }
