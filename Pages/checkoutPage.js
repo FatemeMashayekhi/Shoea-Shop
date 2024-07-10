@@ -40,35 +40,43 @@ export async function checkoutPage() {
 
     <div class="flex flex-col gap-y-5">
       <p class="text-xl font-semibold">Order List</p>
-      <div>
+      <div id="order-container" class="flex flex-col gap-y-6">
 
-        <div id="card" class="flex bg-white rounded-3xl p-5 gap-x-6">
-          <div
-            class="bg-navBg rounded-2xl w-48 h-28 flex justify-center items-center"
-          >
-            <img
-              src="./public/imges/shoe1.png"
-              alt="shoe1"
-              class="top-10 mix-blend-darken"
-            />
-          </div>
-          <div class="flex flex-col gap-y-3 w-full">
-            <p class="font-semibold">Air Jordan 3 Retro</p>
-            <div class="flex gap-x-3 items-center text-xs text-textGray">
-              <span
-                style="background-color: black"
-                class="rounded-full size-4"
-              ></span>
-              <span>Black</span>
-              <span>|</span>
-              <span>Size = 42</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <p id="single-price" class="font-semibold text-lg">$105.00</p>
-              <p class="rounded-full bg-productsBg size-8 flex items-center justify-center">1</p>
-            </div>
-          </div>
-        </div>
+
+      ${orders
+        .map((item) => {
+          return `
+              <div id="card" class="flex bg-white rounded-3xl p-5 gap-x-6">
+                <div
+                  class="bg-navBg rounded-2xl w-48 h-28 flex justify-center items-center"
+                >
+                  <img
+                    src="${item.imgUrl}"
+                    alt="shoe1"
+                    class="top-10 mix-blend-darken"
+                  />
+                </div>
+                <div class="flex flex-col gap-y-3 w-full">
+                  <p class="font-semibold">${item.name}</p>
+                  <div class="flex gap-x-3 items-center text-xs text-textGray">
+                    <span
+                      style="background-color: ${item.colorCode}"
+                      class="rounded-full size-4"
+                    ></span>
+                    <span>${item.color}</span>
+                    <span>|</span>
+                    <span>Size = ${item.sizes}</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <p id="single-price" class="font-semibold text-lg">$${item.price}</p>
+                    <p class="rounded-full bg-productsBg size-8 flex items-center justify-center">${item.quantity}</p>
+                  </div>
+                </div>
+              </div>
+        `;
+        })
+        .join("")}
+
 
       </div>
     </div>
