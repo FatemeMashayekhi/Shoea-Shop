@@ -1,5 +1,29 @@
+import { router, routes } from "../main";
+
 export async function orderPage() {
-  const createEventListeners = () => {};
+  const createEventListeners = () => {
+    const home = document.querySelector("#home");
+    const cart = document.querySelector("#cart");
+    const order = document.querySelector("#order");
+
+    if (home) {
+      home.addEventListener("click", () => {
+        router.navigate(routes.products);
+      });
+    }
+
+    if (cart) {
+      cart.addEventListener("click", () => {
+        router.navigate(routes.cart);
+      });
+    }
+
+    if (order) {
+      order.addEventListener("click", () => {
+        router.navigate(routes.order);
+      });
+    }
+  };
   const html = `
   <div class="min-h-screen flex flex-col font-Roboto">
 
@@ -7,7 +31,7 @@ export async function orderPage() {
     <div id="header" class="flex justify-between items-center">
       <div class="flex gap-x-5 items-center">
         <img src="./public/imges/logo.png" alt="logo" class="w-4" />
-        <p class="font-bold text-2xl">My Cart</p>
+        <p class="font-bold text-2xl">My Orders</p>
       </div>
       <div class="flex gap-x-4">
         <img src="./public/imges/search-interface-symbol.png" alt="search-icon" class="size-6" />
@@ -73,23 +97,23 @@ export async function orderPage() {
 
   <footer class="sticky bottom-0 z-40 ">
     <div class="flex justify-evenly bg-white text-center items-center p-4 rounded-t-3xl shadow-inner">
-      <div href="/products" data-navigo>
+      <div id="home" class="cursor-pointer">
         <img src="./public/imges/home-2.png" alt="home" />
         <p class="text-10">Home</p>
       </div>
-      <div href="/cart" data-navigo>
+      <div id="cart" class="cursor-pointer">
         <img src="./public/imges/cart.png" alt="cart" />
         <p class="text-10">Cart</p>
       </div>
-      <div href="#" data-navigo>
+      <div id="order" class="cursor-pointer">
         <img src="./public/imges/shoppi1.png" alt="order" />
         <p class="text-10">Orders</p>
       </div>
-      <div href="#" data-navigo>
+      <div class="cursor-pointer">
         <img src="./public/imges/wallet.png" alt="wallet" />
         <p class="text-10">Wallet</p>
       </div>
-      <div href="#" data-navigo>
+      <div class="cursor-pointer">
         <img src="./public/imges/profile.png" alt="profile" />
         <p class="text-10">Profile</p>
       </div>
