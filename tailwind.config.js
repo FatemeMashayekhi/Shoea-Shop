@@ -22,6 +22,7 @@ export default {
       borderWidth: {
         5: "5px",
         1: "1px",
+        3: "3px",
       },
 
       backgroundImage: {
