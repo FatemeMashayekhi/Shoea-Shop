@@ -7,7 +7,8 @@ export async function addressPage() {
 
   const createEventListeners = () => {
     let addressName = "Home";
-    function selectedAddress() {
+    let selectedAddress;
+    function selectAddress() {
       const buttons = document.querySelectorAll(".radio-btn");
       let selectedButton = null;
       buttons.forEach((btn) => {
@@ -24,12 +25,28 @@ export async function addressPage() {
           ///////update the selected button reference///////////
           selectedButton = btn;
 
+          ///////////////find selected address//////////
           addressName = btn.getAttribute("data-name");
+          selectedAddress = addresses.find((item) => item.name === addressName);
+
+          if (selectedAddress) {
+            console.log(selectedAddress);
+
+            // const storedObject = localStorage.getItem("selectedAddress");
+            // const parsedObject = JSON.parse(storedObject);
+            // console.log(parsedObject);
+          }
+
           console.log(addressName);
         });
       });
     }
-    selectedAddress();
+    selectAddress();
+    document.querySelector("#apply-btn").addEventListener("click", () => {
+      const address = JSON.stringify(selectedAddress);
+      localStorage.setItem("selectedAddress", address);
+      router.navigate(routes.checkout);
+    });
     console.log(addressName);
 
     /////////////prev icon handler/////////////
@@ -83,7 +100,7 @@ export async function addressPage() {
   </div>
   
   <div class="sticky bottom-0 z-40 bg-white rounded-t-3xl shadow-inner text-center p-7">
-    <button type="button" class="bg-black text-white p-4 rounded-full w-[364px]">Apply</button>
+    <button type="button" id="apply-btn" class="bg-black text-white p-4 rounded-full w-[364px]">Apply</button>
   </div>
 </div>
   `;

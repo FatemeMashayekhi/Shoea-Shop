@@ -14,6 +14,10 @@ export async function checkoutPage() {
     document.querySelector("#edit-address").addEventListener("click", () => {
       router.navigate(routes.address);
     });
+
+    // const storedObject = localStorage.getItem("selectedAddress");
+    // const parsedObject = JSON.parse(storedObject);
+    // console.log(parsedObject);
   };
 
   const html = `
@@ -39,8 +43,12 @@ export async function checkoutPage() {
         <div class="flex gap-x-4 items-center">
            <img src="./public/imges/location.png" alt="location-icon" class="size-14" />
          <div>
-           <p class="font-semibold">Home</p>
-           <p class="text-sm text-textGray">61480 Sunbrook Park, PC 5679</p>
+           <p id="address-name" class="font-semibold">${
+             JSON.parse(localStorage.getItem("selectedAddress")).name
+           }</p>
+           <p id="address-location" class="text-sm text-textGray">${
+             JSON.parse(localStorage.getItem("selectedAddress")).address
+           }</p>
          </div>
         </div>
         <img src="./public/imges/edit.png" alt="edit-icon" id="edit-address" class="w-5 cursor-pointer" />
