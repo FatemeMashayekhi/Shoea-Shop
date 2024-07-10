@@ -9,6 +9,11 @@ export async function checkoutPage() {
     document.querySelector("#prev").addEventListener("click", () => {
       router.navigate(routes.cart);
     });
+
+    ///////////////choose address handler///////
+    document.querySelector("#edit-address").addEventListener("click", () => {
+      router.navigate(routes.address);
+    });
   };
 
   const html = `
@@ -38,7 +43,7 @@ export async function checkoutPage() {
            <p class="text-sm text-textGray">61480 Sunbrook Park, PC 5679</p>
          </div>
         </div>
-        <img src="./public/imges/edit.png" alt="edit-icon" class="w-5" />
+        <img src="./public/imges/edit.png" alt="edit-icon" id="edit-address" class="w-5 cursor-pointer" />
       </div>
     </div>
     <div class="border-1"></div>
