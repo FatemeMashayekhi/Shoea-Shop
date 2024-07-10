@@ -63,13 +63,18 @@ export async function cartPage() {
 
     function updateTotalPrice() {
       const totalPriceSpan = document.querySelector("#total-price");
-      const price = cart
-        .map((item) => item.price)
-        .reduce((acc, item) => {
-          return acc + item;
-        });
-      totalPriceSpan.textContent = `$${price}`;
-      console.log(price);
+
+      //////////check if the cart array is not empty///////
+      if (cart && cart.length > 0) {
+        const price = cart
+          .map((item) => item.price)
+          .reduce((acc, item) => acc + item);
+
+        totalPriceSpan.textContent = `$${price}`;
+        console.log(price);
+      } else {
+        totalPriceSpan.textContent = "$0";
+      }
     }
     updateTotalPrice();
 
@@ -83,7 +88,7 @@ export async function cartPage() {
       modal.innerHTML = `
     <div
       id="modal-content"
-      class="bg-lightGray translate-y-6 p-6 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5 absolute"
+      class="bg-lightGray p-6 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5 absolute"
     >
       <div class="flex flex-col items-center justify-center gap-y-3">
         <img src="./public/imges/modaltop.png" alt="modal-top" />
@@ -91,7 +96,7 @@ export async function cartPage() {
       </div>
       <div class="border-1 w-full"></div>
       <div>
-        <div id="card" class="flex bg-white rounded-3xl p-6 gap-x-6 shadow-sm">
+        <div id="card" class="flex bg-white rounded-3xl p-4 gap-x-4 shadow-sm">
           <div
             class="bg-navBg rounded-2xl w-48 h-28 flex justify-center items-center"
           >
