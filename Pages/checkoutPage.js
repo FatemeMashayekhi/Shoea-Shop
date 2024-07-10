@@ -1,10 +1,9 @@
-export function checkoutPage() {
-  const createEventListeners = () => {
-    const p = document.querySelector("p");
-    p.addEventListener("click", () => {
-      alert("hiii");
-    });
-  };
+import axios from "../api";
+
+export async function checkoutPage() {
+  const orders = await getOrderList();
+  console.log(orders);
+  const createEventListeners = () => {};
 
   const html = `
 <div class="font-Roboto bg-lightGray">
@@ -147,3 +146,15 @@ export function checkoutPage() {
 
   return { html, createEventListeners };
 }
+
+const getOrderList = async () => {
+  try {
+    const response = await axios.get("/checkout");
+    if (response.status === 200) {
+      const orders = response.data;
+      return orders;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
