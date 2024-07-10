@@ -83,7 +83,7 @@ export async function cartPage() {
       modal.innerHTML = `
     <div
       id="modal-content"
-      class="bg-lightGray p-6 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5 absolute"
+      class="bg-lightGray translate-y-6 p-6 rounded-t-45 bottom-0 flex flex-col text-center items-center gap-y-5 absolute"
     >
       <div class="flex flex-col items-center justify-center gap-y-3">
         <img src="./public/imges/modaltop.png" alt="modal-top" />
@@ -187,9 +187,10 @@ export async function cartPage() {
     try {
       const response = await axios.delete(`/cart/${productId}`);
       if (response.status === 200) {
-        await cartPage();
+        // await cartPage();
         const modal = document.getElementById("modal-container");
         modal.style.display = "none";
+        window.location.reload();
       }
     } catch (error) {
       console.log(error);
