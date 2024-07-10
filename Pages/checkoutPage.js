@@ -47,6 +47,60 @@ export async function checkoutPage() {
         router.navigate(routes.ship);
       });
     }
+
+    let amount;
+    function updateAmount() {
+      const amountSpan = document.querySelector("#amount");
+      amount = orders
+        .map((item) => item.price)
+        .reduce((acc, item) => {
+          return acc + item;
+        });
+      amountSpan.textContent = `$${amount}`;
+    }
+    updateAmount();
+
+    let shipPrice;
+    function updateShipping() {
+      const shippingSpan = document.querySelector("#ship");
+      shipPrice = JSON.parse(localStorage.getItem("selectedType")).price;
+      shippingSpan.textContent = `$${shipPrice}`;
+    }
+    updateShipping();
+
+    let reducedAmount;
+    const promoInput = document.querySelector("#promo-input");
+    const promoSpan = document.querySelector("#promo");
+    document.querySelector("#check-promo").addEventListener("click", () => {
+      if (promoInput.value == "maral") {
+        promoInput.value = "";
+        reducedAmount = Math.round((amount * 30) / 100);
+        console.log(reducedAmount);
+        promoSpan.textContent = `-$${reducedAmount}`;
+      } else {
+        promoSpan.textContent = "-$0";
+        promoInput.value = "";
+      }
+      updateTotal();
+    });
+
+    console.log(reducedAmount);
+    function updateTotal() {
+      if (reducedAmount !== undefined) {
+        const total = document.querySelector("#total-price");
+        const calculateTotal = amount + shipPrice - reducedAmount;
+        total.textContent = `$${calculateTotal}`;
+      } else {
+        const total = document.querySelector("#total-price");
+        const calculateTotal = amount + shipPrice;
+        total.textContent = `$${calculateTotal}`;
+      }
+    }
+    updateTotal();
+
+    document.querySelector("#continue-btn").addEventListener("click", () => {
+      router.navigate(routes.payment);
+    });
   };
 
   const html = `
@@ -153,10 +207,10 @@ export async function checkoutPage() {
     <div class="flex flex-col gap-y-5">
       <p class="text-xl font-semibold">Promo Code</p>
       <div class="flex items-center justify-between">
-        <label for="promo">
-          <input id="promo" type="text" placeholder="Enter Promo Code" class="p-4 rounded-2xl bg-productsBg placeholder-placeholderText w-[310px] text-sm" />
+        <label for="promo-input">
+          <input id="promo-input" type="text" placeholder="Enter Promo Code" class="p-4 rounded-2xl bg-productsBg placeholder-placeholderText w-[310px] text-sm" />
         </label>
-        <i class="fa-solid fa-circle-plus text-5xl"></i>
+        <i id="check-promo" class="fa-solid fa-circle-plus text-5xl cursor-pointer"></i>
       </div>
     </div>
 
@@ -165,17 +219,21 @@ export async function checkoutPage() {
       <div class="flex flex-col gap-y-4">
         <div class="flex justify-between items-center">
           <p class="text-sm text-textGray">Amount</p>
-          <p>$585.00</p>
+          <p id="amount" class="font-semibold">$585.00</p>
         </div>
         <div class="flex justify-between items-center">
           <p class="text-sm text-textGray">Shipping</p>
-          <p>-</p>
+          <p id="ship" class="font-semibold">-</p>
+        </div>
+        <div class="flex justify-between items-center">
+          <p class="text-sm text-textGray">Promo</p>
+          <p id="promo" class="font-semibold">-</p>
         </div>
       </div>
       <div class="border-1"></div>
       <div class="flex justify-between items-center">
         <p class="text-sm text-textGray">Total</p>
-        <p>-</p>
+        <p id="total-price" class="font-semibold">-</p>
       </div>
     </div>
 
@@ -187,7 +245,7 @@ export async function checkoutPage() {
   <div class="flex justify-center p-6 rounded-t-45 shadow-inner">
     <div class="relative">
       <button
-        type="button"
+        type="button" id="continue-btn"
         class="bg-black text-white p-4 rounded-full w-96 text-center"
       >
         Continue to Payment
