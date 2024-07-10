@@ -173,8 +173,8 @@ export async function cartPage() {
 
     function foreachItem() {
       cart.forEach(handleCheckoutForItem);
-      router.navigate(routes.checkout);
-      // window.location.replace(routes.checkout);
+      // router.navigate(routes.checkout);
+      window.location.replace(routes.checkout);
     }
 
     // Iterate through each cart item and call handleCheckoutForItem
