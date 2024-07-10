@@ -1,9 +1,15 @@
 import axios from "../api";
+import { router, routes } from "../main";
 
 export async function checkoutPage() {
   const orders = await getOrderList();
   console.log(orders);
-  const createEventListeners = () => {};
+  const createEventListeners = () => {
+    ////////////prev icon handler////////////
+    document.querySelector("#prev").addEventListener("click", () => {
+      router.navigate(routes.cart);
+    });
+  };
 
   const html = `
 <div class="font-Roboto bg-lightGray">
@@ -13,7 +19,7 @@ export async function checkoutPage() {
         <img
           src="./imges/prev icon.png"
           alt="prev-icon"
-          id="prev-icon"
+          id="prev"
           class="cursor-pointer -ml-7"
         />
         <p class="font-bold text-2xl">Checkout</p>
