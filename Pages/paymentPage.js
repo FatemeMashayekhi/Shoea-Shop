@@ -4,7 +4,33 @@ export async function paymentPage() {
   const methods = await getPaymentMethods();
   console.log(methods);
 
-  const createEventListeners = () => {};
+  const createEventListeners = () => {
+    let method = null;
+    function selectedMethod() {
+      const buttons = document.querySelectorAll(".check-btn");
+      let selectedButton = null;
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          btn.classList.add("bg-black");
+
+          if (selectedButton) {
+            selectedButton.classList.remove("bg-black");
+          }
+
+          ////////add classes to the clicked button///////////
+          btn.classList.add("bg-black");
+
+          ///////update the selected button reference///////////
+          selectedButton = btn;
+
+          method = btn.getAttribute("data-name");
+          console.log(method);
+        });
+      });
+    }
+    selectedMethod();
+    console.log(method);
+  };
 
   const html = `
   <div class="flex flex-col gap-y-4 bg-lightGray font-Roboto min-h-screen">
@@ -39,8 +65,8 @@ export async function paymentPage() {
         </div>
         <div>
           <div
-            data-name=""
-            class="radio-btn border-3 border-black rounded-full size-5 flex items-center justify-center cursor-pointer"
+            data-name="${item.name}"
+            class="check-btn border-3 border-black rounded-full size-5 flex items-center justify-center cursor-pointer"
           >
             <div class="radio bg-black rounded-full"></div>
           </div>
