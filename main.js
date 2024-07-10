@@ -21,6 +21,7 @@ import { searchPage, searching } from "./Pages/searchPage";
 import { cartPage } from "./Pages/cartPage";
 import { checkoutPage } from "./Pages/checkoutPage";
 import { addressPage } from "./Pages/addressPage";
+import { shipPage } from "./Pages/shipPage";
 
 export const router = new Navigo("/");
 
@@ -44,6 +45,7 @@ export const routes = {
   cart: "/cart",
   checkout: "/checkout",
   address: "/address",
+  ship: "/ship",
 };
 
 router
@@ -75,6 +77,10 @@ router
   })
   .on(routes.address, async () => {
     const { html, createEventListeners } = await addressPage();
+    render(html, createEventListeners);
+  })
+  .on(routes.ship, async () => {
+    const { html, createEventListeners } = await shipPage();
     render(html, createEventListeners);
   })
   .resolve();
