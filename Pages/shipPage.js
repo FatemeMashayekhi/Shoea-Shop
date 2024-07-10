@@ -33,7 +33,7 @@ export async function shipPage() {
   };
 
   const html = `
-    <div class="flex flex-col gap-y-4 bg-lightGray font-Roboto min-h-screen">
+<div class="flex flex-col gap-y-4 bg-lightGray font-Roboto min-h-screen">
   <div class="grow p-6">
     <div class="flex justify-between items-center ml-0">
     <div class="flex items-center">
