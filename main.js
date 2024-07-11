@@ -24,6 +24,7 @@ import { addressPage } from "./Pages/addressPage";
 import { shipPage } from "./Pages/shipPage";
 import { paymentPage } from "./Pages/paymentPage";
 import { orderPage } from "./Pages/orderPage";
+import { brandPage } from "./Pages/brandPage";
 
 export const router = new Navigo("/");
 
@@ -53,6 +54,7 @@ export const routes = {
   ship: "/ship",
   payment: "/payment",
   order: "/order",
+  brand: "/brand",
 };
 
 router
@@ -96,6 +98,10 @@ router
   })
   .on(routes.order, async () => {
     const { html, createEventListeners } = await orderPage();
+    render(html, createEventListeners);
+  })
+  .on(routes.brand, async () => {
+    const { html, createEventListeners } = await brandPage();
     render(html, createEventListeners);
   })
   .resolve();
