@@ -101,9 +101,41 @@ export async function checkoutPage() {
     }
     updateTotal();
 
-    document.querySelector("#continue-btn").addEventListener("click", () => {
-      router.navigate(routes.payment);
-    });
+    const continueBtn = document.querySelector("#continue-btn");
+    if (continueBtn) {
+      continueBtn.addEventListener("click", async () => {
+        await handleOrderForItem(); // Assuming handleOrderForItem is asynchronous
+        orders.splice(0, orders.length);
+        router.navigate(routes.payment);
+      });
+    }
+
+    async function handleOrderForItem() {
+      orders.forEach(async (item, index) => {
+        const specifications = {
+          name: item.name,
+          brand: item.brand,
+          price: item.price,
+          color: item.color,
+          colorCode: item.colorCode,
+          sizes: item.sizes,
+          quantity: item.quantity,
+          imgUrl: item.imgUrl,
+          is_active: index % 2 === 1, // Set is_active based on odd/even index
+        };
+
+        try {
+          const response = await axios.post("/orders", specifications);
+          console.log(
+            `Checkout successful for item ${item.id}:`,
+            response.data
+          );
+        } catch (error) {
+          console.error(`Error during checkout for item ${item.id}:`, error);
+          // Handle errors (e.g., display an error message)
+        }
+      });
+    }
   };
 
   const html = `

@@ -650,75 +650,30 @@
       ]
     }
   ],
-  "session": [
-    {
-      "name": "Maral Mashayekhi",
-      "imgUrl": "./public/imges/parsapic.jpg",
-      "id": 1
-    }
-  ],
   "cart": [
-    {
-      "name": "All Star Lift Cozy",
-      "brand": "Converse",
-      "price": 150,
-      "pricePerUnit": 75,
-      "color": "White",
-      "colorCode": "#e5e5e5",
-      "sizes": "41",
-      "quantity": 2,
-      "imgUrl": "./public/imges/convers/Miniaturized/4.png",
-      "id": 2
-    },
-    {
-      "name": "Chabok Aramesh",
-      "brand": "IranKafsh",
-      "price": 876,
-      "pricePerUnit": 438,
-      "color": "Red",
-      "colorCode": "#b91c1c",
-      "sizes": "41",
-      "quantity": 2,
-      "imgUrl": "./public/imges/irankafsh/Miniaturized/5.png",
-      "id": 3
-    }
-  ],
-  "checkout": [
-    {
-      "name": "All Star Lift Cozy",
-      "brand": "Converse",
-      "price": 75,
-      "pricePerUnit": 75,
-      "color": "Red",
-      "colorCode": "#b91c1c",
-      "sizes": "42",
-      "quantity": 1,
-      "imgUrl": "./public/imges/convers/Miniaturized/4.png",
-      "id": 2
-    },
-    {
-      "name": "White Sport",
-      "brand": "KafshMeli",
-      "price": 500,
-      "pricePerUnit": 500,
-      "color": "White",
-      "colorCode": "#e5e5e5",
-      "sizes": "41",
-      "quantity": 1,
-      "imgUrl": "./public/imges/kafshmeli/Miniaturized/1.png",
-      "id": 3
-    },
     {
       "name": "Adidas Samba",
       "brand": "Adidas",
-      "price": 100,
+      "price": 200,
       "pricePerUnit": 100,
       "color": "Red",
       "colorCode": "#b91c1c",
-      "sizes": "40",
-      "quantity": 1,
+      "sizes": "41",
+      "quantity": 2,
       "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
-      "id": 4
+      "id": 1
+    },
+    {
+      "name": "All Star Lift Cozy",
+      "brand": "Converse",
+      "price": 300,
+      "pricePerUnit": 75,
+      "color": "Pink",
+      "colorCode": "#ec4899",
+      "sizes": "40",
+      "quantity": 4,
+      "imgUrl": "./public/imges/convers/Miniaturized/4.png",
+      "id": 2
     },
     {
       "name": "Training Shoe",
@@ -730,44 +685,119 @@
       "sizes": "41",
       "quantity": 2,
       "imgUrl": "./public/imges/puma/Miniaturized/5.png",
-      "id": 5
-    }
-  ],
-  "active": [
-    {
-      "id": 1,
-      "name": "Adidas Samba",
-      "brand": "Adidas",
-      "price": 100,
-      "color": "Red",
-      "colorCode": "#b91c1c",
-      "sizes": 42,
-      "quantity": 1,
-      "imgUrl": "./public/imges/shoe4.png"
-    }
-  ],
-  "completed": [
-    {
-      "id": 5,
-      "name": "White Sport",
-      "brand": "KafshMeli",
-      "price": 500,
-      "color": "White",
-      "colorCode": "#e5e5e5",
-      "sizes": 41,
-      "quantity": 2,
-      "imgUrl": "./public/imges/shoe1.png"
+      "id": 3
     },
     {
-      "id": 8,
+      "name": "Royal Glide",
+      "brand": "Reebok",
+      "price": 43,
+      "pricePerUnit": 43,
+      "color": "Green",
+      "colorCode": "#052e16",
+      "sizes": "42",
+      "quantity": 1,
+      "imgUrl": "./public/imges/reebok/Miniaturized/6.png",
+      "id": 4
+    }
+  ],
+  "checkout": [
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 300,
+      "pricePerUnit": 100,
+      "color": "Red",
+      "colorCode": "#b91c1c",
+      "sizes": "41",
+      "quantity": 3,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "id": 1
+    },
+    {
+      "name": "All Star Lift Cozy",
+      "brand": "Converse",
+      "price": 150,
+      "pricePerUnit": 75,
+      "color": "Pink",
+      "colorCode": "#ec4899",
+      "sizes": "40",
+      "quantity": 2,
+      "imgUrl": "./public/imges/convers/Miniaturized/4.png",
+      "id": 2
+    },
+    {
+      "name": "Training Shoe",
+      "brand": "Puma",
+      "price": 49,
+      "pricePerUnit": 49,
+      "color": "Black",
+      "colorCode": "#000000",
+      "sizes": "41",
+      "quantity": 1,
+      "imgUrl": "./public/imges/puma/Miniaturized/5.png",
+      "id": 3
+    },
+    {
+      "name": "Royal Glide",
+      "brand": "Reebok",
+      "price": 129,
+      "pricePerUnit": 43,
+      "color": "Green",
+      "colorCode": "#052e16",
+      "sizes": "42",
+      "quantity": 3,
+      "imgUrl": "./public/imges/reebok/Miniaturized/6.png",
+      "id": 4
+    }
+  ],
+  "orders": [
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 300,
+      "color": "Red",
+      "colorCode": "#b91c1c",
+      "sizes": "41",
+      "quantity": 3,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "is_active": false,
+      "id": 1
+    },
+    {
+      "name": "All Star Lift Cozy",
+      "brand": "Converse",
+      "price": 150,
+      "color": "Pink",
+      "colorCode": "#ec4899",
+      "sizes": "40",
+      "quantity": 2,
+      "imgUrl": "./public/imges/convers/Miniaturized/4.png",
+      "is_active": true,
+      "id": 2
+    },
+    {
       "name": "Training Shoe",
       "brand": "Puma",
       "price": 49,
       "color": "Black",
-      "colorCode": "#e5e5e5",
-      "sizes": 40,
+      "colorCode": "#000000",
+      "sizes": "41",
       "quantity": 1,
-      "imgUrl": "./public/imges/shoe2.png"
+      "imgUrl": "./public/imges/puma/Miniaturized/5.png",
+      "is_active": false,
+      "id": 3
+    },
+    {
+      "name": "Royal Glide",
+      "brand": "Reebok",
+      "price": 129,
+      "color": "Green",
+      "colorCode": "#052e16",
+      "sizes": "42",
+      "quantity": 3,
+      "imgUrl": "./public/imges/reebok/Miniaturized/6.png",
+      "is_active": true,
+      "id": 4
     }
   ],
   "addresses": [
