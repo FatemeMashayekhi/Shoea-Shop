@@ -173,8 +173,8 @@ export async function cartPage() {
 
     function foreachItem() {
       cart.forEach(handleCheckoutForItem);
-      router.navigate(routes.checkout);
-      // window.location.replace(routes.checkout);
+      // router.navigate(routes.checkout);
+      window.location.replace(routes.checkout);
     }
 
     // Iterate through each cart item and call handleCheckoutForItem
@@ -291,7 +291,7 @@ export async function cartPage() {
 
 <div
   id="modal-container"
-  class="hidden fixed z-50 bottom-0 left-0 w-full h-screen overflow-auto bg-black/50"
+  class="hidden fixed z-50 bottom-0 left-0 w-full h-screen bg-black/50"
 >
 
 </div>
