@@ -57,6 +57,7 @@ export async function productDetailsPage(match) {
     //////////////number input//////////////
     function updateQuantityDisplay() {
       document.getElementById("num").textContent = currentQuantity;
+      updateButtonState();
 
       //////////////total price handler//////////////
       function updateTotalPrice() {
@@ -104,6 +105,7 @@ export async function productDetailsPage(match) {
 
           selectedSizeValue = size.textContent;
           console.log(selectedSizeValue);
+          updateButtonState();
         });
       });
     }
@@ -132,6 +134,7 @@ export async function productDetailsPage(match) {
 
           console.log("Selected color name:", colorName);
           console.log("Selected color code:", colorCode);
+          updateButtonState();
         });
       });
     }
@@ -202,6 +205,24 @@ export async function productDetailsPage(match) {
 
     //////////add Cart btn handler////////////
     const addCartBtn = document.getElementById("add-cart");
+    addCartBtn.disabled = true;
+
+    function updateButtonState() {
+      ////////////////enable the button if size and color are selected and quantity is not 0/////////////
+      addCartBtn.disabled = !(
+        selectedSizeValue &&
+        colorName &&
+        currentQuantity > 0
+      );
+
+      if (addCartBtn.disabled) {
+        ////////////button is disabled////////
+        addCartBtn.style.backgroundColor = "#6C757D";
+      } else {
+        //////////////button is enabled///////////
+        addCartBtn.style.backgroundColor = "black";
+      }
+    }
     if (addCartBtn) {
       addCartBtn.addEventListener("click", async (e) => {
         e.preventDefault();
@@ -350,7 +371,7 @@ export async function productDetailsPage(match) {
             <p id="price" class="font-semibold text-2xl">0</p>
           </div>
           <div class="relative">
-            <button type="button" id="add-cart" class="bg-black text-white p-4 rounded-full w-64">
+            <button type="button" id="add-cart" class="bg-grayBtn text-white p-4 rounded-full w-64">
               Add to Cart
             </button>
             <i class="fas fa-shopping-bag text-white absolute left-14 top-5"></i>
