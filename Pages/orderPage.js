@@ -11,7 +11,8 @@ export async function orderPage() {
 
     if (home) {
       home.addEventListener("click", () => {
-        router.navigate(routes.products);
+        // router.navigate(routes.products);
+        window.location.replace(routes.products);
       });
     }
 

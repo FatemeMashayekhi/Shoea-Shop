@@ -10,88 +10,90 @@ export function productsPage() {
     <i id="search-icon" class="fa-solid fa-magnifying-glass absolute top-2 left-4 pt-0.5 text-grayBtn cursor-pointer"></i>
     <input type="text" id="search" placeholder="Search" class="w-96 h-9 bg-lightGray pl-10 placeholder-placeholderText" />
   </label>
-<div class="flex flex-wrap gap-10 justify-center font-Roboto">
-  <div class="text-center flex flex-col gap-y-3 cursor-pointer">
-    <div class="bg-navBg rounded-full size-[60px] relative">
-      <img
-        src="./public/imges/categories.png"
-        alt="nike-logo"
-        class="absolute top-3 left-3"
-      />
+
+  <div class="flex justify-center font-Roboto">
+  <div class="grid grid-cols-4 mt-[10px] w-[380px] gap-10">
+    <div>
+      <a class='brand-btns flex flex-col items-center'>
+        <img id='nike-round'
+          class="w-[60px] h-[60px] rounded-full"
+          src="./public/shoeimage/imges/nikelikepic.png"
+          alt=""
+        />
+        <span>Nike</span>
+      </a>
     </div>
-    <p class="text-sm">Nike</p>
-  </div>
-  <div class="text-center flex flex-col gap-y-3 cursor-pointer">
-    <div class="bg-navBg rounded-full size-[60px] relative">
-      <img
-        src="./public/imges/adidas.png"
-        alt="adidas-logo"
-        class="absolute top-4 left-3"
-      />
+    <div>
+      <a class='brand-btns flex flex-col items-center''>
+        <img id='adidas-round'
+          class="w-[60px] h-[60px] rounded-full"
+          src="./public/shoeimage/imges/adidaspic.png"
+          alt=""
+        />
+        <span>Adidas</span>
+      </a>
     </div>
-    <p class="text-sm">Adidas</p>
-  </div>
-  <div class="text-center flex flex-col gap-y-3 cursor-pointer">
-    <div class="bg-navBg rounded-full size-[60px] relative">
-      <img
-        src="./public/imges/puma.png"
-        alt="puma-logo"
-        class="absolute top-4 left-2"
-      />
+    <div>
+      <a class='brand-btns flex flex-col items-center''>
+        <img id='asics-round'
+          class="w-[60px] h-[60px] rounded-full"
+          src="./public/shoeimage/imges/Asicspic.png"
+          alt=""
+        />
+        <span>Asics</span>
+      </a>
     </div>
-    <p class="text-sm">Puma</p>
-  </div>
-  <div class="text-center flex flex-col gap-y-3 cursor-pointer">
-    <div class="bg-navBg rounded-full size-[60px] relative">
-      <img
-        src="./public/imges/asics.png"
-        alt="asics-logo"
-        class="absolute top-3 left-4"
-      />
+    <div>
+      <a class='brand-btns flex flex-col items-center''>
+        <img id='convers-round'
+          class="w-[60px] h-[60px] rounded-full"
+          src="./public/shoeimage/imges/converspic.png"
+          alt=""
+        />
+        <span>Converse</span>
+      </a>
     </div>
-    <p class="text-sm">Asics</p>
-  </div>
-  <div class="text-center flex flex-col gap-y-3 cursor-pointer">
-    <div class="bg-navBg rounded-full size-[60px] relative">
-      <img
-        src="./public/imges/reebok.png"
-        alt="rebook-logo"
-        class="absolute top-4 left-3"
-      />
+    <div>
+      <a class='brand-btns flex flex-col items-center'>
+        <img id='newball-round'
+          class="w-[60px] h-[60px] rounded-full"
+          src="./public/shoeimage/imges/newbalpic.png"
+          alt=""
+        />
+        <span>NewBalance</span>
+      </a>
     </div>
-    <p class="text-sm">Reebok</p>
-  </div>
-  <div class="text-center flex flex-col gap-y-3 cursor-pointer">
-    <div class="bg-navBg rounded-full size-[60px] relative">
-      <img
-        src="./public/imges/newba.png"
-        alt="newba-logo"
-        class="absolute top-2 left-2"
-      />
+    <div>
+      <a class='brand-btns flex flex-col items-center''>
+        <img id='puma-round'
+          class="w-[60px] h-[60px] rounded-full"
+          src="./public/shoeimage/imges/pumapic.png"
+          alt=""
+        />
+        <span>Puma</span>
+      </a>
     </div>
-    <p class="text-sm">New Ba..</p>
-  </div>
-  <div class="text-center flex flex-col gap-y-3 cursor-pointer">
-    <div class="bg-navBg rounded-full size-[60px] relative">
-      <img
-        src="./public/imges/convers.png"
-        alt="converse-logo"
-        class="absolute top-4 left-3"
-      />
+    <div>
+      <a class='brand-btns flex flex-col items-center''>
+        <img id='reebok-round'
+          class="w-[60px] h-[60px] rounded-full"
+          src="./public/shoeimage/imges/reebokpic.png"
+          alt=""
+        />
+        <span>Reebok</span>
+      </a>
     </div>
-    <p class="text-sm">Converse</p>
-  </div>
-  <div class="text-center flex flex-col gap-y-3 cursor-pointer">
-    <div class="bg-navBg rounded-full size-[60px] relative">
-      <img
-        src="./public/imges/more.png"
-        alt="more-logo"
-        class="absolute top-3 left-2"
-      />
+    <div>
+      <button>
+        <img
+          class="w-[60px] h-[60px] rounded-full"
+          src="./public/shoeimage/imges/morpicc.png"
+          alt=""
+        />more
+      </button>
     </div>
-    <p class="text-sm">More ..</p>
   </div>
-</div>
+  </div>
 <div class="flex justify-between px-2 font-semibold items-center tracking-wider">
   <p class="text-xl">Most Popular</p>
   <div>
@@ -206,4 +208,14 @@ document.addEventListener("DOMContentLoaded", () => {
       router.navigate(`/search?q=${query}`);
     });
   }
+
+  const productsBrand = document.querySelectorAll(".brand-btns");
+
+  productsBrand.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      const spanElem = item.querySelector("span").textContent;
+      console.log(spanElem);
+      router.navigate(`/brands/${spanElem}`);
+    });
+  });
 });

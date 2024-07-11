@@ -19,28 +19,25 @@ export async function checkoutPage() {
       router.navigate(routes.ship);
     });
 
-    console.log(JSON.parse(localStorage.getItem("selectedType")));
     const storedObject = localStorage.getItem("selectedType");
 
     if (storedObject) {
       const parsedObject = JSON.parse(storedObject);
       const shipCard = document.querySelector("#ship-card");
       shipCard.innerHTML = `
-
-      <div class="flex gap-x-4 items-center">
-        <img src="${parsedObject.icon}" class="size-14" />
-        <div class="flex flex-col gap-y-2">
-          <div class="flex gap-x-4 items-center">
-          <p class="font-semibold text-lg">${parsedObject.name}</p>
+        <div class="flex gap-x-4 items-center">
+          <img src="${parsedObject.icon}" class="size-14" />
+          <div class="flex flex-col gap-y-2">
+            <div class="flex gap-x-4 items-center">
+              <p class="font-semibold text-lg">${parsedObject.name}</p>
+            </div>
+            <p class="text-textGray text-sm">${parsedObject.description}</p>
           </div>
-          <p class="text-textGray text-sm">${parsedObject.description}</p>
         </div>
-      </div>
-      <div class="flex items-center gap-x-3">
-      <span class="font-semibold text-lg">$${parsedObject.price}</span>
-      <img src="./public/imges/edit.png" alt="edit-icon" id="edit-shipType" class="w-5 cursor-pointer" />
-      </div>
-
+        <div class="flex items-center gap-x-3">
+          <span class="font-semibold text-lg">$${parsedObject.price}</span>
+          <img src="./public/imges/edit.png" alt="edit-icon" id="edit-shipType" class="w-5 cursor-pointer" />
+        </div>
       `;
 
       document.querySelector("#edit-shipType").addEventListener("click", () => {
@@ -66,9 +63,11 @@ export async function checkoutPage() {
 
     let shipPrice;
     function updateShipping() {
-      const shippingSpan = document.querySelector("#ship");
-      shipPrice = JSON.parse(localStorage.getItem("selectedType")).price;
-      shippingSpan.textContent = `$${shipPrice}`;
+      if (storedObject) {
+        const shippingSpan = document.querySelector("#ship");
+        shipPrice = JSON.parse(localStorage.getItem("selectedType")).price;
+        shippingSpan.textContent = `$${shipPrice}`;
+      }
     }
     updateShipping();
 
@@ -106,12 +105,20 @@ export async function checkoutPage() {
     updateTotal();
 
     const continueBtn = document.querySelector("#continue-btn");
-    if (continueBtn) {
-      continueBtn.addEventListener("click", async () => {
-        await handleOrderForItem(); // Assuming handleOrderForItem is asynchronous
-        orders.splice(0, orders.length);
-        router.navigate(routes.payment);
-      });
+    continueBtn.disabled = true;
+    if (
+      localStorage.getItem("selectedType") &&
+      localStorage.getItem("selectedAddress")
+    ) {
+      continueBtn.disabled = false;
+
+      if (continueBtn) {
+        continueBtn.addEventListener("click", async () => {
+          await handleOrderForItem(); // Assuming handleOrderForItem is asynchronous
+          orders.splice(0, orders.length);
+          router.navigate(routes.payment);
+        });
+      }
     }
 
     async function handleOrderForItem() {
@@ -125,7 +132,7 @@ export async function checkoutPage() {
           sizes: item.sizes,
           quantity: item.quantity,
           imgUrl: item.imgUrl,
-          is_active: index % 2 === 1, // Set is_active based on odd/even index
+          is_active: index % 2 === 1,
         };
 
         try {
@@ -136,7 +143,7 @@ export async function checkoutPage() {
           );
         } catch (error) {
           console.error(`Error during checkout for item ${item.id}:`, error);
-          // Handle errors (e.g., display an error message)
+          /////////handle errors////////
         }
       });
     }

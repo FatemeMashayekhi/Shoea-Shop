@@ -2,61 +2,63 @@ import axios from "../api";
 import { router, routes } from "../main";
 
 export async function paymentPage() {
-  const methods = await getPaymentMethods();
-  console.log(methods);
+  const accessToken = localStorage.getItem("accessToken") ?? false;
+  if (accessToken) {
+    const methods = await getPaymentMethods();
+    console.log(methods);
 
-  const createEventListeners = () => {
-    let method = null;
+    const createEventListeners = () => {
+      let method = null;
 
-    function selectedMethod() {
-      const buttons = document.querySelectorAll(".check-btn");
-      let selectedButton = null;
+      function selectedMethod() {
+        const buttons = document.querySelectorAll(".check-btn");
+        let selectedButton = null;
 
-      buttons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          btn.classList.add("bg-black");
+        buttons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            btn.classList.add("bg-black");
 
-          if (selectedButton) {
-            selectedButton.classList.remove("bg-black");
-          }
+            if (selectedButton) {
+              selectedButton.classList.remove("bg-black");
+            }
 
-          //a//////////dd classes to the clicked button///////
-          btn.classList.add("bg-black");
+            //a//////////dd classes to the clicked button///////
+            btn.classList.add("bg-black");
 
-          /////////update the selected button reference//////////
-          selectedButton = btn;
+            /////////update the selected button reference//////////
+            selectedButton = btn;
 
-          method = btn.getAttribute("data-name");
+            method = btn.getAttribute("data-name");
+          });
         });
-      });
-    }
-
-    selectedMethod();
-    const error = document.querySelector("#error-span");
-    document.querySelector("#confirm-btn").addEventListener("click", () => {
-      if (!method) {
-        //////if no method is selected////////
-        error.innerHTML = "Please Select a Payment Method First";
-      } else {
-        error.innerHTML = "";
-        const modal = document.querySelector("#modal-container");
-        modal.classList.remove("hidden");
       }
-    });
 
-    document.querySelector("#prev-icon").addEventListener("click", () => {
-      router.navigate(routes.checkout);
-    });
-
-    const goToOrder = document.querySelector("#go-order");
-    if (goToOrder) {
-      goToOrder.addEventListener("click", () => {
-        router.navigate(routes.order);
+      selectedMethod();
+      const error = document.querySelector("#error-span");
+      document.querySelector("#confirm-btn").addEventListener("click", () => {
+        if (!method) {
+          //////if no method is selected////////
+          error.innerHTML = "Please Select a Payment Method First";
+        } else {
+          error.innerHTML = "";
+          const modal = document.querySelector("#modal-container");
+          modal.classList.remove("hidden");
+        }
       });
-    }
-  };
 
-  const html = `
+      document.querySelector("#prev-icon").addEventListener("click", () => {
+        router.navigate(routes.checkout);
+      });
+
+      const goToOrder = document.querySelector("#go-order");
+      if (goToOrder) {
+        goToOrder.addEventListener("click", () => {
+          router.navigate(routes.order);
+        });
+      }
+    };
+
+    const html = `
   <div class="flex flex-col gap-y-4 bg-lightGray font-Roboto min-h-screen">
   <div class="grow p-6 flex flex-col gap-y-6">
     <div class="flex justify-between items-center ml-0">
@@ -137,7 +139,10 @@ export async function paymentPage() {
 </div>
   `;
 
-  return { html, createEventListeners };
+    return { html, createEventListeners };
+  } else {
+    router.navigate(routes.login);
+  }
 }
 
 const getPaymentMethods = async () => {

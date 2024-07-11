@@ -54,7 +54,7 @@ export const routes = {
   ship: "/ship",
   payment: "/payment",
   order: "/order",
-  brand: "/brand",
+  brand: "/brands/:id",
 };
 
 router
