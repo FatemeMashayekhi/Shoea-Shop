@@ -8,6 +8,8 @@ export async function addressPage() {
   const createEventListeners = () => {
     let addressName = "Home";
     let selectedAddress;
+    document.querySelector("#apply-btn").disabled = true;
+
     function selectAddress() {
       const buttons = document.querySelectorAll(".radio-btn");
       let selectedButton = null;
@@ -31,6 +33,9 @@ export async function addressPage() {
 
           if (selectedAddress) {
             console.log(selectedAddress);
+            document.querySelector("#apply-btn").disabled = false;
+            document.querySelector("#apply-btn").style.backgroundColor =
+              "black";
 
             // const storedObject = localStorage.getItem("selectedAddress");
             // const parsedObject = JSON.parse(storedObject);
@@ -100,7 +105,7 @@ export async function addressPage() {
   </div>
   
   <div class="sticky bottom-0 z-40 bg-white rounded-t-3xl shadow-inner text-center p-7">
-    <button type="button" id="apply-btn" class="bg-black text-white p-4 rounded-full w-[364px]">Apply</button>
+    <button type="button" id="apply-btn" class="bg-grayBtn text-white p-4 rounded-full w-[364px]">Apply</button>
   </div>
 </div>
   `;

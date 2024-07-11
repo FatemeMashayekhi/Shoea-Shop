@@ -613,6 +613,57 @@
         "./public/imges/neawba/6_2.jpg",
         "./public/imges/neawba/6_3.jpg"
       ]
+    },
+    {
+      "id": 8,
+      "name": "Training Shoe",
+      "brand": "Puma",
+      "price": 49,
+      "rate": 7.5,
+      "sold": 5490,
+      "in-stock": 2310,
+      "colors": [
+        {
+          "color-name": "Blue",
+          "color-code": "#3b82f6"
+        },
+        {
+          "color-name": "Green",
+          "color-code": "#052e16"
+        },
+        {
+          "color-name": "Red",
+          "color-code": "#b91c1c"
+        },
+        {
+          "color-name": "White",
+          "color-code": "#e5e5e5"
+        },
+        {
+          "color-name": "Black",
+          "color-code": "#000000"
+        },
+        {
+          "color-name": "Pink",
+          "color-code": "#ec4899"
+        },
+        {
+          "color-name": "Orange",
+          "color-code": "#ea580c"
+        }
+      ],
+      "sizes": [
+        40,
+        41,
+        42
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
+      "images": [
+        "./public/imges/puma/Miniaturized/5.png",
+        "./public/imges/puma/5.webp",
+        "./public/imges/puma/5_2.png",
+        "./public/imges/puma/5_3.png"
+      ]
     }
   ],
   "mostPopular": [
