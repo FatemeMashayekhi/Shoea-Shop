@@ -36,7 +36,7 @@ export const mainLayout = (content) => {
       <img src="./public/imges/cart.png" alt="cart" />
       <p class="text-10">Cart</p>
     </a>
-    <a href="#" data-navigo>
+    <a href="/order" data-navigo>
       <img src="./public/imges/shoppi.png" alt="order" />
       <p class="text-10">Orders</p>
     </a>

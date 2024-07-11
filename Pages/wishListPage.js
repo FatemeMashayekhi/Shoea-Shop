@@ -165,16 +165,17 @@ export const getWishes = async (searchQuery) => {
     const response = await axios.get("/wishList");
     if (response.status === 200) {
       const wishes = response.data;
+      console.log(wishes);
 
       const filteredWishes = searchQuery
         ? wishes.filter((wish) => wish.name.toLowerCase().includes(searchQuery))
         : wishes;
 
-      const container = document.getElementById("wish-container");
+      let container = document.getElementById("wish-container");
       if (container) {
         container.innerHTML = "";
         filteredWishes.forEach((wish) => {
-          container += `
+          container.innerHTML += `
           <div class="flex flex-col justify-start gap-y-2">
             <div class="bg-productsBg size-[182px] relative rounded-3xl">
             <img src="./imges/love.png" alt="love-icon" class="absolute right-3 top-3 z-30" />
