@@ -105,12 +105,20 @@ export async function checkoutPage() {
     updateTotal();
 
     const continueBtn = document.querySelector("#continue-btn");
-    if (continueBtn) {
-      continueBtn.addEventListener("click", async () => {
-        await handleOrderForItem(); // Assuming handleOrderForItem is asynchronous
-        orders.splice(0, orders.length);
-        router.navigate(routes.payment);
-      });
+    continueBtn.disabled = true;
+    if (
+      localStorage.getItem("selectedType") &&
+      localStorage.getItem("selectedAddress")
+    ) {
+      continueBtn.disabled = false;
+
+      if (continueBtn) {
+        continueBtn.addEventListener("click", async () => {
+          await handleOrderForItem(); // Assuming handleOrderForItem is asynchronous
+          orders.splice(0, orders.length);
+          router.navigate(routes.payment);
+        });
+      }
     }
 
     async function handleOrderForItem() {
@@ -124,7 +132,7 @@ export async function checkoutPage() {
           sizes: item.sizes,
           quantity: item.quantity,
           imgUrl: item.imgUrl,
-          is_active: index % 2 === 1, // Set is_active based on odd/even index
+          is_active: index % 2 === 1,
         };
 
         try {
@@ -135,7 +143,7 @@ export async function checkoutPage() {
           );
         } catch (error) {
           console.error(`Error during checkout for item ${item.id}:`, error);
-          // Handle errors (e.g., display an error message)
+          /////////handle errors////////
         }
       });
     }
