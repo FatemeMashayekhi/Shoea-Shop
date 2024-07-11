@@ -74,15 +74,30 @@ export async function checkoutPage() {
     let reducedAmount;
     const promoInput = document.querySelector("#promo-input");
     const promoSpan = document.querySelector("#promo");
+
+    // Initialize a flag to track whether the promo code has been used
+    let promoCodeUsed = false;
+
     document.querySelector("#check-promo").addEventListener("click", () => {
-      if (promoInput.value == "maral") {
-        promoInput.value = "";
-        reducedAmount = Math.round((amount * 30) / 100);
-        console.log(reducedAmount);
-        promoSpan.textContent = `-$${reducedAmount}`;
+      if (!promoCodeUsed) {
+        if (promoInput.value === "maral") {
+          promoInput.value = "";
+          reducedAmount = Math.round((amount * 30) / 100);
+          console.log(reducedAmount);
+          promoSpan.textContent = `-$${reducedAmount}`;
+          promoCodeUsed = true; // Mark the promo code as used
+        } else {
+          promoSpan.textContent = "-$0";
+          promoInput.value = "Wrong Code";
+          promoInput.style.color = "red";
+          promoInput.addEventListener("input", () => {
+            promoInput.style.color = "black";
+          });
+        }
       } else {
+        // Promo code already used
         promoSpan.textContent = "-$0";
-        promoInput.value = "Wrong Code";
+        promoInput.value = "Code Already Used";
         promoInput.style.color = "red";
         promoInput.addEventListener("input", () => {
           promoInput.style.color = "black";
