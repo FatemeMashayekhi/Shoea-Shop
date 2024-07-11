@@ -32,13 +32,7 @@ export function signupPage() {
           <i id="repeatPassEye" class="fa-solid fa-eye-slash absolute text-grayBtn right-3 top-3 text-xs cursor-pointer"></i>
         </label>
 
-        <div class="flex justify-center mt-6">
-        <label class="block relative cursor-pointer select-none pl-7 text-base font-medium">
-          <input type="checkbox" class="absolute opacity-0 cursor-pointer h-0 w-0 checked:" />
-          Remember me
-          <span class="absolute top-0 left-0 h-5 w-5 bg-white border-1 border-gray-300 rounded-md"></span>
-        </label>
-        </div>
+
         <div class="flex justify-center mt-2">
         <a href="/login" data-navigo class="text-grayBtn hover:text-black cursor-pointer">Already have an account?</a>
         </div>
