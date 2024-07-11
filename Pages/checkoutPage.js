@@ -83,7 +83,11 @@ export async function checkoutPage() {
         promoSpan.textContent = `-$${reducedAmount}`;
       } else {
         promoSpan.textContent = "-$0";
-        promoInput.value = "";
+        promoInput.value = "Wrong Code";
+        promoInput.style.color = "red";
+        promoInput.addEventListener("input", () => {
+          promoInput.style.color = "black";
+        });
       }
       updateTotal();
     });

@@ -100,8 +100,8 @@ router
     const { html, createEventListeners } = await orderPage();
     render(html, createEventListeners);
   })
-  .on(routes.brand, async () => {
-    const { html, createEventListeners } = await brandPage();
+  .on(routes.brand, async (match) => {
+    const { html, createEventListeners } = await brandPage(match);
     render(html, createEventListeners);
   })
   .resolve();

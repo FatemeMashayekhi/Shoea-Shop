@@ -1,5 +1,18 @@
-export async function brandPage() {
-  const createEventListeners = () => {};
+import axios from "../api";
+import { routes } from "../main";
+
+export async function brandPage(match) {
+  //   console.log(match.data.id);
+  //   const data = await getBrands(match.data.id);
+  //   console.log(data);
+  const createEventListeners = () => {
+    const prevIcon = document.querySelector("#prev");
+    if (prevIcon) {
+      prevIcon.addEventListener("click", () => {
+        window.location.replace(routes.products);
+      });
+    }
+  };
 
   const html = `
 
@@ -33,3 +46,15 @@ export async function brandPage() {
 
   return { html, createEventListeners };
 }
+
+const getBrands = async (brand) => {
+  try {
+    const response = await axios.get(`/products?brand=${brand}`);
+    if (response.status === 200) {
+      const brands = response.data;
+      return brands;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
