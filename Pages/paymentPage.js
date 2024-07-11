@@ -47,6 +47,13 @@ export async function paymentPage() {
     document.querySelector("#prev-icon").addEventListener("click", () => {
       router.navigate(routes.checkout);
     });
+
+    const goToOrder = document.querySelector("#go-order");
+    if (goToOrder) {
+      goToOrder.addEventListener("click", () => {
+        router.navigate(routes.order);
+      });
+    }
   };
 
   const html = `
@@ -120,7 +127,7 @@ export async function paymentPage() {
     <p class="text-2xl font-semibold">Order Successful!</p>
     <p class="text-sm tracking-wider">You have successfully made order</p>
     <div class="flex flex-col gap-y-3">
-    <button type="button" class="bg-black text-white p-4 rounded-3xl text-sm font-semibold w-[250px]">View Order</button>
+    <button type="button" id="go-order" class="bg-black text-white p-4 rounded-3xl text-sm font-semibold w-[250px]">View Order</button>
     <button type="button" class="bg-navBg text-btnListBg p-4 rounded-3xl text-sm font-semibold w-[250px]">View E-Receipt</button>
     </div>
   </div>
