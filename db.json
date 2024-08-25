@@ -520,6 +520,14 @@
         {
           "color-name": "Black",
           "color-code": "#000000"
+        },
+        {
+          "color-name": "Pink",
+          "color-code": "#ec4899"
+        },
+        {
+          "color-name": "Orange",
+          "color-code": "#ea580c"
         }
       ],
       "sizes": [
@@ -533,49 +541,6 @@
         "./public/imges/adidas/2.png",
         "./public/imges/adidas/2_2.png",
         "./public/imges/adidas/2_3.png"
-      ]
-    },
-    {
-      "id": 3,
-      "name": "All Star Lift Cozy",
-      "brand": "Converse",
-      "price": 75,
-      "rate": 8.3,
-      "sold": 3215,
-      "in-stock": 2800,
-      "colors": [
-        {
-          "color-name": "Blue",
-          "color-code": "#3b82f6"
-        },
-        {
-          "color-name": "Green",
-          "color-code": "#052e16"
-        },
-        {
-          "color-name": "Red",
-          "color-code": "#b91c1c"
-        },
-        {
-          "color-name": "White",
-          "color-code": "#e5e5e5"
-        },
-        {
-          "color-name": "Black",
-          "color-code": "#000000"
-        }
-      ],
-      "sizes": [
-        40,
-        41,
-        42
-      ],
-      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
-      "images": [
-        "./public/imges/convers/Miniaturized/4.png",
-        "./public/imges/convers/4.jpg",
-        "./public/imges/convers/4_2.jpg",
-        "./public/imges/convers/4_3.jpg"
       ]
     },
     {
@@ -627,6 +592,57 @@
         "./public/imges/Asics/3.jpg",
         "./public/imges/Asics/3_2.jpg",
         "./public/imges/Asics/3_3.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "All Star Lift Cozy",
+      "brand": "Converse",
+      "price": 75,
+      "rate": 8.3,
+      "sold": 3215,
+      "in-stock": 2800,
+      "colors": [
+        {
+          "color-name": "Blue",
+          "color-code": "#3b82f6"
+        },
+        {
+          "color-name": "Green",
+          "color-code": "#052e16"
+        },
+        {
+          "color-name": "Red",
+          "color-code": "#b91c1c"
+        },
+        {
+          "color-name": "White",
+          "color-code": "#e5e5e5"
+        },
+        {
+          "color-name": "Black",
+          "color-code": "#000000"
+        },
+        {
+          "color-name": "Pink",
+          "color-code": "#ec4899"
+        },
+        {
+          "color-name": "Orange",
+          "color-code": "#ea580c"
+        }
+      ],
+      "sizes": [
+        40,
+        41,
+        42
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
+      "images": [
+        "./public/imges/convers/Miniaturized/4.png",
+        "./public/imges/convers/4.jpg",
+        "./public/imges/convers/4_2.jpg",
+        "./public/imges/convers/4_3.jpg"
       ]
     }
   ],

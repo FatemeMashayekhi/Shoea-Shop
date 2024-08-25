@@ -3,9 +3,25 @@ import axios from "../api";
 import { Navigation, Pagination } from "swiper/modules";
 import { routes } from "../main";
 
+let isInWish = false;
+
 export async function productDetailsPage(match) {
   const product = await getProduct(match.data.id);
   console.log(product);
+
+  if (product) {
+    try {
+      const response = await axios.get("/wishList");
+      if (response.status === 200) {
+        const wishes = response.data;
+        isInWish = !!wishes.find((item) => item.id === product.id);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  console.log(isInWish);
 
   ///////////////back icon///////////////
   const prevHandler = () => {
@@ -150,8 +166,8 @@ export async function productDetailsPage(match) {
         try {
           let response = await axios.post("/wishList", product);
           if (response.status === 201) {
-            like.src = "../public/imges/favorite.png";
-            like.classList.add("size-11");
+            like.src = "../public/imges/heartt.png";
+            like.classList.add("size-16");
             const modal = document.getElementById("myModal");
             modal.style.display = "block";
             modal.innerHTML = "";
@@ -323,7 +339,11 @@ export async function productDetailsPage(match) {
       <div class="flex flex-col p-6 gap-y-4">
         <div class="flex justify-between">
           <p class="font-semibold text-4xl">${product.name}</p>
-          <img src="../public/imges/like.png" alt="like-icon" id="like" class="size-7 cursor-pointer" />
+        ${
+          isInWish
+            ? '<img src="../public/imges/heartt.png" alt="like-icon" id="like" class="size-7 cursor-pointer" />'
+            : '<img src="../public/imges/like.png" alt="like-icon" id="like" class="size-7 cursor-pointer" />'
+        }
         </div>
         <div class="flex gap-x-4 items-center">
           <p class="bg-navBg text-xs w-20 h-6 rounded-md pt-1 text-center">${
