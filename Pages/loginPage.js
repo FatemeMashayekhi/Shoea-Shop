@@ -24,7 +24,7 @@ export function loginPage() {
         <label for="password" class="relative">
           <i class="fa-solid fa-lock absolute top-2 left-4 pt-0.5 text-grayBtn"></i>
           <input type="password" id="password" placeholder="Password" class="w-96 h-9 bg-lightGray pl-10 placeholder-grayBtn" />
-          <i class="fa-solid fa-eye-slash absolute text-grayBtn right-3 top-3 text-xs cursor-pointer"></i>
+          <i class="fa-solid fa-eye-slash absolute text-grayBtn right-3 top-3 z-50 text-xs cursor-pointer"></i>
         </label>
 
         <div class="flex justify-center mt-6">
@@ -122,7 +122,7 @@ function showpass() {
   const passInput = document.querySelector("#password");
   const eye = document.querySelector(".fa-eye-slash");
 
-  eye.addEventListener("click", (e) => {
+  eye?.addEventListener("click", (e) => {
     e.preventDefault();
     if (passInput.type === "password") {
       passInput.type = "text";

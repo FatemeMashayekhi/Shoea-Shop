@@ -19,6 +19,16 @@
       "email": "m@gmail.com",
       "password": "$2a$10$Hn1nfPEOs6t5ISMpFUxRGeqOh6UU4N02C1LqCp6iNhf6REYHFXSYq",
       "id": 4
+    },
+    {
+      "email": "admin@example.com",
+      "password": "$2a$10$PnKKMA83UW3Gbyjb.pDjBOuT827Z19FW7Wb/8ZhBRGNZcS0hNlhvO",
+      "id": 5
+    },
+    {
+      "email": "mashayekhimaral@gmail.com",
+      "password": "$2a$10$0aCb/g4mndY3i1gtq4lIC.v.tsvHeEHM31YVFlfDAWWNtD7YHPM3m",
+      "id": 6
     }
   ],
   "products": [
