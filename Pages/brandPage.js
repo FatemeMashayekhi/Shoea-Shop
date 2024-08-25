@@ -49,7 +49,7 @@ export async function brandPage(match) {
     const prev = document.querySelector("#prev");
     if (prev) {
       prev.addEventListener("click", () => {
-        router.navigate(routes.products);
+        window.location.replace(routes.products);
       });
     }
   };
