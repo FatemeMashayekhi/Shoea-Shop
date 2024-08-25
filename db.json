@@ -14,6 +14,11 @@
       "email": "jill@gmail.com",
       "password": "$2a$10$UbnSOOkq/gvknhc.LR5nMu/UWbipQ8cXCJFizFfr79Oq/.jVbd7yq",
       "id": 3
+    },
+    {
+      "email": "m@gmail.com",
+      "password": "$2a$10$Hn1nfPEOs6t5ISMpFUxRGeqOh6UU4N02C1LqCp6iNhf6REYHFXSYq",
+      "id": 4
     }
   ],
   "products": [
@@ -562,6 +567,57 @@
         "./public/imges/convers/4_2.jpg",
         "./public/imges/convers/4_3.jpg"
       ]
+    },
+    {
+      "id": 2,
+      "name": "Gel-Cumulus 26",
+      "brand": "Asics",
+      "price": 180,
+      "rate": 4.1,
+      "sold": 1200,
+      "in-stock": 5032,
+      "colors": [
+        {
+          "color-name": "Blue",
+          "color-code": "#3b82f6"
+        },
+        {
+          "color-name": "Green",
+          "color-code": "#052e16"
+        },
+        {
+          "color-name": "Red",
+          "color-code": "#b91c1c"
+        },
+        {
+          "color-name": "White",
+          "color-code": "#e5e5e5"
+        },
+        {
+          "color-name": "Black",
+          "color-code": "#000000"
+        },
+        {
+          "color-name": "Pink",
+          "color-code": "#ec4899"
+        },
+        {
+          "color-name": "Orange",
+          "color-code": "#ea580c"
+        }
+      ],
+      "sizes": [
+        40,
+        41,
+        42
+      ],
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
+      "images": [
+        "./public/imges/Asics/Miniaturized/3.png",
+        "./public/imges/Asics/3.jpg",
+        "./public/imges/Asics/3_2.jpg",
+        "./public/imges/Asics/3_3.jpg"
+      ]
     }
   ],
   "mostPopular": [
@@ -650,9 +706,144 @@
       ]
     }
   ],
-  "cart": [],
-  "checkout": [],
-  "orders": [],
+  "cart": [
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 300,
+      "pricePerUnit": 100,
+      "color": "Pink",
+      "colorCode": "#ec4899",
+      "sizes": "42",
+      "quantity": 3,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "id": 3
+    },
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 200,
+      "pricePerUnit": 100,
+      "color": "Green",
+      "colorCode": "#052e16",
+      "sizes": "42",
+      "quantity": 2,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "id": 4
+    }
+  ],
+  "checkout": [
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 100,
+      "pricePerUnit": 100,
+      "color": "Black",
+      "colorCode": "#000000",
+      "sizes": "42",
+      "quantity": 1,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "id": 2
+    },
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 300,
+      "pricePerUnit": 100,
+      "color": "Pink",
+      "colorCode": "#ec4899",
+      "sizes": "42",
+      "quantity": 3,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "id": 3
+    },
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 200,
+      "pricePerUnit": 100,
+      "color": "Green",
+      "colorCode": "#052e16",
+      "sizes": "42",
+      "quantity": 2,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "id": 4
+    }
+  ],
+  "orders": [
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 100,
+      "color": "Black",
+      "colorCode": "#000000",
+      "sizes": "42",
+      "quantity": 1,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "is_active": false,
+      "id": 1
+    },
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 300,
+      "color": "Pink",
+      "colorCode": "#ec4899",
+      "sizes": "42",
+      "quantity": 3,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "is_active": true,
+      "id": 2
+    },
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 200,
+      "color": "Green",
+      "colorCode": "#052e16",
+      "sizes": "42",
+      "quantity": 2,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "is_active": false,
+      "id": 3
+    },
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 100,
+      "color": "Black",
+      "colorCode": "#000000",
+      "sizes": "42",
+      "quantity": 1,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "is_active": false,
+      "id": 4
+    },
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 300,
+      "color": "Pink",
+      "colorCode": "#ec4899",
+      "sizes": "42",
+      "quantity": 3,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "is_active": true,
+      "id": 5
+    },
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 200,
+      "color": "Green",
+      "colorCode": "#052e16",
+      "sizes": "42",
+      "quantity": 2,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "is_active": false,
+      "id": 6
+    }
+  ],
   "addresses": [
     {
       "name": "Home",
