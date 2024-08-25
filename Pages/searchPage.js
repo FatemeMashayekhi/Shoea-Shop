@@ -151,7 +151,6 @@ export function ownSearch() {
   document.querySelector("#search-icon").addEventListener("click", () => {
     const searchInput = document.querySelector("#search-box");
     if (searchInput.value !== "") {
-      console.log("first");
       const query = searchInput?.value.toLowerCase().trim();
       // window.location.replace(`/search?q=${query}`);
       router.navigate(`/search?q=${query}`);
