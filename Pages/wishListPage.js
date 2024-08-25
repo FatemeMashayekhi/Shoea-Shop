@@ -26,7 +26,7 @@ export function wishListPage() {
     <button type="button" id="btn9" class="text-black font-semibold border-2 border-black rounded-full h-10 px-5">IranKafsh</button>
     <button type="button" id="btn10" class="text-black font-semibold border-2 border-black rounded-full h-10 px-5">KafshMeli</button>
   </div>
-  <div id="wish-container" class="flex flex-wrap justify-center gap-4">
+  <div id="wish-container" class="grid grid-cols-2 justify-center gap-4">
     <div class="flex flex-col justify-start gap-y-2">
       <div class="bg-productsBg size-[182px] relative rounded-3xl">
       <img src="./imges/love.png" alt="love-icon" class="absolute right-3 top-3 z-30" />
