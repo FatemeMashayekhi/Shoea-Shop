@@ -74,15 +74,30 @@ export async function checkoutPage() {
     let reducedAmount;
     const promoInput = document.querySelector("#promo-input");
     const promoSpan = document.querySelector("#promo");
+
+    // Initialize a flag to track whether the promo code has been used
+    let promoCodeUsed = false;
+
     document.querySelector("#check-promo").addEventListener("click", () => {
-      if (promoInput.value == "maral") {
-        promoInput.value = "";
-        reducedAmount = Math.round((amount * 30) / 100);
-        console.log(reducedAmount);
-        promoSpan.textContent = `-$${reducedAmount}`;
+      if (!promoCodeUsed) {
+        if (promoInput.value === "maral") {
+          promoInput.value = "";
+          reducedAmount = Math.round((amount * 30) / 100);
+          console.log(reducedAmount);
+          promoSpan.textContent = `-$${reducedAmount}`;
+          promoCodeUsed = true; // Mark the promo code as used
+        } else {
+          promoSpan.textContent = "-$0";
+          promoInput.value = "Wrong Code";
+          promoInput.style.color = "red";
+          promoInput.addEventListener("input", () => {
+            promoInput.style.color = "black";
+          });
+        }
       } else {
+        // Promo code already used
         promoSpan.textContent = "-$0";
-        promoInput.value = "Wrong Code";
+        promoInput.value = "Code Already Used";
         promoInput.style.color = "red";
         promoInput.addEventListener("input", () => {
           promoInput.style.color = "black";
@@ -146,6 +161,21 @@ export async function checkoutPage() {
           /////////handle errors////////
         }
       });
+
+      const token = JSON.parse(localStorage.getItem("selectedAddress"));
+      if (token) {
+        const container = document.querySelector("#token");
+        if (container) {
+          container.innerHTML = `
+                     <p id="address-name" class="font-semibold">${
+                       JSON.parse(localStorage.getItem("selectedAddress")).name
+                     }</p>
+           <p id="address-location" class="text-sm text-textGray">${
+             JSON.parse(localStorage.getItem("selectedAddress")).address
+           }</p>
+          `;
+        }
+      }
     }
   };
 
@@ -171,13 +201,9 @@ export async function checkoutPage() {
       <div class="bg-white flex p-5 rounded-3xl items-center justify-between">
         <div class="flex gap-x-4 items-center">
            <img src="./public/imges/location.png" alt="location-icon" class="size-14" />
-         <div class="flex flex-col gap-y-1">
-           <p id="address-name" class="font-semibold">${
-             JSON.parse(localStorage.getItem("selectedAddress")).name
-           }</p>
-           <p id="address-location" class="text-sm text-textGray">${
-             JSON.parse(localStorage.getItem("selectedAddress")).address
-           }</p>
+         <div id="token" class="flex flex-col gap-y-1">
+           <p id="address-name" class="font-semibold">Home</p>
+           <p id="address-location" class="text-sm text-textGray">Tehran</p>
          </div>
         </div>
         <img src="./public/imges/edit.png" alt="edit-icon" id="edit-address" class="w-5 cursor-pointer" />

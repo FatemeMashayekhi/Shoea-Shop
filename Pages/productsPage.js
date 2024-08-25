@@ -14,7 +14,7 @@ export function productsPage() {
   <div class="flex justify-center font-Roboto">
   <div class="grid grid-cols-4 mt-[10px] w-[380px] gap-10">
     <div>
-      <a class='brand-btns flex flex-col items-center'>
+      <a class='brand-btns flex flex-col items-center cursor-pointer'>
         <img id='nike-round'
           class="w-[60px] h-[60px] rounded-full"
           src="./public/shoeimage/imges/nikelikepic.png"
@@ -24,7 +24,7 @@ export function productsPage() {
       </a>
     </div>
     <div>
-      <a class='brand-btns flex flex-col items-center''>
+      <a class='brand-btns flex flex-col items-center cursor-pointer'>
         <img id='adidas-round'
           class="w-[60px] h-[60px] rounded-full"
           src="./public/shoeimage/imges/adidaspic.png"
@@ -34,7 +34,7 @@ export function productsPage() {
       </a>
     </div>
     <div>
-      <a class='brand-btns flex flex-col items-center''>
+      <a class='brand-btns flex flex-col items-center cursor-pointer'>
         <img id='asics-round'
           class="w-[60px] h-[60px] rounded-full"
           src="./public/shoeimage/imges/Asicspic.png"
@@ -44,7 +44,7 @@ export function productsPage() {
       </a>
     </div>
     <div>
-      <a class='brand-btns flex flex-col items-center''>
+      <a class='brand-btns flex flex-col items-center cursor-pointer'>
         <img id='convers-round'
           class="w-[60px] h-[60px] rounded-full"
           src="./public/shoeimage/imges/converspic.png"
@@ -54,7 +54,7 @@ export function productsPage() {
       </a>
     </div>
     <div>
-      <a class='brand-btns flex flex-col items-center'>
+      <a class='brand-btns flex flex-col items-center cursor-pointer'>
         <img id='newball-round'
           class="w-[60px] h-[60px] rounded-full"
           src="./public/shoeimage/imges/newbalpic.png"
@@ -64,7 +64,7 @@ export function productsPage() {
       </a>
     </div>
     <div>
-      <a class='brand-btns flex flex-col items-center''>
+      <a class='brand-btns flex flex-col items-center cursor-pointer'>
         <img id='puma-round'
           class="w-[60px] h-[60px] rounded-full"
           src="./public/shoeimage/imges/pumapic.png"
@@ -74,7 +74,7 @@ export function productsPage() {
       </a>
     </div>
     <div>
-      <a class='brand-btns flex flex-col items-center''>
+      <a class='brand-btns flex flex-col items-center cursor-pointer'>
         <img id='reebok-round'
           class="w-[60px] h-[60px] rounded-full"
           src="./public/shoeimage/imges/reebokpic.png"

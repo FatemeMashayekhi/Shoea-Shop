@@ -14,6 +14,11 @@
       "email": "jill@gmail.com",
       "password": "$2a$10$UbnSOOkq/gvknhc.LR5nMu/UWbipQ8cXCJFizFfr79Oq/.jVbd7yq",
       "id": 3
+    },
+    {
+      "email": "m@gmail.com",
+      "password": "$2a$10$Hn1nfPEOs6t5ISMpFUxRGeqOh6UU4N02C1LqCp6iNhf6REYHFXSYq",
+      "id": 4
     }
   ],
   "products": [
@@ -564,13 +569,13 @@
       ]
     },
     {
-      "id": 6,
-      "name": "9060",
-      "brand": "New Ba..",
-      "price": 149,
-      "rate": 5.6,
-      "sold": 4325,
-      "in-stock": 1002,
+      "id": 2,
+      "name": "Gel-Cumulus 26",
+      "brand": "Asics",
+      "price": 180,
+      "rate": 4.1,
+      "sold": 1200,
+      "in-stock": 5032,
       "colors": [
         {
           "color-name": "Blue",
@@ -608,61 +613,10 @@
       ],
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
       "images": [
-        "./public/imges/neawba/Miniaturized/6.png",
-        "./public/imges/neawba/6.jpg",
-        "./public/imges/neawba/6_2.jpg",
-        "./public/imges/neawba/6_3.jpg"
-      ]
-    },
-    {
-      "id": 8,
-      "name": "Training Shoe",
-      "brand": "Puma",
-      "price": 49,
-      "rate": 7.5,
-      "sold": 5490,
-      "in-stock": 2310,
-      "colors": [
-        {
-          "color-name": "Blue",
-          "color-code": "#3b82f6"
-        },
-        {
-          "color-name": "Green",
-          "color-code": "#052e16"
-        },
-        {
-          "color-name": "Red",
-          "color-code": "#b91c1c"
-        },
-        {
-          "color-name": "White",
-          "color-code": "#e5e5e5"
-        },
-        {
-          "color-name": "Black",
-          "color-code": "#000000"
-        },
-        {
-          "color-name": "Pink",
-          "color-code": "#ec4899"
-        },
-        {
-          "color-name": "Orange",
-          "color-code": "#ea580c"
-        }
-      ],
-      "sizes": [
-        40,
-        41,
-        42
-      ],
-      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In ipsam perferendis quasi consectetur ",
-      "images": [
-        "./public/imges/puma/Miniaturized/5.png",
-        "./public/imges/puma/5.webp",
-        "./public/imges/puma/5_2.png",
-        "./public/imges/puma/5_3.png"
+        "./public/imges/Asics/Miniaturized/3.png",
+        "./public/imges/Asics/3.jpg",
+        "./public/imges/Asics/3_2.jpg",
+        "./public/imges/Asics/3_3.jpg"
       ]
     }
   ],
@@ -756,54 +710,6 @@
     {
       "name": "Adidas Samba",
       "brand": "Adidas",
-      "price": 200,
-      "pricePerUnit": 100,
-      "color": "Red",
-      "colorCode": "#b91c1c",
-      "sizes": "41",
-      "quantity": 2,
-      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
-      "id": 1
-    },
-    {
-      "name": "All Star Lift Cozy",
-      "brand": "Converse",
-      "price": 300,
-      "pricePerUnit": 75,
-      "color": "Pink",
-      "colorCode": "#ec4899",
-      "sizes": "40",
-      "quantity": 4,
-      "imgUrl": "./public/imges/convers/Miniaturized/4.png",
-      "id": 2
-    },
-    {
-      "name": "Training Shoe",
-      "brand": "Puma",
-      "price": 98,
-      "pricePerUnit": 49,
-      "color": "Black",
-      "colorCode": "#000000",
-      "sizes": "41",
-      "quantity": 2,
-      "imgUrl": "./public/imges/puma/Miniaturized/5.png",
-      "id": 3
-    },
-    {
-      "name": "Royal Glide",
-      "brand": "Reebok",
-      "price": 43,
-      "pricePerUnit": 43,
-      "color": "Green",
-      "colorCode": "#052e16",
-      "sizes": "42",
-      "quantity": 1,
-      "imgUrl": "./public/imges/reebok/Miniaturized/6.png",
-      "id": 4
-    },
-    {
-      "name": "Adidas Samba",
-      "brand": "Adidas",
       "price": 300,
       "pricePerUnit": 100,
       "color": "Pink",
@@ -811,104 +717,56 @@
       "sizes": "42",
       "quantity": 3,
       "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
-      "id": 5
+      "id": 3
     },
     {
       "name": "Adidas Samba",
       "brand": "Adidas",
-      "price": 500,
+      "price": 200,
       "pricePerUnit": 100,
-      "color": "Black",
-      "colorCode": "#000000",
-      "sizes": "41",
-      "quantity": 5,
-      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
-      "id": 6
-    },
-    {
-      "name": "Adidas Samba",
-      "brand": "Adidas",
-      "price": 500,
-      "pricePerUnit": 100,
-      "color": "Orange",
-      "colorCode": "#ea580c",
-      "sizes": "41",
-      "quantity": 5,
-      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
-      "id": 7
-    },
-    {
-      "name": "Gel-Cumulus 26",
-      "brand": "Asics",
-      "price": 180,
-      "pricePerUnit": 180,
-      "color": "Orange",
-      "colorCode": "#ea580c",
-      "sizes": "40",
-      "quantity": 1,
-      "imgUrl": "./public/imges/Asics/Miniaturized/3.png",
-      "id": 8
-    },
-    {
-      "name": "Nike Initiator",
-      "brand": "Nike",
-      "price": 150,
-      "pricePerUnit": 75,
-      "color": "White",
-      "colorCode": "#e5e5e5",
+      "color": "Green",
+      "colorCode": "#052e16",
       "sizes": "42",
       "quantity": 2,
-      "imgUrl": "./public/imges/nike/shoe2.png",
-      "id": 9
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "id": 4
     }
   ],
   "checkout": [
     {
       "name": "Adidas Samba",
       "brand": "Adidas",
-      "price": 300,
+      "price": 100,
       "pricePerUnit": 100,
-      "color": "Red",
-      "colorCode": "#b91c1c",
-      "sizes": "41",
-      "quantity": 3,
+      "color": "Black",
+      "colorCode": "#000000",
+      "sizes": "42",
+      "quantity": 1,
       "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
-      "id": 1
-    },
-    {
-      "name": "All Star Lift Cozy",
-      "brand": "Converse",
-      "price": 150,
-      "pricePerUnit": 75,
-      "color": "Pink",
-      "colorCode": "#ec4899",
-      "sizes": "40",
-      "quantity": 2,
-      "imgUrl": "./public/imges/convers/Miniaturized/4.png",
       "id": 2
     },
     {
-      "name": "Training Shoe",
-      "brand": "Puma",
-      "price": 49,
-      "pricePerUnit": 49,
-      "color": "Black",
-      "colorCode": "#000000",
-      "sizes": "41",
-      "quantity": 1,
-      "imgUrl": "./public/imges/puma/Miniaturized/5.png",
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 300,
+      "pricePerUnit": 100,
+      "color": "Pink",
+      "colorCode": "#ec4899",
+      "sizes": "42",
+      "quantity": 3,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
       "id": 3
     },
     {
-      "name": "Royal Glide",
-      "brand": "Reebok",
-      "price": 129,
-      "pricePerUnit": 43,
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 200,
+      "pricePerUnit": 100,
       "color": "Green",
       "colorCode": "#052e16",
       "sizes": "42",
-      "quantity": 3,
-      "imgUrl": "./public/imges/reebok/Miniaturized/6.png",
+      "quantity": 2,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
       "id": 4
     }
   ],
@@ -916,50 +774,74 @@
     {
       "name": "Adidas Samba",
       "brand": "Adidas",
-      "price": 300,
-      "color": "Red",
-      "colorCode": "#b91c1c",
-      "sizes": "41",
-      "quantity": 3,
+      "price": 100,
+      "color": "Black",
+      "colorCode": "#000000",
+      "sizes": "42",
+      "quantity": 1,
       "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
       "is_active": false,
       "id": 1
     },
     {
-      "name": "All Star Lift Cozy",
-      "brand": "Converse",
-      "price": 150,
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 300,
       "color": "Pink",
       "colorCode": "#ec4899",
-      "sizes": "40",
-      "quantity": 2,
-      "imgUrl": "./public/imges/convers/Miniaturized/4.png",
+      "sizes": "42",
+      "quantity": 3,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
       "is_active": true,
       "id": 2
     },
     {
-      "name": "Training Shoe",
-      "brand": "Puma",
-      "price": 49,
-      "color": "Black",
-      "colorCode": "#000000",
-      "sizes": "41",
-      "quantity": 1,
-      "imgUrl": "./public/imges/puma/Miniaturized/5.png",
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 200,
+      "color": "Green",
+      "colorCode": "#052e16",
+      "sizes": "42",
+      "quantity": 2,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
       "is_active": false,
       "id": 3
     },
     {
-      "name": "Royal Glide",
-      "brand": "Reebok",
-      "price": 129,
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 100,
+      "color": "Black",
+      "colorCode": "#000000",
+      "sizes": "42",
+      "quantity": 1,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "is_active": false,
+      "id": 4
+    },
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 300,
+      "color": "Pink",
+      "colorCode": "#ec4899",
+      "sizes": "42",
+      "quantity": 3,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "is_active": true,
+      "id": 5
+    },
+    {
+      "name": "Adidas Samba",
+      "brand": "Adidas",
+      "price": 200,
       "color": "Green",
       "colorCode": "#052e16",
       "sizes": "42",
-      "quantity": 3,
-      "imgUrl": "./public/imges/reebok/Miniaturized/6.png",
-      "is_active": true,
-      "id": 4
+      "quantity": 2,
+      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
+      "is_active": false,
+      "id": 6
     }
   ],
   "addresses": [

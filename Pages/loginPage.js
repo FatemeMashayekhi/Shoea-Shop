@@ -39,7 +39,7 @@ export function loginPage() {
         </div>
         <span id="error" class="text-red-800 h-7 text-center"></span>
       </div>
-      <button id="login-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed mt-[56px]" disabled="true">Sign In</button>
+      <button id="login-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed " disabled="true">Sign In</button>
     </div>
     `;
   }
