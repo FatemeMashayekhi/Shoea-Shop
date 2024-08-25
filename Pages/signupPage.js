@@ -6,8 +6,8 @@ export function signupPage() {
     return window.location.replace(routes.products);
   } else {
     return `
-    <a href="/slider" data-navigo class="mt-2">
-       <img src="./imges/prev icon.png" alt="prev-icon" class="cursor-pointer" />
+    <a href="/slider" data-navigo>
+       <img src="./imges/prev icon.png" alt="prev-icon" class="cursor-pointer mt-2" />
     </a>
     <div class="flex flex-col items-center gap-y-32 font-Roboto mt-20">
       <div><img src="./imges/logo.png" alt="logo" /></div>
@@ -38,7 +38,7 @@ export function signupPage() {
         </div>
         <span id="error" class="text-red-700 h-7 text-center"></span>
       </div>
-      <button id="create-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl mt-10 cursor-not-allowed" disabled="true">Create</button>
+      <button id="create-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl mt-8 cursor-not-allowed" disabled="true">Create</button>
     </div>
   `;
   }

@@ -95,7 +95,7 @@ export function login() {
       }
     } catch (e) {
       console.log(e);
-      document.querySelector("#error").innerHTML = e.response.data;
+      document.querySelector("#error").innerHTML = e.response.statusText;
     }
   });
 
