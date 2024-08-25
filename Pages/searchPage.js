@@ -17,7 +17,7 @@ export function searchPage() {
 
   <div class="border-1"></div>
 
-  <div id="container" class="grow">
+  <div id="container" class="grow grid grid-cols-2">
     <div class="flex flex-col gap-y-6">
       <div class="flex justify-between items-center">
         <p class="text-textGray">Nike Wrapshot Classic</p>
