@@ -38,7 +38,7 @@ export function signupPage() {
         </div>
         <span id="error" class="text-red-800 h-7 text-center"></span>
       </div>
-      <button id="create-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed" disabled="true">Create</button>
+      <button id="create-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl mt-10 cursor-not-allowed" disabled="true">Create</button>
     </div>
   `;
   }
