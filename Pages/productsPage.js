@@ -14,83 +14,84 @@ export function productsPage() {
   <div class="flex justify-center font-Roboto">
   <div class="grid grid-cols-4 mt-[10px] w-[380px] gap-10">
     <div>
-      <a class='brand-btns flex flex-col items-center cursor-pointer'>
+      <a class='brand-btns flex flex-col items-center cursor-pointer gap-y-3'>
         <img id='nike-round'
           class="w-[60px] h-[60px] rounded-full"
           src="./public/shoeimage/imges/nikelikepic.png"
           alt=""
         />
-        <span>Nike</span>
+        <span class="font-semibold">Nike</span>
       </a>
     </div>
     <div>
-      <a class='brand-btns flex flex-col items-center cursor-pointer'>
+      <a class='brand-btns flex flex-col items-center cursor-pointer gap-y-3'>
         <img id='adidas-round'
           class="w-[60px] h-[60px] rounded-full"
           src="./public/shoeimage/imges/adidaspic.png"
           alt=""
         />
-        <span>Adidas</span>
+        <span class="font-semibold">Adidas</span>
       </a>
     </div>
     <div>
-      <a class='brand-btns flex flex-col items-center cursor-pointer'>
+      <a class='brand-btns flex flex-col items-center cursor-pointer gap-y-3'>
         <img id='asics-round'
           class="w-[60px] h-[60px] rounded-full"
           src="./public/shoeimage/imges/Asicspic.png"
           alt=""
         />
-        <span>Asics</span>
+        <span class="font-semibold">Asics</span>
       </a>
     </div>
     <div>
-      <a class='brand-btns flex flex-col items-center cursor-pointer'>
+      <a class='brand-btns flex flex-col items-center cursor-pointer gap-y-3'>
         <img id='convers-round'
           class="w-[60px] h-[60px] rounded-full"
           src="./public/shoeimage/imges/converspic.png"
           alt=""
         />
-        <span>Converse</span>
+        <span class="font-semibold">Converse</span>
       </a>
     </div>
     <div>
-      <a class='brand-btns flex flex-col items-center cursor-pointer'>
+      <a class='brand-btns flex flex-col items-center cursor-pointer gap-y-3'>
         <img id='newball-round'
           class="w-[60px] h-[60px] rounded-full"
           src="./public/shoeimage/imges/newbalpic.png"
           alt=""
         />
-        <span>NewBalance</span>
+        <span class="font-semibold">NewBalance</span>
       </a>
     </div>
     <div>
-      <a class='brand-btns flex flex-col items-center cursor-pointer'>
+      <a class='brand-btns flex flex-col items-center cursor-pointer gap-y-3'>
         <img id='puma-round'
           class="w-[60px] h-[60px] rounded-full"
           src="./public/shoeimage/imges/pumapic.png"
           alt=""
         />
-        <span>Puma</span>
+        <span class="font-semibold">Puma</span>
       </a>
     </div>
     <div>
-      <a class='brand-btns flex flex-col items-center cursor-pointer'>
+      <a class='brand-btns flex flex-col items-center cursor-pointer gap-y-3'>
         <img id='reebok-round'
           class="w-[60px] h-[60px] rounded-full"
           src="./public/shoeimage/imges/reebokpic.png"
           alt=""
         />
-        <span>Reebok</span>
+        <span class="font-semibold">Reebok</span>
       </a>
     </div>
     <div>
-      <button>
-        <img
+      <a class='flex flex-col items-center cursor-pointer gap-y-3'>
+        <img id='reebok-round'
           class="w-[60px] h-[60px] rounded-full"
           src="./public/shoeimage/imges/morpicc.png"
           alt=""
-        />more
-      </button>
+        />
+        <span class="font-semibold">More ..</span>
+      </a>
     </div>
   </div>
   </div>

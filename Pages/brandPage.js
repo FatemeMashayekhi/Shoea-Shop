@@ -69,7 +69,7 @@ export async function brandPage(match) {
     </div>
   </div>
 
-  <div id="container">
+  <div id="container" class="grid grid-cols-2">
 
     <div class="flex flex-col justify-start gap-y-1">
       <a href="/products/" class="bg-productsBg size-[182px] relative rounded-3xl">
