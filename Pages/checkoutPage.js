@@ -243,7 +243,7 @@ export async function checkoutPage() {
 
 
       ${orders
-        .map((item) => {
+        ?.map((item) => {
           return `
               <div id="card" class="flex bg-white rounded-3xl p-5 gap-x-6">
                 <div
