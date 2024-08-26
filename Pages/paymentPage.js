@@ -59,7 +59,7 @@ export async function paymentPage() {
     //   goToOrder.addEventListener("click", async () => {
     //     try {
     //       // Make an Axios DELETE request to clear the cart
-    //       await axios.delete("/cart"); // Adjust the API endpoint
+    //       await axios.delete("/cart/1"); // Adjust the API endpoint
     //       console.log("Cart cleared.");
     //       router.navigate(routes.order);
     //     } catch (error) {

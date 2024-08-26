@@ -102,16 +102,16 @@ export function productsPage() {
   </div>
 </div>
 <div id="scroll-container" class="flex gap-x-2 w-full overflow-x-scroll">
-  <button type="button" id="btn1" class="bg-btnListBg text-white  border-2 border-btnListBg rounded-full h-10 px-4">All</button>
-  <button type="button" id="btn2" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Nike</button>
-  <button type="button" id="btn3" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Adidas</button>
-  <button type="button" id="btn4" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Puma</button>
-  <button type="button" id="btn5" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Asics</button>
-  <button type="button" id="btn6" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">NewBalance</button>
-  <button type="button" id="btn7" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Converse</button>
-  <button type="button" id="btn8" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Reebok</button>
-  <button type="button" id="btn9" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">IranKafsh</button>
-  <button type="button" id="btn10" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">KafshMeli</button>
+  <button type="button" id="btn1" class="filter-btns bg-btnListBg text-white  border-2 border-btnListBg rounded-full h-10 px-4">All</button>
+  <button type="button" id="btn2" class="filter-btns text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Nike</button>
+  <button type="button" id="btn3" class="filter-btns text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Adidas</button>
+  <button type="button" id="btn4" class="filter-btns text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Puma</button>
+  <button type="button" id="btn5" class="filter-btns text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Asics</button>
+  <button type="button" id="btn6" class="filter-btns text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">NewBalance</button>
+  <button type="button" id="btn7" class="filter-btns text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Converse</button>
+  <button type="button" id="btn8" class="filter-btns text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">Reebok</button>
+  <button type="button" id="btn9" class="filter-btns text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">IranKafsh</button>
+  <button type="button" id="btn10" class="filter-btns text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">KafshMeli</button>
 </div>
 <div id="products-container" class="grid grid-cols-2 justify-center gap-3">
 
@@ -165,12 +165,22 @@ window.addEventListener("scroll", async () => {
 let productsLoaded = false;
 let currentBatch = 0;
 
-export const getProducts = async () => {
+export const getProducts = async (buttonText) => {
+  console.log(buttonText);
   try {
     if (!productsLoaded) {
       const response = await axios.get("/products");
       if (response.status === 200) {
         const products = response.data;
+
+        console.log(products.filter((p) => p.brand === buttonText));
+
+        const filterProducts = buttonText
+          ? products.filter((p) => p.brand === buttonText)
+          : products;
+
+        console.log(filterProducts);
+
         const container = document.getElementById("products-container");
 
         const batchSize = 4;
@@ -178,7 +188,7 @@ export const getProducts = async () => {
         const endIdx = startIdx + batchSize;
 
         for (let i = startIdx; i < endIdx; i++) {
-          const product = products[i];
+          const product = filterProducts[i];
           if (!product) break;
 
           container.innerHTML += `
@@ -217,6 +227,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const spanElem = item.querySelector("span").textContent;
       console.log(spanElem);
       router.navigate(`/brands/${spanElem}`);
+    });
+  });
+
+  const filterProducts = document.querySelectorAll(".filter-btns");
+
+  filterProducts.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      const buttonText = item.textContent;
+      getProducts(buttonText);
     });
   });
 });
