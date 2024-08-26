@@ -32,7 +32,7 @@ export function sliderPage() {
     
     </div>
     
-    <div class="text-center mt-14">
+    <div class="text-center mt-9">
     <button id="next-btn" type="button" class="w-96 h-12 bg-darkBtn text-white font-Roboto rounded-3xl">Next</button>
     </div>
     

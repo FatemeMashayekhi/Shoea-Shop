@@ -16,10 +16,12 @@ export const mainLayout = (content) => {
      </div>
    </div>
    <div class="mt-4">
-    <a href="/wishList" data-navigo class="cursor-pointer">
-      <img id="wish" src="./public/imges/header.png" alt="header" />
-    </a>
-  </div>
+      <button onclick="window.location.replace('${
+        routes.wishList
+      }')" class="cursor-pointer">
+        <img id="wish" src="./public/imges/header.png" alt="header" />
+      </button>
+    </div>
  </header>
 
  <main class="grow px-4">

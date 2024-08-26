@@ -24,7 +24,7 @@ export function loginPage() {
         <label for="password" class="relative">
           <i class="fa-solid fa-lock absolute top-2 left-4 pt-0.5 text-grayBtn"></i>
           <input type="password" id="password" placeholder="Password" class="w-96 h-9 bg-lightGray pl-10 placeholder-grayBtn" />
-          <i class="fa-solid fa-eye-slash absolute text-grayBtn right-3 top-3 text-xs cursor-pointer"></i>
+          <i class="fa-solid fa-eye-slash absolute text-grayBtn right-3 top-3 z-50 text-xs cursor-pointer"></i>
         </label>
 
         <div class="flex justify-center mt-6">
@@ -37,9 +37,9 @@ export function loginPage() {
         <div class="flex justify-center mt-2">
         <a href="/signup" data-navigo class="text-grayBtn hover:text-black cursor-pointer">Don't have an account?</a>
         </div>
-        <span id="error" class="text-red-800 h-7 text-center"></span>
+        <span id="error" class="text-red-700 h-7 text-center"></span>
       </div>
-      <button id="login-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl cursor-not-allowed " disabled="true">Sign In</button>
+      <button id="login-btn" type="submit" class="w-96 h-12 bg-grayBtn text-white font-Roboto rounded-3xl mt-5 cursor-not-allowed " disabled="true">Sign In</button>
     </div>
     `;
   }
@@ -95,7 +95,7 @@ export function login() {
       }
     } catch (e) {
       console.log(e);
-      document.querySelector("#error").innerHTML = e.response.data;
+      document.querySelector("#error").innerHTML = e.response.statusText;
     }
   });
 
@@ -122,7 +122,7 @@ function showpass() {
   const passInput = document.querySelector("#password");
   const eye = document.querySelector(".fa-eye-slash");
 
-  eye.addEventListener("click", (e) => {
+  eye?.addEventListener("click", (e) => {
     e.preventDefault();
     if (passInput.type === "password") {
       passInput.type = "text";

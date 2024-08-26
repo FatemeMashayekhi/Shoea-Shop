@@ -112,7 +112,7 @@ export function productsPage() {
   <button type="button" id="btn9" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">IranKafsh</button>
   <button type="button" id="btn10" class="text-btnListBg font-semibold border-2 border-btnListBg rounded-full h-10 px-5">KafshMeli</button>
 </div>
-<div id="products-container" class="flex flex-wrap justify-center gap-3">
+<div id="products-container" class="grid grid-cols-2 justify-center gap-3">
 
 </div>
 </div>

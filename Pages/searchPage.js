@@ -17,7 +17,7 @@ export function searchPage() {
 
   <div class="border-1"></div>
 
-  <div id="container" class="grow">
+  <div id="container" class="grow grid grid-cols-2">
     <div class="flex flex-col gap-y-6">
       <div class="flex justify-between items-center">
         <p class="text-textGray">Nike Wrapshot Classic</p>
@@ -151,7 +151,6 @@ export function ownSearch() {
   document.querySelector("#search-icon").addEventListener("click", () => {
     const searchInput = document.querySelector("#search-box");
     if (searchInput.value !== "") {
-      console.log("first");
       const query = searchInput?.value.toLowerCase().trim();
       // window.location.replace(`/search?q=${query}`);
       router.navigate(`/search?q=${query}`);
