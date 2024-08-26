@@ -171,7 +171,8 @@ export async function checkoutPage() {
         continueBtn.addEventListener("click", async () => {
           await handleOrderForItem(); //////assuming handleOrderForItem is asynchronous///////
           orders.splice(0, orders.length);
-          router.navigate(routes.payment);
+          // router.navigate(routes.payment);
+          window.location.replace(routes.payment);
         });
       }
     }
