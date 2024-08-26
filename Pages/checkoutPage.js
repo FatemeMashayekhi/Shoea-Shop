@@ -15,10 +15,34 @@ export async function checkoutPage() {
       router.navigate(routes.address);
     });
 
+    ///////////////choose shiptype handler///////
     document.querySelector("#ship-type").addEventListener("click", () => {
       router.navigate(routes.ship);
     });
 
+    ///////////////handle address choosing///////
+    const addressToken = localStorage.getItem("selectedAddress");
+    if (addressToken) {
+      const parsedAddressToken = JSON.parse(addressToken);
+      const addressCard = document.querySelector("#token");
+      if (addressCard) {
+        addressCard.innerHTML = `
+                         <p id="address-name" class="font-semibold">${parsedAddressToken.name}</p>
+               <p id="address-location" class="text-sm text-textGray">${parsedAddressToken.address}</p>
+              `;
+      }
+    } else {
+      const addressCard = document.querySelector("#token");
+      if (addressCard) {
+        addressCard.innerHTML = `
+               <p id="address-name" class="font-semibold">Home</p>
+               <p id="address-location" class="text-sm text-textGray">Tehran</p>
+    
+              `;
+      }
+    }
+
+    ///////////////handle ship choosing///////
     const storedObject = localStorage.getItem("selectedType");
 
     if (storedObject) {
@@ -43,8 +67,21 @@ export async function checkoutPage() {
       document.querySelector("#edit-shipType").addEventListener("click", () => {
         router.navigate(routes.ship);
       });
+    } else {
+      const shipCard = document.querySelector("#ship-card");
+      shipCard.innerHTML = `
+    <div class="flex items-center gap-x-4">
+      <img src="./public/imges/truck.png" alt="truck-icon" class="w-7 h-5" />
+      <p class="text-xl font-semibold tracking-tight">Choose Shipping Type</p>
+    </div>
+    
+          <button onclick="window.location.replace('${routes.ship}')" class="cursor-pointer">
+        <i id="ship-type" class="fa-solid fa-chevron-right text-lg cursor-pointer"></i>
+      </button>
+      `;
     }
 
+    ///////////////calc amount///////
     let amount;
     function updateAmount() {
       const amountSpan = document.querySelector("#amount");
@@ -61,6 +98,7 @@ export async function checkoutPage() {
     }
     updateAmount();
 
+    ///////////////calc ship price///////
     let shipPrice;
     function updateShipping() {
       if (storedObject) {
@@ -75,7 +113,7 @@ export async function checkoutPage() {
     const promoInput = document.querySelector("#promo-input");
     const promoSpan = document.querySelector("#promo");
 
-    // Initialize a flag to track whether the promo code has been used
+    ////initialize a flag to track whether the promo code has been used////////
     let promoCodeUsed = false;
 
     document.querySelector("#check-promo").addEventListener("click", () => {
@@ -85,7 +123,7 @@ export async function checkoutPage() {
           reducedAmount = Math.round((amount * 30) / 100);
           console.log(reducedAmount);
           promoSpan.textContent = `-$${reducedAmount}`;
-          promoCodeUsed = true; // Mark the promo code as used
+          promoCodeUsed = true; ///////mark the promo code as used///////
         } else {
           promoSpan.textContent = "-$0";
           promoInput.value = "Wrong Code";
@@ -95,7 +133,7 @@ export async function checkoutPage() {
           });
         }
       } else {
-        // Promo code already used
+        ////////promo code already used/////////
         promoSpan.textContent = "-$0";
         promoInput.value = "Code Already Used";
         promoInput.style.color = "red";
@@ -129,7 +167,7 @@ export async function checkoutPage() {
 
       if (continueBtn) {
         continueBtn.addEventListener("click", async () => {
-          await handleOrderForItem(); // Assuming handleOrderForItem is asynchronous
+          await handleOrderForItem(); //////assuming handleOrderForItem is asynchronous///////
           orders.splice(0, orders.length);
           router.navigate(routes.payment);
         });
@@ -161,21 +199,6 @@ export async function checkoutPage() {
           /////////handle errors////////
         }
       });
-
-      const token = JSON.parse(localStorage.getItem("selectedAddress"));
-      if (token) {
-        const container = document.querySelector("#token");
-        if (container) {
-          container.innerHTML = `
-                     <p id="address-name" class="font-semibold">${
-                       JSON.parse(localStorage.getItem("selectedAddress")).name
-                     }</p>
-           <p id="address-location" class="text-sm text-textGray">${
-             JSON.parse(localStorage.getItem("selectedAddress")).address
-           }</p>
-          `;
-        }
-      }
     }
   };
 

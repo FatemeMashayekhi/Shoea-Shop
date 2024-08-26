@@ -695,16 +695,16 @@
       "id": 3
     },
     {
-      "name": "Adidas Samba",
-      "brand": "Adidas",
-      "price": 200,
-      "pricePerUnit": 100,
-      "color": "Green",
-      "colorCode": "#052e16",
+      "name": "All Star Lift Cozy",
+      "brand": "Converse",
+      "price": 225,
+      "pricePerUnit": 75,
+      "color": "White",
+      "colorCode": "#e5e5e5",
       "sizes": "42",
-      "quantity": 2,
-      "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
-      "id": 4
+      "quantity": 3,
+      "imgUrl": "./public/imges/convers/Miniaturized/4.png",
+      "id": 8
     }
   ],
   "checkout": [
@@ -743,6 +743,18 @@
       "quantity": 2,
       "imgUrl": "./public/imges/adidas/Miniaturized/2.png",
       "id": 4
+    },
+    {
+      "name": "All Star Lift Cozy",
+      "brand": "Converse",
+      "price": 225,
+      "pricePerUnit": 75,
+      "color": "White",
+      "colorCode": "#e5e5e5",
+      "sizes": "42",
+      "quantity": 3,
+      "imgUrl": "./public/imges/convers/Miniaturized/4.png",
+      "id": 8
     }
   ],
   "orders": [
