@@ -54,6 +54,19 @@ export async function paymentPage() {
         router.navigate(routes.order);
       });
     }
+    // const goToOrder = document.querySelector("#go-order");
+    // if (goToOrder) {
+    //   goToOrder.addEventListener("click", async () => {
+    //     try {
+    //       // Make an Axios DELETE request to clear the cart
+    //       await axios.delete("/cart"); // Adjust the API endpoint
+    //       console.log("Cart cleared.");
+    //       router.navigate(routes.order);
+    //     } catch (error) {
+    //       console.error("Error clearing cart:", error);
+    //     }
+    //   });
+    // }
   };
 
   const html = `
