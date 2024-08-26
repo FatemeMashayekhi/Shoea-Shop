@@ -130,15 +130,17 @@ export async function checkoutPage() {
           promoInput.style.color = "red";
           promoInput.addEventListener("input", () => {
             promoInput.style.color = "black";
+            promoInput.value = "";
           });
         }
       } else {
         ////////promo code already used/////////
-        promoSpan.textContent = "-$0";
+        // promoSpan.textContent = "-$0";
         promoInput.value = "Code Already Used";
         promoInput.style.color = "red";
         promoInput.addEventListener("input", () => {
           promoInput.style.color = "black";
+          promoInput.value = "";
         });
       }
       updateTotal();
